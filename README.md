@@ -18,7 +18,7 @@ Checks: `npm run lint`, `npm run typecheck`, `npm run build`.
 | --- | --- | --- |
 | `RESEND_API_KEY` | Yes | Server-side Resend key. Never exposed to the browser. |
 | `CONTACT_FROM_EMAIL` | Recommended | Sender, e.g. `Fairpointe Website <website@fairpointe.co.uk>`. The domain must be verified in Resend. |
-| `CONTACT_TO_EMAIL` | No | Overrides the recipient. Defaults to `adebola@fairpointe.co.uk`. |
+| `CONTACT_TO_EMAIL` | No | Overrides the recipient. Defaults to `hello@fairpointe.co.uk`. |
 
 Without `RESEND_API_KEY` the form shows its failure state. It never reports success unless Resend accepts the message.
 

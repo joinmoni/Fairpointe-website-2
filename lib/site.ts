@@ -1,7 +1,7 @@
 export const site = {
   name: "Fairpointe",
   url: "https://fairpointe.co.uk",
-  email: "adebola@fairpointe.co.uk",
+  email: "hello@fairpointe.co.uk",
   tagline: "Enterprise technology, delivered in the UK.",
   description:
     "Fairpointe is a UK technology company helping organisations adopt specialist cloud, security and AI technology and helping international technology companies enter the UK market.",
