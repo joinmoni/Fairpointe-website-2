@@ -42,7 +42,7 @@ export function MultiCloudStack({ tone = "paper" }: { tone?: "paper" | "deep" })
         ))}
       </div>
       <figcaption className="mt-4 text-[0.9375rem] text-ink-muted">
-        The same engineering disciplines applied across both cloud platforms.
+        The same engineering disciplines applied across both cloud platforms and hybrid environments.
       </figcaption>
     </figure>
   );

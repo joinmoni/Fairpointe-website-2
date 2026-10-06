@@ -9,33 +9,39 @@ export const phases: {
   lanes: Lane[];
 }[] = [
   {
-    title: "Understand the market",
-    body: "Identify target customers, competitors, incumbent suppliers, pricing, procurement routes and where your technology has the strongest opportunity.",
-    workstreams: ["Customers", "Competitors", "Pricing", "Incumbent suppliers", "Procurement routes"],
+    title: "Market Development",
+    body: "Identify target accounts, buying signals, relevant partners and opportunities across the UK enterprise and public sectors.",
+    workstreams: ["Target accounts", "Buying signals", "Partners", "Public-sector opportunities"],
     lanes: ["commercial"],
   },
   {
-    title: "Build pipeline",
-    body: "Develop opportunities across UK enterprises, the AWS and Microsoft ecosystems and relevant public-sector organisations.",
-    workstreams: ["Enterprise accounts", "AWS and Microsoft ecosystem", "Public-sector opportunities"],
-    lanes: ["commercial"],
-  },
-  {
-    title: "Close",
-    body: "Support technical discovery, demonstrations, solution design, commercial conversations and procurement.",
-    workstreams: ["Technical discovery", "Demos", "Commercial support", "Procurement"],
+    title: "Technical Pre-sales",
+    body: "Support discovery, technical conversations, demonstrations and customer evaluations with UK-based capability.",
+    workstreams: ["Discovery", "Technical conversations", "Demonstrations", "Evaluations"],
     lanes: ["commercial", "technical"],
   },
   {
-    title: "Deploy",
-    body: "Provide local architecture, implementation, integration and migration capability where required.",
-    workstreams: ["Architecture", "Implementation", "Integration", "Migration"],
+    title: "Proof of Concept",
+    body: "Work with customers and your product team to validate the technology against real requirements and environments.",
+    workstreams: ["Requirements", "Validation", "Customer environment"],
+    lanes: ["commercial", "technical"],
+  },
+  {
+    title: "Deployment & Integration",
+    body: "Implement and integrate your product within the customer’s existing cloud, identity, security, data and engineering environment.",
+    workstreams: ["Implementation", "Integration", "Cloud and identity", "Security and data"],
     lanes: ["technical"],
   },
   {
-    title: "Grow",
-    body: "Support customers after deployment and identify opportunities for renewals, expansion and managed services.",
-    workstreams: ["Support", "Renewals", "Expansion", "Managed services"],
+    title: "Customer Engineering",
+    body: "Work directly with customer technical teams to resolve deployment challenges and move successful implementations into production.",
+    workstreams: ["Customer technical teams", "Deployment challenges", "Production"],
+    lanes: ["technical"],
+  },
+  {
+    title: "Ongoing Support",
+    body: "Provide local technical continuity after go-live and help identify opportunities for expansion.",
+    workstreams: ["Local support", "Technical continuity", "Expansion"],
     lanes: ["commercial", "technical"],
   },
 ];
@@ -62,7 +68,7 @@ function LaneBar({ active, lane, first, last }: { active: boolean; lane: Lane; f
 }
 
 /**
- * The five-phase UK operating model as a matrix. The two right-hand lanes show
+ * The six-phase UK operating model as a matrix. The two right-hand lanes show
  * where commercial and technical work run, and where they overlap.
  */
 export function OperatingModel() {
@@ -127,7 +133,7 @@ export function OperatingModel() {
 /** Compact horizontal sequence for the homepage, on a navy band. */
 export function MarketEntrySequence() {
   return (
-    <ol className="grid grid-cols-1 border-t border-rule-navy sm:grid-cols-2 md:grid-cols-5">
+    <ol className="grid grid-cols-1 border-t border-rule-navy sm:grid-cols-2 md:grid-cols-6">
       {phases.map((phase, i) => (
         <li
           key={phase.title}

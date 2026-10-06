@@ -11,12 +11,12 @@ import { MarketEntrySequence } from "@/components/diagrams/market-entry";
 export const metadata: Metadata = pageMetadata({
   title: "Fairpointe | Enterprise Technology and UK Market Entry",
   description:
-    "Fairpointe helps organisations adopt specialist AI, security and cloud technology, and helps international technology companies enter the UK market.",
+    "Fairpointe helps organisations evaluate, deploy and operate specialist AI, cloud and security technology, and helps international technology companies enter, sell and deliver in the UK.",
   path: "/",
 });
 
 const capabilityIndex = [
-  { id: "ai-security", label: "AI & Security" },
+  { id: "ai-security", label: "Specialist Technology Deployment" },
   { id: "cloud-infrastructure", label: "Cloud & Infrastructure" },
   { id: "uk-market-entry", label: "UK Market Entry" },
 ];
@@ -38,7 +38,7 @@ export default function HomePage() {
         <Container>
           <h1 id="hero-heading" className="type-display motion-safe:animate-rise">
             Enterprise technology, <br className="hidden md:block" />
-            delivered in the UK.
+            deployed in the UK.
           </h1>
           <Grid className="mt-10 md:mt-14">
             <div
@@ -46,8 +46,9 @@ export default function HomePage() {
               style={{ animationDelay: "90ms" }}
             >
               <p className="type-lede text-ink-soft">
-                Fairpointe helps organisations adopt specialist cloud, security and AI technology, and helps
-                international technology companies enter the UK market.
+                Fairpointe helps organisations evaluate, deploy and operate specialist AI, cloud and security
+                technology. We also help international technology companies enter the UK market, win customers and
+                deliver successfully.
               </p>
               <div className="mt-10 flex flex-wrap gap-3">
                 <CtaButton href={cta.project.href}>{cta.project.label}</CtaButton>
@@ -78,17 +79,15 @@ export default function HomePage() {
       </section>
 
       {/* Introduction */}
-      <SplitSection id="introduction" title="Technology is changing faster than most organisations can adopt it.">
-        <p className="type-lede text-ink">
-          Fairpointe works at the point where emerging technology meets real-world implementation.
+      <SplitSection id="introduction" title="From evaluation to production.">
+        <p className="type-lede text-ink">Buying enterprise technology is only the beginning.</p>
+        <p>
+          Fairpointe works alongside engineering, security and infrastructure teams to evaluate, integrate and deploy
+          specialist technology into real production environments.
         </p>
         <p>
-          We help organisations evaluate, deploy and operate specialist technology across AI, security and cloud
-          infrastructure.
-        </p>
-        <p>
-          For international technology companies, we provide a route into the UK market, combining market
-          intelligence, enterprise sales, public-sector procurement and local technical delivery.
+          We support deployments across AWS, Microsoft Azure, hybrid infrastructure and the wider enterprise
+          technology stack.
         </p>
       </SplitSection>
 
@@ -100,32 +99,33 @@ export default function HomePage() {
             Where we work
           </h2>
 
-          {/* 01 AI & Security */}
+          {/* 01 Specialist Technology Deployment */}
           <article id="ai-security" aria-labelledby="ai-security-heading" className="pt-16 pb-20 md:pt-24 md:pb-28">
             <div className="border-t border-ink pt-6">
-              <CapabilityLabel index="01" label="AI & Security" />
+              <CapabilityLabel index="01" label="Specialist Technology Deployment" />
             </div>
             <Grid className="mt-10 gap-y-12 md:mt-14">
               <div className="col-span-4 md:col-span-12 lg:col-span-6">
                 <h3 id="ai-security-heading" className="type-h2">
-                  Secure the systems behind modern AI.
+                  Specialist technology, deployed into your environment.
                 </h3>
                 <div className="type-body prose-flow mt-8 max-w-[36rem] text-ink-soft">
                   <p>
-                    AI agents, automated workloads and cloud applications increasingly operate using machine identities,
-                    service accounts, API keys and tokens.
+                    Evaluate, integrate and deploy specialist AI, cloud and security technology into your existing
+                    environment.
                   </p>
                   <p>
-                    Fairpointe helps organisations understand these non-human identities, what they can access and how
-                    they should be controlled.
+                    Current areas include AI agent security and non-human identities: the service accounts, API keys and
+                    tokens that AI agents and automated workloads use to reach company systems.
                   </p>
                 </div>
-                <ArrowLink href="/ai-security" className="mt-10">
-                  Explore AI & Security
-                </ArrowLink>
+                <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4">
+                  <ArrowLink href={cta.project.href}>{cta.project.label}</ArrowLink>
+                  <ArrowLink href="/ai-security">Explore AI & Security</ArrowLink>
+                </div>
               </div>
               <div className="col-span-4 md:col-span-8 lg:col-span-5 lg:col-start-8">
-                <h4 className="sr-only">AI & Security capabilities</h4>
+                <h4 className="sr-only">Specialist technology deployment capabilities</h4>
                 <RuledList
                   numbered
                   items={[
@@ -157,8 +157,8 @@ export default function HomePage() {
                 </h3>
                 <div className="type-body prose-flow mt-8 max-w-[36rem] text-ink-soft">
                   <p>
-                    Fairpointe helps organisations design, implement and improve cloud infrastructure across Amazon Web
-                    Services and Microsoft Azure.
+                    Build the cloud and infrastructure foundation required to deploy and operate modern enterprise
+                    technology across AWS, Microsoft Azure and hybrid environments.
                   </p>
                   <p>
                     We work across architecture, cloud security, platform engineering, automation, migration and the
@@ -189,13 +189,16 @@ export default function HomePage() {
             </div>
             <Grid className="mt-10 gap-y-10 md:mt-14">
               <h3 id="uk-market-entry-heading" className="type-h2-lg col-span-4 md:col-span-11 lg:col-span-8">
-                Build your UK business without building a UK team first.
+                Enter, sell and deliver in the UK.
               </h3>
               <div className="type-body prose-flow col-span-4 text-on-navy-soft md:col-span-8 lg:col-span-6">
-                <p>Fairpointe helps international enterprise technology companies enter and grow in the UK.</p>
                 <p>
-                  We identify where demand exists, build enterprise and public-sector opportunities, support technical
-                  sales, navigate procurement, implement technology and provide local support after the sale.
+                  Build UK pipeline, support technical evaluations, deploy your product and serve customers without
+                  building the entire UK team first.
+                </p>
+                <p>
+                  Fairpointe provides local commercial and technical capability, from market development and technical
+                  pre-sales through proof of concept, deployment and ongoing customer support.
                 </p>
               </div>
               <div className="col-span-4 md:col-span-4 md:col-start-9 lg:col-span-4 lg:col-start-9 lg:self-end">
@@ -223,14 +226,12 @@ export default function HomePage() {
           <div className="type-body prose-flow col-span-4 text-ink-soft md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
             <p className="type-lede text-ink">Entering the UK requires more than generating leads.</p>
             <p>
-              Enterprise customers need technical confidence. Public-sector buyers have specific procurement routes.
-              Cloud marketplaces and channel partners influence how technology is purchased. Customers also need
-              someone capable of implementing what has been sold.
+              Enterprise customers need commercial confidence and technical confidence. They need to understand how
+              your technology fits their environment, how it will be deployed and who will support it after the sale.
             </p>
-            <p>Fairpointe brings these functions together.</p>
             <p>
-              From the first market assessment through to implementation and customer expansion, we help technology
-              companies establish a credible UK presence before committing to a full local team.
+              Fairpointe combines UK market development with hands-on technical delivery, helping international
+              technology companies move from opportunity to evaluation, deployment and ongoing customer support.
             </p>
             <div className="pt-4">
               <ArrowLink href="/uk-market-entry">See how UK Market Entry works</ArrowLink>
@@ -240,14 +241,14 @@ export default function HomePage() {
       </Section>
 
       {/* Public sector */}
-      <SplitSection id="public-sector" tone="deep" title="Technology delivery for UK public services.">
+      <SplitSection id="public-sector" tone="deep" title="Specialist technology for UK public services.">
         <p>
-          Fairpointe helps public-sector organisations evaluate and implement modern technology across cloud
-          infrastructure, security, AI, automation, data and software.
+          Fairpointe helps technology companies and public-sector organisations navigate the path from opportunity and
+          procurement through to technical delivery.
         </p>
         <p>
-          We also help international technology companies understand UK public-sector demand and navigate the routes
-          through which technology is researched, procured and delivered.
+          We combine procurement intelligence with hands-on technical capability to help specialist technology reach UK
+          public-sector organisations and work successfully in their environments.
         </p>
         <div className="pt-4">
           <ArrowLink href="/public-sector">Explore Public Sector</ArrowLink>
@@ -255,12 +256,12 @@ export default function HomePage() {
       </SplitSection>
 
       <CtaBand
-        title="What are you trying to build?"
+        title="What are you trying to deploy?"
         primary={cta.project}
         secondary={{ label: "Enter the UK market", href: "/uk-market-entry" }}
       >
-        Whether you are adopting new technology or bringing technology into the UK, start with a conversation about
-        the problem, the environment and what success looks like.
+        Whether you are evaluating specialist technology or bringing your technology into the UK, start with a
+        conversation about the environment, the requirement and what successful deployment looks like.
       </CtaBand>
     </>
   );

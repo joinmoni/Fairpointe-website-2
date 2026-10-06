@@ -1,21 +1,21 @@
 import { cn } from "@/lib/utils";
 
-export const controlStages = [
+export const deploymentStages = [
   {
-    title: "Discover",
-    body: "Identify service accounts, API keys, tokens, secrets and other non-human identities across your technology environment.",
+    title: "Evaluate",
+    body: "Understand the technology, use case, architecture, security requirements and expected business outcome before committing to deployment.",
   },
   {
-    title: "Govern",
-    body: "Understand ownership, permissions, dependencies and which systems each identity can access.",
+    title: "Integrate",
+    body: "Connect the technology to your existing cloud, identity, data, developer and security environments.",
   },
   {
-    title: "Control",
-    body: "Reduce excessive privileges, improve credential management and establish controls around what agents and workloads are permitted to do.",
+    title: "Deploy",
+    body: "Configure and implement the technology inside your production environment, working directly with your technical teams.",
   },
   {
-    title: "Monitor",
-    body: "Identify unusual activity, changes in access and risks as your AI and cloud environments evolve.",
+    title: "Operate",
+    body: "Support the technology after go-live, resolve deployment issues and help expand successful implementations.",
   },
 ] as const;
 
@@ -23,7 +23,7 @@ export const controlStages = [
 export function StageIndex() {
   return (
     <ol aria-label="Approach" className="relative border-l border-rule-strong pl-8">
-      {controlStages.map((stage, i) => (
+      {deploymentStages.map((stage, i) => (
         <li key={stage.title} className="relative py-3.5">
           <span
             aria-hidden
@@ -50,13 +50,13 @@ function Arrow({ className }: { className?: string }) {
   );
 }
 
-/** Discover → Govern → Control → Monitor, drawn as a continuous loop. */
+/** Evaluate → Integrate → Deploy → Operate, drawn as a continuous loop. */
 export function ControlLoop() {
   return (
     <figure>
       {/* Desktop and tablet: horizontal track with return path */}
       <div className="hidden md:block">
-        {/* Return path from Monitor back to Discover */}
+        {/* Return path from Operate back to Evaluate */}
         <div aria-hidden className="relative h-8">
           <div className="absolute top-0 right-0 -bottom-[10px] left-[5.5px] border-t border-r border-l border-dashed border-ink/45" />
           <svg viewBox="0 0 8 8" className="absolute -bottom-[2px] left-[2px] z-10 size-2 rotate-90 text-ink/60">
@@ -64,12 +64,12 @@ export function ControlLoop() {
           </svg>
         </div>
         <ol className="grid grid-cols-4 gap-x-6 lg:gap-x-8">
-          {controlStages.map((stage, i) => (
+          {deploymentStages.map((stage, i) => (
             <li key={stage.title} className="relative">
               <div aria-hidden className="relative z-10 flex h-5 items-center">
                 <span className={cn("size-3 shrink-0 border border-ink", i === 0 ? "bg-ink" : "bg-paper")} />
                 <span className="h-px flex-1 bg-ink/70" />
-                {i < controlStages.length - 1 ? (
+                {i < deploymentStages.length - 1 ? (
                   <Arrow className="-ml-px text-ink/70" />
                 ) : (
                   <span className="h-px w-0" />
@@ -86,7 +86,7 @@ export function ControlLoop() {
       {/* Mobile: vertical sequence */}
       <ol className="relative md:hidden">
         <span aria-hidden className="absolute top-2 bottom-2 left-[5.5px] w-px bg-ink/40" />
-        {controlStages.map((stage, i) => (
+        {deploymentStages.map((stage, i) => (
           <li key={stage.title} className="relative pb-10 pl-10 last:pb-0">
             <span
               aria-hidden
@@ -99,7 +99,8 @@ export function ControlLoop() {
         ))}
       </ol>
       <figcaption className="mt-6 text-[0.9375rem] text-ink-muted md:mt-4">
-        A continuous cycle: identities change as agents, workloads and cloud environments change.
+        A continuous cycle: successful implementations expand and new technology is evaluated as your environment
+        changes.
       </figcaption>
     </figure>
   );

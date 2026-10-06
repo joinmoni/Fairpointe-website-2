@@ -2,9 +2,9 @@ export const site = {
   name: "Fairpointe",
   url: "https://fairpointe.co.uk",
   email: "hello@fairpointe.co.uk",
-  tagline: "Enterprise technology, delivered in the UK.",
+  tagline: "Enterprise technology, deployed in the UK.",
   description:
-    "Fairpointe is a UK technology company helping organisations adopt specialist cloud, security and AI technology and helping international technology companies enter the UK market.",
+    "Fairpointe helps UK organisations evaluate and deploy specialist enterprise technology, and helps international technology companies enter, sell and deliver in the UK.",
   locale: "en_GB",
 } as const;
 
@@ -71,12 +71,12 @@ export const navigation: NavEntry[] = [
       {
         label: "AI & Security",
         href: "/ai-security",
-        description: "AI agent and non-human identity security",
+        description: "Evaluate and deploy emerging AI and security technology",
       },
       {
         label: "Cloud & Infrastructure",
         href: "/cloud-infrastructure",
-        description: "Architecture and operations across AWS and Microsoft Azure",
+        description: "Cloud foundations across AWS, Microsoft Azure and hybrid environments",
       },
     ],
   },

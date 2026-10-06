@@ -11,7 +11,7 @@ const path = "/contact";
 export const metadata: Metadata = pageMetadata({
   title: "Contact Fairpointe | Discuss a Technology Project",
   description:
-    "Contact Fairpointe about AI, security, cloud infrastructure, UK public-sector technology or entering the UK technology market.",
+    "Contact Fairpointe about evaluating or deploying AI, security and cloud technology, UK public-sector technology or entering the UK technology market.",
   path,
 });
 
@@ -39,10 +39,11 @@ export default async function ContactPage({ searchParams }: PageProps<"/contact"
             <div className="col-span-4 md:col-span-10 lg:col-span-5">
               <div className="lg:sticky lg:top-32">
                 <h1 id="contact-heading" className="type-h1">
-                  Speak to Fairpointe.
+                  Let&rsquo;s discuss what you&rsquo;re trying to deploy or bring to the UK.
                 </h1>
                 <p className="type-lede mt-8 max-w-[26rem] text-ink-soft">
-                  Tell us what you are working on. We will review your enquiry and respond directly.
+                  Whether you&rsquo;re evaluating specialist technology, planning a deployment or looking to establish
+                  your technology company in the UK, tell us what you&rsquo;re working on.
                 </p>
               </div>
             </div>

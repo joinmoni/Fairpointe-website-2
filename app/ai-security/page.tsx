@@ -4,18 +4,28 @@ import { breadcrumbSchema, faqSchema, pageMetadata, serviceSchema } from "@/lib/
 import { JsonLd } from "@/components/json-ld";
 import { Grid, Section } from "@/components/marketing/layout";
 import { CtaButton } from "@/components/marketing/links";
-import { CtaBand, FaqSection, PageHero } from "@/components/marketing/blocks";
+import { CtaBand, FaqSection, PageHero, RuledList } from "@/components/marketing/blocks";
 import { AccessPaths, ControlLoop, EnvironmentCoverage, StageIndex } from "@/components/diagrams/ai-security";
 
 const path = "/ai-security";
 const description =
-  "Secure AI agents and non-human identities across AWS, Azure, Entra, GitHub, Kubernetes and SaaS. Discover, govern, control and monitor machine access.";
+  "Evaluate and deploy AI and security technology, including AI agent and non-human identity security across AWS, Azure, Entra, GitHub, Kubernetes and SaaS.";
 
 export const metadata: Metadata = pageMetadata({
   title: "AI Agent & Non-Human Identity Security UK | Fairpointe",
   description,
   path,
 });
+
+const environmentAreas = [
+  "AWS",
+  "Microsoft Azure",
+  "Identity",
+  "Security",
+  "AI Infrastructure",
+  "Developer Platforms",
+  "Hybrid Environments",
+];
 
 const discussEnvironment = { label: "Discuss your environment", href: contactHref("ai-security") };
 
@@ -57,7 +67,7 @@ const faqs = [
   {
     question: "Can Fairpointe work across AWS and Microsoft Azure?",
     answer:
-      "Yes. Fairpointe’s approach is designed for multi-cloud and mixed technology environments, including AWS, Microsoft Azure, Microsoft Entra, GitHub, Kubernetes and SaaS applications.",
+      "Yes. Fairpointe evaluates and deploys technology across multi-cloud and mixed technology environments, including AWS, Microsoft Azure, Microsoft Entra, GitHub, Kubernetes and SaaS applications.",
   },
 ];
 
@@ -67,8 +77,8 @@ export default function AiSecurityPage() {
       <JsonLd
         data={[
           serviceSchema({
-            name: "AI agent and non-human identity security",
-            serviceType: "AI agent security",
+            name: "AI and security technology evaluation and deployment",
+            serviceType: "AI agent and non-human identity security",
             description,
             path,
           }),
@@ -78,32 +88,48 @@ export default function AiSecurityPage() {
       />
 
       <PageHero
-        title={
-          <>
-            Your AI agents have identities. <span className="block">Secure them.</span>
-          </>
-        }
+        title="Deploy emerging AI and security technology with confidence."
         actions={<CtaButton href={discussEnvironment.href}>{discussEnvironment.label}</CtaButton>}
         aside={<StageIndex />}
       >
         <p>
-          AI agents connect to applications, databases, cloud infrastructure and sensitive company information using
-          service accounts, API keys, tokens and other machine identities.
+          Fairpointe helps organisations evaluate and deploy specialist technologies across AI infrastructure,
+          identity, security and cloud.
         </p>
         <p>
-          Fairpointe helps organisations discover these identities, understand what they can access and control what
-          autonomous systems are allowed to do.
+          We work alongside your existing engineering and security teams to take new technology from technical
+          evaluation and proof of concept into production.
         </p>
       </PageHero>
 
-      {/* Problem */}
-      <Section id="problem" aria-labelledby="problem-heading">
+      {/* Approach */}
+      <Section id="approach" tone="deep" rule={false} aria-labelledby="approach-heading">
+        <h2 id="approach-heading" className="type-h2 max-w-[22ch]">
+          Take new technology from evaluation into production.
+        </h2>
+        <div className="mt-14 md:mt-20">
+          <ControlLoop />
+        </div>
+        <Grid className="mt-16 md:mt-20">
+          <div className="col-span-4 md:col-span-9 lg:col-span-6">
+            <h3 className="mb-5 text-[0.9375rem] font-medium text-ink-muted">Environments we work across</h3>
+            <RuledList items={environmentAreas} columns={2} />
+          </div>
+        </Grid>
+      </Section>
+
+      {/* Problem: AI agent and non-human identity security as a specialist example */}
+      <Section id="problem" rule={false} aria-labelledby="problem-heading">
         <Grid className="gap-y-10">
           <h2 id="problem-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-5">
             AI creates a new identity problem.
           </h2>
           <div className="type-body prose-flow col-span-4 text-ink-soft md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
-            <p className="type-lede text-ink">Traditional identity security was designed primarily around people.</p>
+            <p className="type-lede text-ink">
+              AI agent and non-human identity security is one of the specialist areas where Fairpointe helps
+              organisations evaluate and deploy new technology.
+            </p>
+            <p>Traditional identity security was designed primarily around people.</p>
             <p>
               AI agents and automated workloads operate differently. They authenticate to systems, call APIs, access
               data, trigger workflows and take actions without a person signing in each time.
@@ -113,6 +139,11 @@ export default function AiSecurityPage() {
               As organisations deploy more AI, understanding these non-human identities becomes part of securing the AI
               infrastructure itself.
             </p>
+            <p>
+              Fairpointe helps organisations discover service accounts, API keys, tokens, secrets and workload
+              identities, understand their ownership and permissions, reduce excessive privileges and monitor how access
+              changes as AI and cloud environments evolve.
+            </p>
           </div>
           <div className="col-span-4 mt-10 md:col-span-12 md:mt-16">
             <AccessPaths />
@@ -120,18 +151,8 @@ export default function AiSecurityPage() {
         </Grid>
       </Section>
 
-      {/* Approach */}
-      <Section id="approach" tone="deep" rule={false} aria-labelledby="approach-heading">
-        <h2 id="approach-heading" className="type-h2 max-w-[22ch]">
-          Control the identities behind your AI systems.
-        </h2>
-        <div className="mt-14 md:mt-20">
-          <ControlLoop />
-        </div>
-      </Section>
-
       {/* Environments */}
-      <Section id="environments" rule={false} aria-labelledby="environments-heading">
+      <Section id="environments" aria-labelledby="environments-heading">
         <Grid className="gap-y-10">
           <div className="col-span-4 md:col-span-10 lg:col-span-5">
             <h2 id="environments-heading" className="type-h2">
@@ -171,8 +192,9 @@ export default function AiSecurityPage() {
 
       <FaqSection id="faq" title="AI agent security questions" faqs={faqs} />
 
-      <CtaBand title="Understand what your AI agents can access." primary={discussEnvironment}>
-        Talk to Fairpointe about your AI, cloud and machine identity environment.
+      <CtaBand title="Discuss the technology you want to deploy." primary={discussEnvironment}>
+        Talk to Fairpointe about your AI, security, identity and cloud environment, including the machine identities
+        your AI agents use.
       </CtaBand>
     </>
   );

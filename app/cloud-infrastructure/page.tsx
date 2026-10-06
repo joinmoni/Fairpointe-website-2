@@ -9,7 +9,7 @@ import { MultiCloudStack } from "@/components/diagrams/cloud";
 
 const path = "/cloud-infrastructure";
 const description =
-  "Fairpointe designs, implements and improves cloud infrastructure across AWS and Microsoft Azure, including architecture, cloud security, platform engineering, automation and migration.";
+  "Fairpointe designs, implements and operates cloud infrastructure across AWS, Microsoft Azure and hybrid environments, including architecture, cloud security, platform engineering, automation and migration.";
 
 export const metadata: Metadata = pageMetadata({
   title: "Cloud & Infrastructure on AWS and Microsoft Azure | Fairpointe",
@@ -39,12 +39,13 @@ export default function CloudInfrastructurePage() {
         actions={<CtaButton href={discuss.href}>{discuss.label}</CtaButton>}
       >
         <p>
-          Fairpointe helps organisations design, implement and improve cloud infrastructure across Amazon Web Services
-          and Microsoft Azure.
+          Fairpointe helps organisations design, implement and operate the cloud infrastructure required to deploy
+          modern enterprise technology across Amazon Web Services, Microsoft Azure and hybrid environments.
         </p>
         <p>
           We work across architecture, cloud security, platform engineering, automation, migration and the
-          infrastructure required to operate modern applications and AI systems reliably.
+          infrastructure required to run modern applications, AI systems and specialist enterprise technology
+          reliably.
         </p>
       </PageHero>
 
@@ -89,7 +90,7 @@ export default function CloudInfrastructurePage() {
       </SplitSection>
 
       <CtaBand title="Discuss your cloud infrastructure." primary={discuss}>
-        Tell us about your cloud environment and what you are trying to build or improve.
+        Tell us about your cloud environment and the technology you need it to deploy and operate.
       </CtaBand>
     </>
   );

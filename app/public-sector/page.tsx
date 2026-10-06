@@ -10,10 +10,10 @@ import { TwoSidedDiagram } from "@/components/diagrams/public-sector";
 
 const path = "/public-sector";
 const description =
-  "Fairpointe supports UK public-sector organisations across cloud infrastructure, AI, automation, cybersecurity, data and software implementation.";
+  "Fairpointe helps technology companies and UK public-sector organisations move from procurement opportunity through technical evaluation, integration and deployment.";
 
 export const metadata: Metadata = pageMetadata({
-  title: "UK Public Sector Technology & Cloud Services | Fairpointe",
+  title: "Specialist Technology for the UK Public Sector | Fairpointe",
   description,
   path,
 });
@@ -21,23 +21,23 @@ export const metadata: Metadata = pageMetadata({
 const capabilities = [
   {
     title: "Cloud & infrastructure",
-    body: "Architecture, migration, platform engineering and infrastructure across AWS and Microsoft Azure.",
+    body: "Architecture, migration, platform engineering and the infrastructure required to deploy specialist technology across AWS, Microsoft Azure and hybrid environments.",
   },
   {
     title: "AI & automation",
-    body: "Practical implementation of AI and automation where it can improve services, operations and internal workflows.",
+    body: "Evaluation and deployment of AI and automation technology where it can improve services, operations and internal workflows.",
   },
   {
     title: "Security",
-    body: "Security across cloud infrastructure, identities, machine access and emerging AI environments.",
+    body: "Deployment of security technology across cloud infrastructure, identities, machine access and emerging AI environments.",
   },
   {
     title: "Data",
-    body: "Infrastructure and software required to make organisational data accessible, useful and secure.",
+    body: "Integration of the data platforms and software required to make organisational data accessible, useful and secure.",
   },
   {
     title: "Software implementation",
-    body: "Technical integration and implementation of specialist software within existing organisational environments.",
+    body: "Technical evaluation, integration and implementation of specialist software within existing organisational environments.",
   },
 ];
 
@@ -47,8 +47,8 @@ export default function PublicSectorPage() {
       <JsonLd
         data={[
           serviceSchema({
-            name: "Technology delivery for UK public services",
-            serviceType: "Public-sector technology implementation",
+            name: "Specialist technology for the UK public sector",
+            serviceType: "Public-sector technology evaluation and deployment",
             description,
             path,
           }),
@@ -57,12 +57,12 @@ export default function PublicSectorPage() {
       />
 
       <PageHero
-        title="Technology delivery for UK public services."
+        title="Specialist technology for the UK public sector."
         actions={<CtaButton href={contactHref("public-sector")}>Discuss a requirement</CtaButton>}
       >
         <p>
-          Fairpointe helps public-sector organisations evaluate, implement and operate modern technology across cloud,
-          security, AI, automation, data and software.
+          Fairpointe helps technology companies and public-sector organisations navigate the path from opportunity and
+          procurement through to technical delivery.
         </p>
       </PageHero>
 
@@ -90,16 +90,21 @@ export default function PublicSectorPage() {
       <Section id="technology-suppliers" tone="deep" aria-labelledby="technology-suppliers-heading">
         <Grid className="gap-y-10">
           <h2 id="technology-suppliers-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-5">
-            Bringing specialist technology into the UK public sector.
+            From procurement opportunity to working technology.
           </h2>
           <div className="type-body prose-flow col-span-4 text-ink-soft md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
-            <p>
-              Fairpointe also works with international technology companies seeking to understand and serve UK
-              public-sector organisations.
+            <p className="type-lede text-ink">
+              Winning a public-sector opportunity is only part of the challenge. Technology still needs to meet the
+              organisation&rsquo;s requirements, integrate with existing environments and be deployed successfully.
             </p>
             <p>
-              This gives us a perspective across both sides of technology adoption: what suppliers can provide and what
-              buyers need to procure, implement and operate successfully.
+              Fairpointe combines procurement intelligence with hands-on technical delivery to help specialist technology
+              reach UK public-sector organisations.
+            </p>
+            <p>
+              Working with both technology suppliers and public-sector organisations gives us a perspective across both
+              sides of technology adoption: what suppliers can provide and what buyers need to procure, deploy and
+              operate successfully.
             </p>
           </div>
           <div className="col-span-4 mt-6 md:col-span-12 md:mt-12">

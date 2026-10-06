@@ -47,7 +47,7 @@ export async function renderOgImage(headline: string) {
             color: "#3b4354",
           }}
         >
-          <div>Enterprise technology, delivered in the UK.</div>
+          <div>Enterprise technology, deployed in the UK.</div>
           <div>fairpointe.co.uk</div>
         </div>
       </div>

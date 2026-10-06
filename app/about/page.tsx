@@ -10,7 +10,7 @@ const path = "/about";
 export const metadata: Metadata = pageMetadata({
   title: "About Fairpointe | UK Technology Company",
   description:
-    "Fairpointe is a UK technology company working across enterprise technology implementation, AI, security, cloud infrastructure and UK market entry.",
+    "Fairpointe is a UK enterprise technology company bringing specialist AI, cloud and security technology into real customer environments, and supporting UK market entry.",
   path,
 });
 
@@ -21,6 +21,25 @@ const experience = [
   "AI and software products",
   "Enterprise B2B technology",
   "UK and international operations",
+];
+
+const principles = [
+  {
+    title: "Commercial and technical",
+    body: "We understand that successful technology adoption requires both a strong commercial case and successful technical delivery.",
+  },
+  {
+    title: "Built for emerging technology",
+    body: "We focus on specialist technologies where deep product understanding and hands-on implementation matter.",
+  },
+  {
+    title: "Cloud agnostic",
+    body: "We work across AWS, Microsoft Azure and hybrid environments based on the customer’s existing technology estate.",
+  },
+  {
+    title: "UK focused",
+    body: "We provide international technology companies with local knowledge, customer access and technical delivery capability.",
+  },
 ];
 
 export default function AboutPage() {
@@ -41,12 +60,17 @@ export default function AboutPage() {
 
       <PageHero title="Built by operators.">
         <p>
-          Fairpointe is a UK technology company working at the intersection of enterprise technology, implementation
-          and market access.
+          Fairpointe is a UK enterprise technology company focused on bringing specialist technology into real customer
+          environments.
         </p>
         <p>
-          We work with organisations adopting emerging technology and with technology companies entering the UK
-          market.
+          We work with organisations adopting emerging AI, cloud and security technology, and with international
+          technology companies expanding into the UK.
+        </p>
+        <p>
+          Our model combines commercial execution with hands-on technical delivery. That means we can support the
+          journey from identifying an opportunity and evaluating the technology through to integration, deployment and
+          ongoing support.
         </p>
       </PageHero>
 
@@ -58,6 +82,14 @@ export default function AboutPage() {
           That means understanding the architecture, implementation, commercial constraints and operational reality
           around a technology decision, not simply recommending software and leaving the customer to make it work.
         </p>
+        <div className="border-t border-rule">
+          {principles.map((principle) => (
+            <article key={principle.title} className="grid gap-3 border-b border-rule py-8">
+              <h3 className="type-h4">{principle.title}</h3>
+              <p>{principle.body}</p>
+            </article>
+          ))}
+        </div>
       </SplitSection>
 
       <Section id="founder" tone="deep" aria-labelledby="founder-heading">
@@ -88,7 +120,7 @@ export default function AboutPage() {
       </Section>
 
       <CtaBand title="Work with Fairpointe." primary={cta.speak}>
-        Talk to us about a technology project or your plans to enter the UK market.
+        Talk to us about the technology you want to deploy or your plans to enter the UK market.
       </CtaBand>
     </>
   );
