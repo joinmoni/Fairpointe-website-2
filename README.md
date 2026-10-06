@@ -1,12 +1,12 @@
 # Fairpointe website
 
-Marketing site for [fairpointe.co.uk](https://fairpointe.co.uk). Next.js 16 (App Router), Tailwind CSS v4, Manrope via `next/font/google`, Radix primitives, Lucide icons and Motion. Enquiries are delivered with Resend.
+Marketing site for [fairpointe.co.uk](https://fairpointe.co.uk). Next.js 16 (App Router), Tailwind CSS v4, Manrope via `next/font/google`, Radix primitives, Lucide icons and Motion. Enquiries are delivered through Gmail SMTP with Nodemailer.
 
 ## Run locally
 
 ```bash
 npm install
-cp .env.example .env.local   # add RESEND_API_KEY
+cp .env.example .env.local   # add GMAIL_USER and GMAIL_APP_PASSWORD
 npm run dev
 ```
 
@@ -16,16 +16,17 @@ Checks: `npm run lint`, `npm run typecheck`, `npm run build`.
 
 | Variable | Required | Purpose |
 | --- | --- | --- |
-| `RESEND_API_KEY` | Yes | Server-side Resend key. Never exposed to the browser. |
-| `CONTACT_FROM_EMAIL` | Recommended | Sender, e.g. `Fairpointe Website <website@fairpointe.co.uk>`. The domain must be verified in Resend. |
+| `GMAIL_USER` | Yes | Gmail / Google Workspace account that sends enquiries. |
+| `GMAIL_APP_PASSWORD` | Yes | App password for `GMAIL_USER` (needs 2-Step Verification). Server-side only. |
+| `CONTACT_FROM_EMAIL` | No | Sender. Defaults to `Fairpointe Website <GMAIL_USER>`. Must be `GMAIL_USER` or a verified "Send mail as" alias. |
 | `CONTACT_TO_EMAIL` | No | Overrides the recipient. Defaults to `hello@fairpointe.co.uk`. |
 
-Without `RESEND_API_KEY` the form shows its failure state. It never reports success unless Resend accepts the message.
+Without the Gmail credentials the form shows its failure state. It never reports success unless Gmail accepts the message.
 
 ## Enquiry pipeline
 
 - `components/contact/enquiry-form.tsx`: reusable client form. Drop `<EnquiryForm defaultEnquiry="uk-market-entry" />` anywhere; every instance uses the same backend.
-- `lib/enquiry/actions.ts`: server action. Honeypot, minimum fill time, Zod validation, per-IP rate limit (5 per 15 minutes), then Resend with `replyTo` set to the visitor.
+- `lib/enquiry/actions.ts`: server action. Honeypot, minimum fill time, Zod validation, per-IP rate limit (5 per 15 minutes), then Gmail via Nodemailer with `replyTo` set to the visitor.
 - `lib/enquiry/email.ts`: subject and plain-text body in the agreed format.
 - Links can preselect the enquiry type with `/contact?enquiry=<slug>` (slugs in `lib/site.ts`).
 
@@ -47,5 +48,5 @@ To add Technology Partners, Customer Stories, Procurement or Insights: create th
 
 ## Before launch
 
-- Verify the sending domain in Resend and set the environment variables in production.
+- Create a Gmail app password for the sending account and set the environment variables in production.
 - Add a privacy notice covering the contact form before collecting enquiries.

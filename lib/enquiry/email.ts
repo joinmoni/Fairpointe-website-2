@@ -1,9 +1,8 @@
 import "server-only";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 import { site } from "@/lib/site";
 import { enquiryLabel, type Enquiry } from "./schema";
 
-const DEFAULT_FROM = "Fairpointe Website <website@fairpointe.co.uk>";
 
 function oneLine(value: string) {
   return value.replace(/[\r\n]+/g, " ").trim();
@@ -39,25 +38,32 @@ export function buildEnquiryEmail(enquiry: Enquiry, meta: { pageUrl: string; sub
   return { subject, text };
 }
 
-/** Sends the enquiry to Fairpointe. Throws if the provider is unavailable or rejects the message. */
+/**
+ * Sends the enquiry to Fairpointe through Gmail SMTP using an app password.
+ * Throws if credentials are missing or Gmail does not accept the message.
+ */
 export async function sendEnquiryEmail(enquiry: Enquiry, meta: { pageUrl: string; submittedAt: Date }) {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) throw new Error("RESEND_API_KEY is not configured");
+  const user = process.env.GMAIL_USER;
+  const pass = process.env.GMAIL_APP_PASSWORD?.replace(/\s+/g, "");
+  if (!user || !pass) throw new Error("GMAIL_USER and GMAIL_APP_PASSWORD must be configured");
 
-  const resend = new Resend(apiKey);
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: { user, pass },
+  });
   const { subject, text } = buildEnquiryEmail(enquiry, meta);
 
-  const { data, error } = await resend.emails.send({
-    from: process.env.CONTACT_FROM_EMAIL || DEFAULT_FROM,
+  const info = await transporter.sendMail({
+    from: process.env.CONTACT_FROM_EMAIL || `Fairpointe Website <${user}>`,
     to: process.env.CONTACT_TO_EMAIL || site.email,
     replyTo: enquiry.email,
     subject,
     text,
   });
 
-  if (error || !data?.id) {
-    throw new Error(`Resend rejected the enquiry: ${error?.name ?? "unknown"} ${error?.message ?? ""}`.trim());
+  if (info.accepted.length === 0) {
+    throw new Error(`Gmail rejected the enquiry: ${info.response}`);
   }
 
-  return data.id;
+  return info.messageId;
 }
