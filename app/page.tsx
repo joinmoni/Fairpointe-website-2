@@ -1,22 +1,24 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { cta } from "@/lib/site";
-import { technologyPartners } from "@/lib/proof";
-import { pageMetadata } from "@/lib/seo";
+import { contactHref, cta } from "@/lib/site";
+import { technologies } from "@/lib/technologies";
+import { pageMetadata, serviceSchema } from "@/lib/seo";
+import { JsonLd } from "@/components/json-ld";
 import { Container, Grid, Section } from "@/components/marketing/layout";
 import { ArrowLink, CtaButton } from "@/components/marketing/links";
-import { CtaBand, RuledList, SplitSection } from "@/components/marketing/blocks";
+import { CtaBand, SplitSection } from "@/components/marketing/blocks";
 import { ControlLoop } from "@/components/diagrams/ai-security";
+import { TechnologyList, TechnologyPartnershipsSection } from "@/components/marketing/technologies";
 
 export const metadata: Metadata = pageMetadata({
   title: "Enterprise Technology Implementation and UK Market Entry | Fairpointe",
   description:
-    "Fairpointe evaluates, integrates and deploys enterprise AI, cloud and security technology in the UK, and helps international technology companies enter the UK market.",
+    "Fairpointe deploys and integrates OpenAI, Microsoft Copilot, Azure, AWS, Snowflake, Databricks and Anthropic technology for UK organisations, and supports UK market entry.",
   path: "/",
 });
 
 const capabilityIndex = [
-  { id: "uk-organisations", label: "Specialist technology deployment" },
+  { id: "technologies", label: "Technologies we deploy" },
   { id: "capabilities", label: "Technology capabilities" },
   { id: "uk-market-entry", label: "UK Market Entry" },
 ];
@@ -39,12 +41,6 @@ const capabilities = [
     body: "Connect new platforms with existing applications, data, APIs, identity systems and business workflows.",
   },
 ];
-
-/**
- * Platforms Fairpointe works across, shown as plain names. These are not
- * partners. Approved partners belong in `technologyPartners` in lib/proof.ts.
- */
-const environments = ["OpenAI", "Microsoft Azure", "AWS", "Snowflake", "Databricks", "ServiceNow"];
 
 const marketEntry = [
   { title: "UK market development", body: "Identify and develop relevant UK enterprise opportunities." },
@@ -69,10 +65,20 @@ function CapabilityLabel({ index, label, inverse = false }: { index: string; lab
 }
 
 export default function HomePage() {
-  const partners = technologyPartners.filter((p) => p.verified);
+  const implementation = { label: "Discuss an implementation", href: contactHref("technology-project") };
 
   return (
     <>
+      <JsonLd
+        data={serviceSchema({
+          name: "Enterprise AI and technology implementation in the UK",
+          serviceType: "Enterprise technology implementation",
+          description: `Architecture, integration, production deployment, governance and ongoing technical support for ${technologies
+            .map((t) => `${t.name} (${t.capability})`)
+            .join("; ")}.`,
+          path: "/",
+        })}
+      />
       {/* Hero */}
       <section aria-labelledby="hero-heading" className="pt-16 md:pt-28 lg:pt-36">
         <Container>
@@ -117,6 +123,34 @@ export default function HomePage() {
           </nav>
         </Container>
       </section>
+
+      {/* Technologies */}
+      <Section id="technologies" aria-labelledby="technologies-heading">
+        <Grid className="gap-y-8">
+          <h2 id="technologies-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-5">
+            Technologies we deploy and integrate
+          </h2>
+          <p className="type-body col-span-4 text-ink-soft md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
+            From enterprise AI and agents to the cloud, data and security infrastructure they depend on, Fairpointe helps
+            UK organisations move specialist technology from evaluation into production.
+          </p>
+        </Grid>
+        <TechnologyList className="mt-14 md:mt-20" />
+        <Grid className="mt-12 gap-y-6 md:mt-16">
+          <h3 className="type-h3 col-span-4 md:col-span-10 lg:col-span-5">Already selected your technology?</h3>
+          <div className="col-span-4 md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7">
+            <p className="type-body text-ink-soft">
+              Fairpointe can help with architecture, integration, production deployment, governance and ongoing
+              technical support.
+            </p>
+            <div className="mt-8">
+              <CtaButton href={implementation.href}>{implementation.label}</CtaButton>
+            </div>
+          </div>
+        </Grid>
+      </Section>
+
+      <TechnologyPartnershipsSection />
 
       {/* UK organisations */}
       <Section id="uk-organisations" aria-labelledby="uk-organisations-heading">
@@ -183,39 +217,9 @@ export default function HomePage() {
               </ol>
             </Grid>
           </article>
-
-          {/* 02 Technology environments */}
-          <article id="environments" aria-labelledby="environments-heading" className="pb-20 md:pb-28 lg:pb-32">
-            <div className="border-t border-ink pt-6">
-              <CapabilityLabel index="02" label="Technology environments" />
-            </div>
-            <Grid className="mt-10 gap-y-12 md:mt-14">
-              <div className="col-span-4 md:col-span-12 lg:col-span-5">
-                <h3 id="environments-heading" className="type-h2">
-                  Technology environments we work across.
-                </h3>
-                <p className="type-body mt-8 max-w-[36rem] text-ink-soft">
-                  Fairpointe works across the platforms and infrastructure modern enterprises use to build, deploy and
-                  operate technology.
-                </p>
-              </div>
-              <div className="col-span-4 md:col-span-12 lg:col-span-6 lg:col-start-7">
-                <RuledList items={environments} columns={2} />
-                <p className="mt-5 text-[0.9375rem] text-ink-muted">
-                  Platforms we work across. Names do not indicate a partnership or endorsement.
-                </p>
-                {partners.length > 0 ? (
-                  <div className="mt-12">
-                    <h4 className="mb-5 text-[0.9375rem] font-medium text-ink-muted">Technology partners</h4>
-                    <RuledList items={partners.map((p) => p.name)} columns={2} />
-                  </div>
-                ) : null}
-              </div>
-            </Grid>
-          </article>
         </Container>
 
-        {/* 03 UK Market Entry: given full-width prominence */}
+        {/* 02 UK Market Entry: given full-width prominence */}
         <article
           id="uk-market-entry"
           aria-labelledby="uk-market-entry-heading"
@@ -223,7 +227,7 @@ export default function HomePage() {
         >
           <Container>
             <div className="border-t border-on-navy/60 pt-6">
-              <CapabilityLabel index="03" label="UK Market Entry" inverse />
+              <CapabilityLabel index="02" label="UK Market Entry" inverse />
             </div>
             <Grid className="mt-10 gap-y-10 md:mt-14">
               <h3 id="uk-market-entry-heading" className="type-h2-lg col-span-4 md:col-span-11 lg:col-span-8">
