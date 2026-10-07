@@ -28,12 +28,12 @@ export function TechnologyList({ className }: { className?: string }) {
     <div className={className}>
       <ul
         aria-label="Technologies we deploy and integrate"
-        className="grid grid-cols-2 border-t border-ink sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7"
+        className="grid grid-cols-2 border-t border-ink sm:grid-cols-4"
       >
         {technologies.map((tech) => (
           <li
             key={tech.id}
-            className="border-b border-rule py-6 pr-4 lg:border-b-0 lg:pr-5 lg:not-first:border-l lg:not-first:pl-5"
+            className="border-b border-rule py-6 pr-4 sm:pr-5 sm:not-nth-[4n+1]:border-l sm:not-nth-[4n+1]:pl-5"
           >
             {tech.showMark ? <TechnologyMark id={tech.id} /> : null}
             <p className={cn("text-[1.0625rem] font-semibold tracking-[-0.015em] text-ink", tech.showMark && "mt-4")}>

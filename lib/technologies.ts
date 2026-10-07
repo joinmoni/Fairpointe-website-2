@@ -59,4 +59,10 @@ export const technologies: Technology[] = [
     capability: "Claude Enterprise, Claude API and agents",
     showMark: true,
   },
+  {
+    id: "elevenlabs",
+    name: "ElevenLabs",
+    capability: "Voice AI agents, speech and audio integration",
+    showMark: true,
+  },
 ];

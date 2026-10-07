@@ -13,7 +13,7 @@ import { TechnologyList, TechnologyPartnershipsSection } from "@/components/mark
 export const metadata: Metadata = pageMetadata({
   title: "Enterprise Technology Implementation and UK Market Entry | Fairpointe",
   description:
-    "Fairpointe deploys and integrates OpenAI, Microsoft Copilot, Azure, AWS, Snowflake, Databricks and Anthropic technology for UK organisations, and supports UK market entry.",
+    "Fairpointe deploys and integrates OpenAI, Microsoft Copilot, Azure, AWS, Snowflake, Databricks, Anthropic and ElevenLabs technology for UK organisations, and supports UK market entry.",
   path: "/",
 });
 
