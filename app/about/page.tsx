@@ -51,7 +51,7 @@ export default function AboutPage() {
             "@context": "https://schema.org",
             "@type": "Person",
             name: "Adebola Adeniran",
-            jobTitle: "Founder",
+            jobTitle: "Founder & Technology Lead",
             worksFor: { "@id": organizationId },
           },
           breadcrumbSchema([{ name: "About", path }]),
@@ -95,22 +95,21 @@ export default function AboutPage() {
       <Section id="founder" tone="deep" aria-labelledby="founder-heading">
         <Grid className="gap-y-12">
           <h2 id="founder-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-5">
-            Led by technical operators.
+            Leadership
           </h2>
           <div className="col-span-4 md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
             <div className="border-t border-ink pt-6">
               <h3 className="type-h3">Adebola Adeniran</h3>
-              <p className="mt-2 text-[1.0625rem] font-medium text-ink-muted">Founder</p>
+              <p className="mt-2 text-[1.0625rem] font-medium text-ink-muted">Founder &amp; Technology Lead</p>
             </div>
             <div className="type-body prose-flow mt-8 text-ink-soft">
               <p>
-                Fairpointe is led by Adebola Adeniran, a technology executive and operator with experience building and
-                leading production software, financial infrastructure, cloud systems and enterprise technology
-                products.
+                Adebola is a technology operator with experience building and scaling software, cloud infrastructure and
+                financial technology products across the UK and international markets.
               </p>
               <p>
-                His work spans engineering leadership, cloud infrastructure, financial technology, AI and B2B software
-                across the UK and international markets.
+                At Fairpointe, he leads technology strategy and the development of specialist enterprise implementation
+                capabilities.
               </p>
             </div>
             <h4 className="mt-12 mb-5 text-[0.9375rem] font-medium text-ink-muted">Experience</h4>

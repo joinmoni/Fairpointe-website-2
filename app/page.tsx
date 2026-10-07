@@ -1,24 +1,62 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { cta } from "@/lib/site";
+import { technologyPartners } from "@/lib/proof";
 import { pageMetadata } from "@/lib/seo";
 import { Container, Grid, Section } from "@/components/marketing/layout";
 import { ArrowLink, CtaButton } from "@/components/marketing/links";
 import { CtaBand, RuledList, SplitSection } from "@/components/marketing/blocks";
-import { MultiCloudStack } from "@/components/diagrams/cloud";
-import { MarketEntrySequence } from "@/components/diagrams/market-entry";
+import { ControlLoop } from "@/components/diagrams/ai-security";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Fairpointe | Enterprise Technology and UK Market Entry",
+  title: "Enterprise Technology Implementation and UK Market Entry | Fairpointe",
   description:
-    "Fairpointe helps organisations evaluate, deploy and operate specialist AI, cloud and security technology, and helps international technology companies enter, sell and deliver in the UK.",
+    "Fairpointe evaluates, integrates and deploys enterprise AI, cloud and security technology in the UK, and helps international technology companies enter the UK market.",
   path: "/",
 });
 
 const capabilityIndex = [
-  { id: "ai-security", label: "Specialist Technology Deployment" },
-  { id: "cloud-infrastructure", label: "Cloud & Infrastructure" },
+  { id: "uk-organisations", label: "Specialist technology deployment" },
+  { id: "capabilities", label: "Technology capabilities" },
   { id: "uk-market-entry", label: "UK Market Entry" },
+];
+
+const capabilities = [
+  {
+    title: "Enterprise AI & Agents",
+    body: "Production deployment of enterprise AI, agentic systems and the infrastructure required to operate them securely.",
+  },
+  {
+    title: "Cloud & Data Platforms",
+    body: "Architecture, integration and deployment across modern cloud, data and AI infrastructure.",
+  },
+  {
+    title: "Security & Identity",
+    body: "Implementation of specialist security, identity and access technologies across enterprise environments.",
+  },
+  {
+    title: "Systems Integration",
+    body: "Connect new platforms with existing applications, data, APIs, identity systems and business workflows.",
+  },
+];
+
+/**
+ * Platforms Fairpointe works across, shown as plain names. These are not
+ * partners. Approved partners belong in `technologyPartners` in lib/proof.ts.
+ */
+const environments = ["OpenAI", "Microsoft Azure", "AWS", "Snowflake", "Databricks", "ServiceNow"];
+
+const marketEntry = [
+  { title: "UK market development", body: "Identify and develop relevant UK enterprise opportunities." },
+  {
+    title: "Technical evaluation",
+    body: "Support customer discovery, technical evaluation and proof-of-concept work.",
+  },
+  { title: "Deployment", body: "Provide local technical capacity for integration and production implementation." },
+  {
+    title: "Customer success",
+    body: "Support customers after deployment and help expand successful implementations.",
+  },
 ];
 
 function CapabilityLabel({ index, label, inverse = false }: { index: string; label: string; inverse?: boolean }) {
@@ -31,6 +69,8 @@ function CapabilityLabel({ index, label, inverse = false }: { index: string; lab
 }
 
 export default function HomePage() {
+  const partners = technologyPartners.filter((p) => p.verified);
+
   return (
     <>
       {/* Hero */}
@@ -46,9 +86,9 @@ export default function HomePage() {
               style={{ animationDelay: "90ms" }}
             >
               <p className="type-lede text-ink-soft">
-                Fairpointe helps organisations evaluate, deploy and operate specialist AI, cloud and security
-                technology. We also help international technology companies enter the UK market, win customers and
-                deliver successfully.
+                Fairpointe helps UK organisations evaluate, integrate and deploy specialist AI, cloud and security
+                technology. We also help international technology companies enter the UK, win customers and deliver
+                successfully.
               </p>
               <div className="mt-10 flex flex-wrap gap-3">
                 <CtaButton href={cta.project.href}>{cta.project.label}</CtaButton>
@@ -78,100 +118,98 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* Introduction */}
-      <SplitSection id="introduction" title="From evaluation to production.">
-        <p className="type-lede text-ink">Buying enterprise technology is only the beginning.</p>
-        <p>
-          Fairpointe works alongside engineering, security and infrastructure teams to evaluate, integrate and deploy
-          specialist technology into real production environments.
-        </p>
-        <p>
-          We support deployments across AWS, Microsoft Azure, hybrid infrastructure and the wider enterprise
-          technology stack.
-        </p>
-      </SplitSection>
+      {/* UK organisations */}
+      <Section id="uk-organisations" aria-labelledby="uk-organisations-heading">
+        <Grid className="gap-y-8">
+          <h2 id="uk-organisations-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-5">
+            Deploy specialist technology with confidence.
+          </h2>
+          <div className="type-body prose-flow col-span-4 text-ink-soft md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
+            <p className="type-lede text-ink">
+              New enterprise technology often looks straightforward in a demo. Production deployment is different.
+            </p>
+            <p>
+              Fairpointe helps organisations evaluate the right technology, integrate it with existing systems and move
+              it into production. We work across the technical path from evaluation and architecture through
+              integration, deployment and ongoing support.
+            </p>
+            <div className="pt-4">
+              <ArrowLink href={cta.project.href}>{cta.project.label}</ArrowLink>
+            </div>
+          </div>
+        </Grid>
+        <div className="mt-16 md:mt-24">
+          <ControlLoop />
+        </div>
+      </Section>
 
       {/* Capabilities */}
       <section aria-labelledby="capabilities-heading">
         <Container>
           <div aria-hidden className="h-px bg-rule" />
           <h2 id="capabilities-heading" className="type-h2 pt-20 md:pt-28 lg:pt-32">
-            Where we work
+            What we deploy
           </h2>
 
-          {/* 01 Specialist Technology Deployment */}
-          <article id="ai-security" aria-labelledby="ai-security-heading" className="pt-16 pb-20 md:pt-24 md:pb-28">
+          {/* 01 Technology capabilities */}
+          <article id="capabilities" aria-labelledby="capabilities-list-heading" className="pt-16 pb-20 md:pt-24 md:pb-28">
             <div className="border-t border-ink pt-6">
-              <CapabilityLabel index="01" label="Specialist Technology Deployment" />
+              <CapabilityLabel index="01" label="Technology capabilities" />
             </div>
             <Grid className="mt-10 gap-y-12 md:mt-14">
-              <div className="col-span-4 md:col-span-12 lg:col-span-6">
-                <h3 id="ai-security-heading" className="type-h2">
+              <div className="col-span-4 md:col-span-12 lg:col-span-5">
+                <h3 id="capabilities-list-heading" className="type-h2">
                   Specialist technology, deployed into your environment.
                 </h3>
-                <div className="type-body prose-flow mt-8 max-w-[36rem] text-ink-soft">
-                  <p>
-                    Evaluate, integrate and deploy specialist AI, cloud and security technology into your existing
-                    environment.
-                  </p>
-                  <p>
-                    Current areas include AI agent security and non-human identities: the service accounts, API keys and
-                    tokens that AI agents and automated workloads use to reach company systems.
-                  </p>
-                </div>
+                <p className="type-body mt-8 max-w-[36rem] text-ink-soft">
+                  We focus on technology where deep product understanding and hands-on implementation matter, from AI
+                  agents and data platforms to identity and access.
+                </p>
                 <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4">
-                  <ArrowLink href={cta.project.href}>{cta.project.label}</ArrowLink>
                   <ArrowLink href="/ai-security">Explore AI & Security</ArrowLink>
+                  <ArrowLink href="/cloud-infrastructure">Explore Cloud & Infrastructure</ArrowLink>
                 </div>
               </div>
-              <div className="col-span-4 md:col-span-8 lg:col-span-5 lg:col-start-8">
-                <h4 className="sr-only">Specialist technology deployment capabilities</h4>
-                <RuledList
-                  numbered
-                  items={[
-                    "AI agent security",
-                    "Non-human identity security",
-                    "Machine identity discovery",
-                    "Access governance",
-                    "Secrets and credential security",
-                    "AI governance",
-                  ]}
-                />
-              </div>
+              <ol className="col-span-4 border-t border-ink md:col-span-12 lg:col-span-6 lg:col-start-7">
+                {capabilities.map((item, i) => (
+                  <li key={item.title} className="grid gap-3 border-b border-rule py-8 md:grid-cols-7 md:gap-8">
+                    <div className="flex items-baseline gap-5 md:col-span-3">
+                      <span className="numeral text-[0.875rem] text-accent">{String(i + 1).padStart(2, "0")}</span>
+                      <h4 className="type-h4 text-[1.3125rem]">{item.title}</h4>
+                    </div>
+                    <p className="type-body text-ink-soft md:col-span-4">{item.body}</p>
+                  </li>
+                ))}
+              </ol>
             </Grid>
           </article>
 
-          {/* 02 Cloud & Infrastructure */}
-          <article
-            id="cloud-infrastructure"
-            aria-labelledby="cloud-infrastructure-heading"
-            className="pb-20 md:pb-28 lg:pb-32"
-          >
+          {/* 02 Technology environments */}
+          <article id="environments" aria-labelledby="environments-heading" className="pb-20 md:pb-28 lg:pb-32">
             <div className="border-t border-ink pt-6">
-              <CapabilityLabel index="02" label="Cloud & Infrastructure" />
+              <CapabilityLabel index="02" label="Technology environments" />
             </div>
             <Grid className="mt-10 gap-y-12 md:mt-14">
-              <div className="col-span-4 md:col-span-12 lg:col-span-6">
-                <h3 id="cloud-infrastructure-heading" className="type-h2">
-                  Cloud infrastructure built for critical workloads.
+              <div className="col-span-4 md:col-span-12 lg:col-span-5">
+                <h3 id="environments-heading" className="type-h2">
+                  Technology environments we work across.
                 </h3>
-                <div className="type-body prose-flow mt-8 max-w-[36rem] text-ink-soft">
-                  <p>
-                    Build the cloud and infrastructure foundation required to deploy and operate modern enterprise
-                    technology across AWS, Microsoft Azure and hybrid environments.
-                  </p>
-                  <p>
-                    We work across architecture, cloud security, platform engineering, automation, migration and the
-                    infrastructure required to operate modern applications and AI systems reliably.
-                  </p>
-                </div>
-                <ArrowLink href="/cloud-infrastructure" className="mt-10">
-                  Explore Cloud & Infrastructure
-                </ArrowLink>
+                <p className="type-body mt-8 max-w-[36rem] text-ink-soft">
+                  Fairpointe works across the platforms and infrastructure modern enterprises use to build, deploy and
+                  operate technology.
+                </p>
               </div>
-              <div className="col-span-4 md:col-span-8 lg:col-span-5 lg:col-start-8">
-                <h4 className="sr-only">Cloud & Infrastructure capabilities</h4>
-                <MultiCloudStack />
+              <div className="col-span-4 md:col-span-12 lg:col-span-6 lg:col-start-7">
+                <RuledList items={environments} columns={2} />
+                <p className="mt-5 text-[0.9375rem] text-ink-muted">
+                  Platforms we work across. Names do not indicate a partnership or endorsement.
+                </p>
+                {partners.length > 0 ? (
+                  <div className="mt-12">
+                    <h4 className="mb-5 text-[0.9375rem] font-medium text-ink-muted">Technology partners</h4>
+                    <RuledList items={partners.map((p) => p.name)} columns={2} />
+                  </div>
+                ) : null}
               </div>
             </Grid>
           </article>
@@ -189,16 +227,16 @@ export default function HomePage() {
             </div>
             <Grid className="mt-10 gap-y-10 md:mt-14">
               <h3 id="uk-market-entry-heading" className="type-h2-lg col-span-4 md:col-span-11 lg:col-span-8">
-                Enter, sell and deliver in the UK.
+                Enter the UK without building the full team first.
               </h3>
               <div className="type-body prose-flow col-span-4 text-on-navy-soft md:col-span-8 lg:col-span-6">
                 <p>
-                  Build UK pipeline, support technical evaluations, deploy your product and serve customers without
-                  building the entire UK team first.
+                  Fairpointe helps international enterprise technology companies establish commercial and technical
+                  delivery capacity in the UK.
                 </p>
                 <p>
-                  Fairpointe provides local commercial and technical capability, from market development and technical
-                  pre-sales through proof of concept, deployment and ongoing customer support.
+                  We can support the path from market development and customer evaluation through technical pre-sales,
+                  integration, deployment and ongoing customer support.
                 </p>
               </div>
               <div className="col-span-4 md:col-span-4 md:col-start-9 lg:col-span-4 lg:col-start-9 lg:self-end">
@@ -207,48 +245,31 @@ export default function HomePage() {
                 </CtaButton>
               </div>
             </Grid>
-            <div className="mt-16 md:mt-24">
-              <h4 className="mb-5 text-[0.9375rem] font-medium text-on-navy-muted">
-                How a UK market entry engagement runs
-              </h4>
-              <MarketEntrySequence />
-            </div>
+            <ol className="mt-16 grid grid-cols-1 border-t border-rule-navy sm:grid-cols-2 md:mt-24 lg:grid-cols-4">
+              {marketEntry.map((item, i) => (
+                <li
+                  key={item.title}
+                  className={
+                    "border-b border-rule-navy py-6 lg:border-b-0 lg:pr-6" + (i > 0 ? " lg:border-l lg:pl-6" : "")
+                  }
+                >
+                  <span className="numeral block text-[0.875rem] text-accent-on-navy">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h4 className="mt-2 text-[1.0625rem] font-semibold tracking-[-0.015em] text-on-navy">{item.title}</h4>
+                  <p className="mt-2 text-[0.9375rem] leading-relaxed text-on-navy-soft sm:pr-6 lg:pr-0">{item.body}</p>
+                </li>
+              ))}
+            </ol>
           </Container>
         </article>
       </section>
 
-      {/* Technology companies */}
-      <Section id="technology-companies" aria-labelledby="technology-companies-heading" rule={false}>
-        <Grid className="gap-y-10">
-          <h2 id="technology-companies-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-5">
-            A commercial and technical partner for the UK.
-          </h2>
-          <div className="type-body prose-flow col-span-4 text-ink-soft md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
-            <p className="type-lede text-ink">Entering the UK requires more than generating leads.</p>
-            <p>
-              Enterprise customers need commercial confidence and technical confidence. They need to understand how
-              your technology fits their environment, how it will be deployed and who will support it after the sale.
-            </p>
-            <p>
-              Fairpointe combines UK market development with hands-on technical delivery, helping international
-              technology companies move from opportunity to evaluation, deployment and ongoing customer support.
-            </p>
-            <div className="pt-4">
-              <ArrowLink href="/uk-market-entry">See how UK Market Entry works</ArrowLink>
-            </div>
-          </div>
-        </Grid>
-      </Section>
-
       {/* Public sector */}
       <SplitSection id="public-sector" tone="deep" title="Specialist technology for UK public services.">
         <p>
-          Fairpointe helps technology companies and public-sector organisations navigate the path from opportunity and
-          procurement through to technical delivery.
-        </p>
-        <p>
-          We combine procurement intelligence with hands-on technical capability to help specialist technology reach UK
-          public-sector organisations and work successfully in their environments.
+          Fairpointe combines procurement intelligence with hands-on technical delivery, helping technology companies
+          and public-sector organisations move from opportunity and procurement through to working technology.
         </p>
         <div className="pt-4">
           <ArrowLink href="/public-sector">Explore Public Sector</ArrowLink>
@@ -260,7 +281,7 @@ export default function HomePage() {
         primary={cta.project}
         secondary={{ label: "Enter the UK market", href: "/uk-market-entry" }}
       >
-        Whether you are evaluating specialist technology or bringing your technology into the UK, start with a
+        Whether you are deploying specialist technology or bringing your technology into the UK, start with a
         conversation about the environment, the requirement and what successful deployment looks like.
       </CtaBand>
     </>

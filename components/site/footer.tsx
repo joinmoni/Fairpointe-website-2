@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { isGroup, navigation, site } from "@/lib/site";
+import { company, isGroup, navigation, site } from "@/lib/site";
 import { Container, Grid } from "@/components/marketing/layout";
 import { Logo } from "./logo";
 
@@ -52,8 +52,35 @@ export function SiteFooter() {
             </ul>
           </nav>
         </Grid>
-        <div className="mt-16 border-t border-rule-navy pt-8 text-[0.875rem] text-on-navy-muted">
-          <p>&copy; {new Date().getFullYear()} Fairpointe. A UK technology company.</p>
+        <div className="mt-16 flex flex-col gap-4 border-t border-rule-navy pt-8 text-[0.875rem] text-on-navy-muted md:flex-row md:justify-between">
+          <div className="space-y-1">
+            <p>
+              &copy; {new Date().getFullYear()} {company.legalName || site.name}. A UK enterprise technology company.
+            </p>
+            {company.companyNumber ? <p>Company number {company.companyNumber}</p> : null}
+            {company.registeredOffice ? <p>Registered office: {company.registeredOffice}</p> : null}
+          </div>
+          <ul className="flex flex-wrap gap-x-6 gap-y-2">
+            {company.linkedinUrl ? (
+              <li>
+                <a href={company.linkedinUrl} rel="me noopener" className="transition-colors hover:text-on-navy">
+                  LinkedIn
+                </a>
+              </li>
+            ) : null}
+            {company.privacyPolicyHref ? (
+              <li>
+                <Link href={company.privacyPolicyHref} className="transition-colors hover:text-on-navy">
+                  Privacy Policy
+                </Link>
+              </li>
+            ) : null}
+            <li>
+              <Link href="/" className="transition-colors hover:text-on-navy">
+                fairpointe.co.uk
+              </Link>
+            </li>
+          </ul>
         </div>
       </Container>
     </footer>

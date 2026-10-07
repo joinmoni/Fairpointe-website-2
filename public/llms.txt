@@ -6,10 +6,10 @@ Contact: hello@fairpointe.co.uk
 
 ## Pages
 
-- [Home](https://fairpointe.co.uk/): Enterprise technology, deployed in the UK. Evaluate, integrate, deploy and operate specialist AI, cloud and security technology.
+- [Home](https://fairpointe.co.uk/): Enterprise technology, deployed in the UK. Evaluate, integrate, deploy and operate specialist AI, cloud and security technology. Capabilities: enterprise AI and agents, cloud and data platforms, security and identity, systems integration. Technology environments include OpenAI, Microsoft Azure, AWS, Snowflake, Databricks and ServiceNow (no partnership implied).
 - [AI & Security](https://fairpointe.co.uk/ai-security): Evaluate and deploy emerging AI and security technology. Approach: evaluate, integrate, deploy, operate. Includes AI agent and non-human identity security across AWS, Microsoft Azure, Microsoft Entra, GitHub, Kubernetes, SaaS applications and MCP infrastructure.
 - [Cloud & Infrastructure](https://fairpointe.co.uk/cloud-infrastructure): The cloud foundation required to deploy and operate enterprise technology across AWS, Microsoft Azure and hybrid environments: cloud architecture, platform engineering, cloud security, infrastructure automation, migration and modernisation.
 - [UK Market Entry](https://fairpointe.co.uk/uk-market-entry): A UK commercial and technical partner for international enterprise technology companies. Commercial and technical capability in six phases: market development, technical pre-sales, proof of concept, deployment and integration, customer engineering, ongoing support.
 - [Public Sector](https://fairpointe.co.uk/public-sector): Specialist technology for the UK public sector, from procurement opportunity through technical evaluation, integration and deployment. Covers cloud and infrastructure, AI and automation, security, data and software implementation.
-- [About](https://fairpointe.co.uk/about): Built by operators. A UK enterprise technology company combining commercial execution with hands-on technical delivery. Led by Adebola Adeniran.
+- [About](https://fairpointe.co.uk/about): Built by operators. A UK enterprise technology company combining commercial execution with hands-on technical delivery. Leadership: Adebola Adeniran, Founder and Technology Lead.
 - [Contact](https://fairpointe.co.uk/contact): Enquiries about technology projects, UK market entry, public sector, AI and security, or cloud and infrastructure.

@@ -70,7 +70,7 @@ export default function UkMarketEntryPage() {
 
       <PageHero
         title="Prove the UK before building the UK team."
-        actions={<CtaButton href={enquiry}>Discuss UK expansion</CtaButton>}
+        actions={<CtaButton href={enquiry}>Enter the UK market</CtaButton>}
       >
         <p>
           Fairpointe helps international enterprise technology companies enter the UK with local commercial and
@@ -157,7 +157,7 @@ export default function UkMarketEntryPage() {
 
       <FaqSection rule={false} id="faq" title="Entering the UK technology market" faqs={faqs} />
 
-      <CtaBand title="Your UK commercial and technical partner." primary={{ label: "Discuss UK expansion", href: enquiry }}>
+      <CtaBand title="Your UK commercial and technical partner." primary={{ label: "Enter the UK market", href: enquiry }}>
         Fairpointe is designed for enterprise technology companies that have proven technology and strong customer
         outcomes but do not yet need a full UK organisation. Whether the opportunity comes directly, through a cloud
         marketplace, through a technology partner or through public-sector procurement, we can help turn UK demand into

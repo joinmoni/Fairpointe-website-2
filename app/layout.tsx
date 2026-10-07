@@ -16,7 +16,7 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: "Fairpointe | Enterprise Technology and UK Market Entry", template: "%s | Fairpointe" },
+  title: { default: "Enterprise Technology Implementation and UK Market Entry | Fairpointe", template: "%s | Fairpointe" },
   description: site.description,
   applicationName: site.name,
   authors: [{ name: site.name, url: site.url }],

@@ -8,6 +8,24 @@ export const site = {
   locale: "en_GB",
 } as const;
 
+/**
+ * Registered company details for the footer. Add only verified values (for
+ * example from Companies House). Empty values are not rendered.
+ */
+export const company: {
+  legalName: string;
+  companyNumber: string;
+  registeredOffice: string;
+  linkedinUrl: string;
+  privacyPolicyHref: string;
+} = {
+  legalName: "",
+  companyNumber: "",
+  registeredOffice: "",
+  linkedinUrl: "",
+  privacyPolicyHref: "",
+};
+
 /** Enquiry types offered on the contact form. Slugs are used in `/contact?enquiry=`. */
 export const enquiryTypes = [
   {

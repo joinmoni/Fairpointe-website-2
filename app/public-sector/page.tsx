@@ -58,7 +58,7 @@ export default function PublicSectorPage() {
 
       <PageHero
         title="Specialist technology for the UK public sector."
-        actions={<CtaButton href={contactHref("public-sector")}>Discuss a requirement</CtaButton>}
+        actions={<CtaButton href={contactHref("public-sector")}>{cta.speak.label}</CtaButton>}
       >
         <p>
           Fairpointe helps technology companies and public-sector organisations navigate the path from opportunity and

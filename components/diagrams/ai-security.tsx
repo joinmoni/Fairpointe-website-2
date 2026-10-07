@@ -3,19 +3,19 @@ import { cn } from "@/lib/utils";
 export const deploymentStages = [
   {
     title: "Evaluate",
-    body: "Understand the technology, use case, architecture, security requirements and expected business outcome before committing to deployment.",
+    body: "Understand the requirement, architecture, security constraints and technology fit before committing to deployment.",
   },
   {
     title: "Integrate",
-    body: "Connect the technology to your existing cloud, identity, data, developer and security environments.",
+    body: "Connect specialist technology into the organisation’s existing cloud, data, identity and enterprise systems.",
   },
   {
     title: "Deploy",
-    body: "Configure and implement the technology inside your production environment, working directly with your technical teams.",
+    body: "Move from evaluation and proof of concept into a secure, production-ready implementation.",
   },
   {
     title: "Operate",
-    body: "Support the technology after go-live, resolve deployment issues and help expand successful implementations.",
+    body: "Provide ongoing technical support, optimisation and expansion as the deployment moves into wider use.",
   },
 ] as const;
 
@@ -99,7 +99,7 @@ export function ControlLoop() {
         ))}
       </ol>
       <figcaption className="mt-6 text-[0.9375rem] text-ink-muted md:mt-4">
-        A continuous cycle: successful implementations expand and new technology is evaluated as your environment
+        A continuous cycle: successful deployments expand and new technology is evaluated as the environment
         changes.
       </figcaption>
     </figure>

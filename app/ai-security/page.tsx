@@ -27,7 +27,7 @@ const environmentAreas = [
   "Hybrid Environments",
 ];
 
-const discussEnvironment = { label: "Discuss your environment", href: contactHref("ai-security") };
+const discussEnvironment = { label: "Discuss a project", href: contactHref("ai-security") };
 
 const useCases = [
   {
