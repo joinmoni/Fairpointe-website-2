@@ -98,10 +98,6 @@ export function ControlLoop() {
           </li>
         ))}
       </ol>
-      <figcaption className="mt-6 text-[0.9375rem] text-ink-muted md:mt-4">
-        A continuous cycle: successful deployments expand and new technology is evaluated as the environment
-        changes.
-      </figcaption>
     </figure>
   );
 }

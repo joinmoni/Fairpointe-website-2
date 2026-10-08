@@ -5,7 +5,6 @@ import { pageMetadata, serviceSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/json-ld";
 import { Container, Grid, Section } from "@/components/marketing/layout";
 import { CtaButton } from "@/components/marketing/links";
-import { CtaBand } from "@/components/marketing/blocks";
 import { ControlLoop } from "@/components/diagrams/ai-security";
 import { TechnologyList, TechnologyPartnershipsSection } from "@/components/marketing/technologies";
 
@@ -167,16 +166,6 @@ export default function HomePage() {
           </Grid>
         </Container>
       </section>
-
-      <div aria-hidden className="bg-navy">
-        <Container>
-          <div className="h-px bg-rule-navy" />
-        </Container>
-      </div>
-
-      <CtaBand title="What are you trying to deploy?" primary={cta.project}>
-        Tell us about the technology, the environment and what a successful deployment looks like.
-      </CtaBand>
     </>
   );
 }
