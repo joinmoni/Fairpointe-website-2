@@ -6,5 +6,6 @@ export const pages = [
   { path: "/cloud-infrastructure", title: "Cloud infrastructure built for critical workloads.", priority: 0.7 },
   { path: "/public-sector", title: "Specialist technology for the UK public sector.", priority: 0.8 },
   { path: "/about", title: "Built by operators.", priority: 0.6 },
+  { path: "/privacy", title: "Privacy Policy", priority: 0.3 },
   { path: "/contact", title: "Let’s discuss what you’re trying to deploy or bring to the UK.", priority: 0.6 },
 ] as const;

@@ -19,11 +19,11 @@ export const company: {
   linkedinUrl: string;
   privacyPolicyHref: string;
 } = {
-  legalName: "",
+  legalName: "Fairpointe UK Limited",
   companyNumber: "",
   registeredOffice: "",
   linkedinUrl: "",
-  privacyPolicyHref: "",
+  privacyPolicyHref: "/privacy",
 };
 
 /** Enquiry types offered on the contact form. Slugs are used in `/contact?enquiry=`. */

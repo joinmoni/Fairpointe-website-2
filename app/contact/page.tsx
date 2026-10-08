@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { site } from "@/lib/site";
+import Link from "next/link";
+import { company, site } from "@/lib/site";
 import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 import { isEnquirySlug } from "@/lib/enquiry/schema";
 import { JsonLd } from "@/components/json-ld";
@@ -57,6 +58,16 @@ export default async function ContactPage({ searchParams }: PageProps<"/contact"
                 >
                   {site.email}
                 </a>
+                <p className="mt-6 text-[0.9375rem] text-ink-muted">
+                  See our{" "}
+                  <Link
+                    href={company.privacyPolicyHref}
+                    className="underline decoration-ink/30 underline-offset-4 transition-colors hover:decoration-ink"
+                  >
+                    Privacy Policy
+                  </Link>{" "}
+                  for how we handle enquiries.
+                </p>
               </div>
             </div>
           </Grid>

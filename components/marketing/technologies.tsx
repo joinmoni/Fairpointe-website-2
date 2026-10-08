@@ -39,7 +39,6 @@ export function TechnologyList({ className }: { className?: string }) {
             <p className={cn("text-[1.0625rem] font-semibold tracking-[-0.015em] text-ink", tech.showMark && "mt-4")}>
               {tech.name}
             </p>
-            <p className="mt-1.5 text-[0.875rem] leading-snug text-ink-muted">{tech.capability}</p>
           </li>
         ))}
       </ul>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { site } from "./site";
+import { company, site } from "./site";
 
 type PageMeta = {
   title: string;
@@ -38,6 +38,7 @@ export function organizationSchema() {
     "@type": "Organization",
     "@id": organizationId,
     name: site.name,
+    ...(company.legalName ? { legalName: company.legalName } : {}),
     url: site.url,
     email: site.email,
     description: site.description,

@@ -3,19 +3,19 @@ import { cn } from "@/lib/utils";
 export const deploymentStages = [
   {
     title: "Evaluate",
-    body: "Technical evaluation, architecture and production readiness.",
+    body: "Validate the technology against the real business and technical requirement.",
   },
   {
     title: "Integrate",
-    body: "Connect the technology with existing cloud, data, identity, APIs and enterprise systems.",
+    body: "Connect it with your existing applications, data, identity and infrastructure.",
   },
   {
     title: "Deploy",
-    body: "Move from proof of concept into a secure production implementation.",
+    body: "Move the solution into a secure, production-ready environment.",
   },
   {
     title: "Operate",
-    body: "Support, optimise and expand the deployment after launch.",
+    body: "Support, optimise and extend the deployment as requirements evolve.",
   },
 ] as const;
 

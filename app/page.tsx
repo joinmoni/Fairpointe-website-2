@@ -1,68 +1,36 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { contactHref, cta } from "@/lib/site";
 import { technologies } from "@/lib/technologies";
 import { pageMetadata, serviceSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/json-ld";
 import { Container, Grid, Section } from "@/components/marketing/layout";
-import { ArrowLink, CtaButton } from "@/components/marketing/links";
-import { CtaBand, SplitSection } from "@/components/marketing/blocks";
+import { CtaButton } from "@/components/marketing/links";
+import { CtaBand } from "@/components/marketing/blocks";
 import { ControlLoop } from "@/components/diagrams/ai-security";
 import { TechnologyList, TechnologyPartnershipsSection } from "@/components/marketing/technologies";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Enterprise Technology Implementation and UK Market Entry | Fairpointe",
+  title: "Enterprise AI and Technology Implementation UK | Fairpointe",
   description:
-    "Fairpointe deploys and integrates OpenAI, Microsoft Copilot, Azure, AWS, Snowflake, Databricks, Anthropic and ElevenLabs technology for UK organisations, and supports UK market entry.",
+    "Fairpointe deploys AI, cloud, data and security technology into production for UK organisations, including OpenAI, Microsoft Copilot, Azure, AWS, Snowflake, Databricks and Anthropic.",
   path: "/",
 });
 
-const capabilityIndex = [
-  { id: "technologies", label: "Technologies we deploy" },
-  { id: "capabilities", label: "Technology capabilities" },
-  { id: "uk-market-entry", label: "UK Market Entry" },
-];
-
 const capabilities = [
-  {
-    title: "Enterprise AI & Agents",
-    body: "Production deployment of enterprise AI, agentic systems and the infrastructure required to operate them securely.",
-  },
+  { title: "Enterprise AI & Agents", body: "Deploy AI applications and agents into real enterprise workflows." },
   {
     title: "Cloud & Data Platforms",
-    body: "Architecture, integration and deployment across modern cloud, data and AI infrastructure.",
+    body: "Build the infrastructure, data and integrations production systems depend on.",
   },
   {
     title: "Security & Identity",
-    body: "Implementation of specialist security, identity and access technologies across enterprise environments.",
+    body: "Secure users, workloads, applications and AI systems across the environment.",
   },
   {
     title: "Systems Integration",
-    body: "Connect new platforms with existing applications, data, APIs, identity systems and business workflows.",
+    body: "Connect specialist technology with the systems your organisation already runs.",
   },
 ];
-
-const marketEntry = [
-  { title: "UK market development", body: "Identify and develop relevant UK enterprise opportunities." },
-  {
-    title: "Technical evaluation",
-    body: "Support customer discovery, technical evaluation and proof-of-concept work.",
-  },
-  { title: "Deployment", body: "Provide local technical capacity for integration and production implementation." },
-  {
-    title: "Customer success",
-    body: "Support customers after deployment and help expand successful implementations.",
-  },
-];
-
-function CapabilityLabel({ index, label, inverse = false }: { index: string; label: string; inverse?: boolean }) {
-  return (
-    <p className="flex items-baseline gap-4 text-[1.0625rem] font-medium tracking-[-0.01em]">
-      <span className={inverse ? "numeral text-accent-on-navy" : "numeral text-accent"}>{index}</span>
-      <span>{label}</span>
-    </p>
-  );
-}
 
 export default function HomePage() {
   const implementation = { label: "Discuss an implementation", href: contactHref("technology-project") };
@@ -74,11 +42,12 @@ export default function HomePage() {
           name: "Enterprise AI and technology implementation in the UK",
           serviceType: "Enterprise technology implementation",
           description: `Architecture, integration, production deployment, governance and ongoing technical support for ${technologies
-            .map((t) => `${t.name} (${t.capability})`)
-            .join("; ")}.`,
+            .map((t) => t.name)
+            .join(", ")}.`,
           path: "/",
         })}
       />
+
       {/* Hero */}
       <section aria-labelledby="hero-heading" className="pt-16 md:pt-28 lg:pt-36">
         <Container>
@@ -92,35 +61,13 @@ export default function HomePage() {
               style={{ animationDelay: "90ms" }}
             >
               <p className="type-lede text-ink-soft">
-                Fairpointe helps UK organisations evaluate, integrate and deploy specialist AI, cloud and security
-                technology. We also help international technology companies enter the UK, win customers and deliver
-                successfully.
+                Fairpointe helps organisations deploy AI, cloud, data and security technology into production.
               </p>
-              <div className="mt-10 flex flex-wrap gap-3">
+              <div className="mt-10">
                 <CtaButton href={cta.project.href}>{cta.project.label}</CtaButton>
-                <CtaButton href="/uk-market-entry" variant="secondary">
-                  Enter the UK market
-                </CtaButton>
               </div>
             </div>
           </Grid>
-          <nav aria-label="Capabilities" className="mt-20 md:mt-28 lg:mt-32">
-            <ol className="grid border-t border-ink md:grid-cols-3">
-              {capabilityIndex.map((item, i) => (
-                <li key={item.id} className="border-b border-rule md:border-b-0">
-                  <Link
-                    href={`#${item.id}`}
-                    className="group flex items-baseline gap-4 py-5 text-[1.0625rem] font-medium tracking-[-0.01em] transition-colors md:py-6"
-                  >
-                    <span className="numeral text-[0.9375rem] text-accent">{String(i + 1).padStart(2, "0")}</span>
-                    <span className="underline decoration-transparent decoration-1 underline-offset-[6px] transition-colors group-hover:decoration-ink">
-                      {item.label}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ol>
-          </nav>
         </Container>
       </section>
 
@@ -152,141 +99,83 @@ export default function HomePage() {
 
       <TechnologyPartnershipsSection />
 
-      {/* UK organisations */}
+      {/* UK organisations and capabilities */}
       <Section id="uk-organisations" aria-labelledby="uk-organisations-heading">
-        <Grid className="gap-y-8">
+        <Grid className="gap-y-10">
           <h2 id="uk-organisations-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-5">
-            Deploy specialist technology with confidence.
+            Deploy specialist technology with confidence
           </h2>
-          <div className="type-body prose-flow col-span-4 text-ink-soft md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
-            <p className="type-lede text-ink">
-              New enterprise technology often looks straightforward in a demo. Production deployment is different.
+          <div className="col-span-4 md:col-span-12 lg:col-span-6 lg:col-start-7 lg:pt-2">
+            <p className="type-body text-ink-soft">
+              Selecting the technology is only the start. Fairpointe helps your team integrate it with existing systems,
+              move it into production and operate it reliably.
             </p>
-            <p>
-              Fairpointe helps organisations evaluate the right technology, integrate it with existing systems and move
-              it into production. We work across the technical path from evaluation and architecture through
-              integration, deployment and ongoing support.
-            </p>
-            <div className="pt-4">
-              <ArrowLink href={cta.project.href}>{cta.project.label}</ArrowLink>
-            </div>
+            <ol id="capabilities" aria-label="Capabilities" className="mt-12 border-t border-ink">
+              {capabilities.map((item, i) => (
+                <li key={item.title} className="grid gap-3 border-b border-rule py-7 md:grid-cols-7 md:gap-8">
+                  <div className="flex items-baseline gap-5 md:col-span-3">
+                    <span className="numeral text-[0.875rem] text-accent">{String(i + 1).padStart(2, "0")}</span>
+                    <h3 className="type-h4 text-[1.3125rem]">{item.title}</h3>
+                  </div>
+                  <p className="type-body text-ink-soft md:col-span-4">{item.body}</p>
+                </li>
+              ))}
+            </ol>
           </div>
         </Grid>
-        <div className="mt-16 md:mt-24">
+      </Section>
+
+      {/* Delivery lifecycle */}
+      <Section id="lifecycle" tone="deep" rule={false} aria-labelledby="lifecycle-heading">
+        <h2 id="lifecycle-heading" className="type-h2 max-w-[22ch]">
+          From evaluation to production
+        </h2>
+        <div className="mt-14 md:mt-20">
           <ControlLoop />
         </div>
       </Section>
 
-      {/* Capabilities */}
-      <section aria-labelledby="capabilities-heading">
+      {/* International technology companies */}
+      <section
+        id="uk-market-entry"
+        aria-labelledby="uk-market-entry-heading"
+        className="on-navy bg-navy py-20 text-on-navy md:py-28 lg:py-32"
+      >
         <Container>
-          <div aria-hidden className="h-px bg-rule" />
-          <h2 id="capabilities-heading" className="type-h2 pt-20 md:pt-28 lg:pt-32">
-            What we deploy
-          </h2>
-
-          {/* 01 Technology capabilities */}
-          <article id="capabilities" aria-labelledby="capabilities-list-heading" className="pt-16 pb-20 md:pt-24 md:pb-28">
-            <div className="border-t border-ink pt-6">
-              <CapabilityLabel index="01" label="Technology capabilities" />
+          <div className="border-t border-on-navy/60 pt-6">
+            <p className="text-[1.0625rem] font-medium tracking-[-0.01em]">For technology companies</p>
+          </div>
+          <Grid className="mt-10 gap-y-10 md:mt-14">
+            <h2 id="uk-market-entry-heading" className="type-h2-lg col-span-4 md:col-span-11 lg:col-span-8">
+              Enter the UK without building the full team first.
+            </h2>
+            <div className="type-body prose-flow col-span-4 text-on-navy-soft md:col-span-8 lg:col-span-6">
+              <p className="text-on-navy">
+                Fairpointe helps international technology companies win and deliver UK opportunities by providing local
+                commercial and technical capacity.
+              </p>
+              <p>
+                From customer discovery and technical evaluation through implementation and ongoing support, we can
+                work alongside your existing team as you build the UK market.
+              </p>
             </div>
-            <Grid className="mt-10 gap-y-12 md:mt-14">
-              <div className="col-span-4 md:col-span-12 lg:col-span-5">
-                <h3 id="capabilities-list-heading" className="type-h2">
-                  Specialist technology, deployed into your environment.
-                </h3>
-                <p className="type-body mt-8 max-w-[36rem] text-ink-soft">
-                  We focus on technology where deep product understanding and hands-on implementation matter, from AI
-                  agents and data platforms to identity and access.
-                </p>
-                <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4">
-                  <ArrowLink href="/ai-security">Explore AI & Security</ArrowLink>
-                  <ArrowLink href="/cloud-infrastructure">Explore Cloud & Infrastructure</ArrowLink>
-                </div>
-              </div>
-              <ol className="col-span-4 border-t border-ink md:col-span-12 lg:col-span-6 lg:col-start-7">
-                {capabilities.map((item, i) => (
-                  <li key={item.title} className="grid gap-3 border-b border-rule py-8 md:grid-cols-7 md:gap-8">
-                    <div className="flex items-baseline gap-5 md:col-span-3">
-                      <span className="numeral text-[0.875rem] text-accent">{String(i + 1).padStart(2, "0")}</span>
-                      <h4 className="type-h4 text-[1.3125rem]">{item.title}</h4>
-                    </div>
-                    <p className="type-body text-ink-soft md:col-span-4">{item.body}</p>
-                  </li>
-                ))}
-              </ol>
-            </Grid>
-          </article>
+            <div className="col-span-4 md:col-span-4 md:col-start-9 lg:col-span-4 lg:col-start-9 lg:self-end">
+              <CtaButton href="/uk-market-entry" variant="primary-inverse">
+                Enter the UK market
+              </CtaButton>
+            </div>
+          </Grid>
         </Container>
-
-        {/* 02 UK Market Entry: given full-width prominence */}
-        <article
-          id="uk-market-entry"
-          aria-labelledby="uk-market-entry-heading"
-          className="on-navy bg-navy py-20 text-on-navy md:py-28 lg:py-32"
-        >
-          <Container>
-            <div className="border-t border-on-navy/60 pt-6">
-              <CapabilityLabel index="02" label="UK Market Entry" inverse />
-            </div>
-            <Grid className="mt-10 gap-y-10 md:mt-14">
-              <h3 id="uk-market-entry-heading" className="type-h2-lg col-span-4 md:col-span-11 lg:col-span-8">
-                Enter the UK without building the full team first.
-              </h3>
-              <div className="type-body prose-flow col-span-4 text-on-navy-soft md:col-span-8 lg:col-span-6">
-                <p>
-                  Fairpointe helps international enterprise technology companies establish commercial and technical
-                  delivery capacity in the UK.
-                </p>
-                <p>
-                  We can support the path from market development and customer evaluation through technical pre-sales,
-                  integration, deployment and ongoing customer support.
-                </p>
-              </div>
-              <div className="col-span-4 md:col-span-4 md:col-start-9 lg:col-span-4 lg:col-start-9 lg:self-end">
-                <CtaButton href="/uk-market-entry" variant="primary-inverse">
-                  Enter the UK market
-                </CtaButton>
-              </div>
-            </Grid>
-            <ol className="mt-16 grid grid-cols-1 border-t border-rule-navy sm:grid-cols-2 md:mt-24 lg:grid-cols-4">
-              {marketEntry.map((item, i) => (
-                <li
-                  key={item.title}
-                  className={
-                    "border-b border-rule-navy py-6 lg:border-b-0 lg:pr-6" + (i > 0 ? " lg:border-l lg:pl-6" : "")
-                  }
-                >
-                  <span className="numeral block text-[0.875rem] text-accent-on-navy">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h4 className="mt-2 text-[1.0625rem] font-semibold tracking-[-0.015em] text-on-navy">{item.title}</h4>
-                  <p className="mt-2 text-[0.9375rem] leading-relaxed text-on-navy-soft sm:pr-6 lg:pr-0">{item.body}</p>
-                </li>
-              ))}
-            </ol>
-          </Container>
-        </article>
       </section>
 
-      {/* Public sector */}
-      <SplitSection id="public-sector" tone="deep" title="Specialist technology for UK public services.">
-        <p>
-          Fairpointe combines procurement intelligence with hands-on technical delivery, helping technology companies
-          and public-sector organisations move from opportunity and procurement through to working technology.
-        </p>
-        <div className="pt-4">
-          <ArrowLink href="/public-sector">Explore Public Sector</ArrowLink>
-        </div>
-      </SplitSection>
+      <div aria-hidden className="bg-navy">
+        <Container>
+          <div className="h-px bg-rule-navy" />
+        </Container>
+      </div>
 
-      <CtaBand
-        title="What are you trying to deploy?"
-        primary={cta.project}
-        secondary={{ label: "Enter the UK market", href: "/uk-market-entry" }}
-      >
-        Whether you are deploying specialist technology or bringing your technology into the UK, start with a
-        conversation about the environment, the requirement and what successful deployment looks like.
+      <CtaBand title="What are you trying to deploy?" primary={cta.project}>
+        Tell us about the technology, the environment and what a successful deployment looks like.
       </CtaBand>
     </>
   );

@@ -11,8 +11,6 @@ import type { TechnologyMarkId } from "@/components/marketing/technology-marks";
 export type Technology = {
   id: TechnologyMarkId;
   name: string;
-  /** Short capability line shown under the name. */
-  capability: string;
   showMark: boolean;
 };
 
@@ -20,49 +18,41 @@ export const technologies: Technology[] = [
   {
     id: "openai",
     name: "OpenAI",
-    capability: "ChatGPT Enterprise, API integration and agents",
     showMark: true,
   },
   {
     id: "microsoft-azure",
     name: "Microsoft Azure",
-    capability: "Azure AI Foundry and enterprise AI infrastructure",
     showMark: true,
   },
   {
     id: "microsoft-copilot",
     name: "Microsoft Copilot",
-    capability: "Copilot Studio agents, integrations and governance",
     showMark: true,
   },
   {
     id: "aws",
     name: "AWS",
-    capability: "Amazon Bedrock and AI cloud infrastructure",
     showMark: true,
   },
   {
     id: "snowflake",
     name: "Snowflake",
-    capability: "Snowflake Cortex and enterprise data implementation",
     showMark: true,
   },
   {
     id: "databricks",
     name: "Databricks",
-    capability: "Mosaic AI and enterprise GenAI deployment",
     showMark: true,
   },
   {
     id: "anthropic",
     name: "Anthropic",
-    capability: "Claude Enterprise, Claude API and agents",
     showMark: true,
   },
   {
     id: "elevenlabs",
     name: "ElevenLabs",
-    capability: "Voice AI agents, speech and audio integration",
     showMark: true,
   },
 ];
