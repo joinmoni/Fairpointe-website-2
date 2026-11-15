@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { cta } from "@/lib/site";
-import { breadcrumbSchema, organizationId, pageMetadata } from "@/lib/seo";
+import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 import { JsonLd } from "@/components/json-ld";
 import { Grid, Section } from "@/components/marketing/layout";
 import { CtaBand, PageHero, RuledList, SplitSection } from "@/components/marketing/blocks";
@@ -46,16 +46,7 @@ export default function AboutPage() {
   return (
     <>
       <JsonLd
-        data={[
-          {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            name: "Adebola Adeniran",
-            jobTitle: "Founder & Technology Lead",
-            worksFor: { "@id": organizationId },
-          },
-          breadcrumbSchema([{ name: "About", path }]),
-        ]}
+        data={breadcrumbSchema([{ name: "About", path }])}
       />
 
       <PageHero title="Built by operators.">
@@ -98,18 +89,14 @@ export default function AboutPage() {
             Leadership
           </h2>
           <div className="col-span-4 md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
-            <div className="border-t border-ink pt-6">
-              <h3 className="type-h3">Adebola Adeniran</h3>
-              <p className="mt-2 text-[1.0625rem] font-medium text-ink-muted">Founder &amp; Technology Lead</p>
-            </div>
-            <div className="type-body prose-flow mt-8 text-ink-soft">
+            <div className="type-body prose-flow border-t border-ink pt-6 text-ink-soft">
               <p>
-                Adebola is a technology operator with experience building and scaling software, cloud infrastructure and
-                financial technology products across the UK and international markets.
+                Fairpointe is led by a technology operator with experience building and scaling software, cloud
+                infrastructure and financial technology products across the UK and international markets.
               </p>
               <p>
-                At Fairpointe, he leads technology strategy and the development of specialist enterprise implementation
-                capabilities.
+                Fairpointe&rsquo;s leadership sets its technology strategy and the development of specialist enterprise
+                implementation capabilities.
               </p>
             </div>
             <h4 className="mt-12 mb-5 text-[0.9375rem] font-medium text-ink-muted">Experience</h4>

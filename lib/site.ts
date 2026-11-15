@@ -2,8 +2,6 @@ export const site = {
   name: "Fairpointe",
   url: "https://fairpointe.co.uk",
   email: "hello@fairpointe.co.uk",
-  /** Founder's direct address, shown alongside the booking link. */
-  directEmail: "adebola@fairpointe.co.uk",
   /** Intro call booking page. Opens in a new tab. */
   bookingUrl: "https://cal.com/fairpointe/intro",
   tagline: "Enterprise technology, deployed in the UK.",
