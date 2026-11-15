@@ -4,7 +4,7 @@ import { technologies } from "@/lib/technologies";
 import { pageMetadata, serviceSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/json-ld";
 import { Container, Grid, Section } from "@/components/marketing/layout";
-import { CtaButton } from "@/components/marketing/links";
+import { ArrowLink, CtaButton } from "@/components/marketing/links";
 import { ControlLoop } from "@/components/diagrams/ai-security";
 import { TechnologyList, TechnologyPartnershipsSection } from "@/components/marketing/technologies";
 
@@ -69,6 +69,29 @@ export default function HomePage() {
           </Grid>
         </Container>
       </section>
+
+      {/* Go-Live Sprint teaser */}
+      <Section id="go-live" tone="deep" rule={false} spacing="compact" aria-labelledby="go-live-heading" className="mt-16 md:mt-24">
+        <Grid className="gap-y-8">
+          <div className="col-span-4 md:col-span-10 lg:col-span-5">
+            <p className="text-[0.9375rem] font-medium text-accent">Go-Live Sprint</p>
+            <h2 id="go-live-heading" className="type-h2 mt-4">
+              Your next enterprise customer, live in 6 weeks.
+            </h2>
+          </div>
+          <div className="col-span-4 md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
+            <p className="type-body text-ink-soft">
+              For AI and SaaS vendors: forward-deployed engineers who get your enterprise customers live without a
+              full-time FDE hire, then hand the code, runbooks and knowledge back to your team. Fixed scope, from
+              £24,000.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
+              <CtaButton href={cta.goLive.href}>See the Go-Live Sprint</CtaButton>
+              <ArrowLink href={cta.bookCall.href} newTab>{cta.bookCall.label}</ArrowLink>
+            </div>
+          </div>
+        </Grid>
+      </Section>
 
       {/* Technologies */}
       <Section id="technologies" aria-labelledby="technologies-heading">
@@ -159,9 +182,14 @@ export default function HomePage() {
               </p>
             </div>
             <div className="col-span-4 md:col-span-4 md:col-start-9 lg:col-span-4 lg:col-start-9 lg:self-end">
-              <CtaButton href="/uk-market-entry" variant="primary-inverse">
-                Enter the UK market
-              </CtaButton>
+              <div className="flex flex-wrap gap-3">
+                <CtaButton href={cta.goLive.href} variant="primary-inverse">
+                  {cta.goLive.label}
+                </CtaButton>
+                <CtaButton href="/uk-market-entry" variant="secondary-inverse">
+                  Enter the UK market
+                </CtaButton>
+              </div>
             </div>
           </Grid>
         </Container>

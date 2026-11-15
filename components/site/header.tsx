@@ -14,7 +14,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-5">
           <DesktopNav />
           <Button asChild size="md" className="hidden h-10 lg:inline-flex">
-            <Link href={cta.speak.href}>{cta.speak.label}</Link>
+            <Link href={cta.goLive.href}>{cta.goLive.label}</Link>
           </Button>
           <MobileNav />
         </div>

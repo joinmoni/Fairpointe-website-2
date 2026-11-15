@@ -7,12 +7,12 @@ import { Grid, Section } from "@/components/marketing/layout";
 import { PageHero } from "@/components/marketing/blocks";
 
 const path = "/privacy";
-const lastUpdated = "8 October 2026";
+const lastUpdated = "15 November 2026";
 
 export const metadata: Metadata = pageMetadata({
   title: "Privacy Policy | Fairpointe",
   description:
-    "How Fairpointe UK Limited collects, uses and protects personal information submitted through fairpointe.co.uk.",
+    `How ${company.legalName} collects, uses and protects personal information submitted through fairpointe.co.uk.`,
   path,
 });
 
@@ -23,6 +23,9 @@ const sections: { title: string; body: ReactNode }[] = [
       <>
         <p>
           {company.legalName} (&ldquo;Fairpointe&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) operates {site.url.replace("https://", "")}.
+          {company.companyNumber
+            ? ` We are registered in England and Wales, company number ${company.companyNumber}.`
+            : null}{" "}
           We are the controller of the personal information described in this policy.
         </p>
         <p>

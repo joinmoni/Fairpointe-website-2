@@ -39,6 +39,15 @@ export function organizationSchema() {
     "@id": organizationId,
     name: site.name,
     ...(company.legalName ? { legalName: company.legalName } : {}),
+    ...(company.companyNumber
+      ? {
+          identifier: {
+            "@type": "PropertyValue",
+            propertyID: "Companies House company number",
+            value: company.companyNumber,
+          },
+        }
+      : {}),
     url: site.url,
     email: site.email,
     description: site.description,

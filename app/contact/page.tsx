@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { company, site } from "@/lib/site";
+import { company, cta, site } from "@/lib/site";
 import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 import { isEnquirySlug } from "@/lib/enquiry/schema";
 import { JsonLd } from "@/components/json-ld";
@@ -58,6 +58,27 @@ export default async function ContactPage({ searchParams }: PageProps<"/contact"
                 >
                   {site.email}
                 </a>
+                <h2 className="mt-10 text-[1.0625rem] font-semibold tracking-[-0.01em]">Speak to Adebola directly</h2>
+                <p className="mt-2 text-[0.9375rem] text-ink-muted">
+                  For the Go-Live Sprint, fractional forward-deployed engineering or a pilot that needs rescuing.
+                </p>
+                <div className="mt-4 flex flex-col items-start gap-3">
+                  <a
+                    href={`mailto:${site.directEmail}`}
+                    className="inline-block text-[1.0625rem] font-medium text-ink underline decoration-ink/30 underline-offset-[6px] transition-colors hover:decoration-ink"
+                  >
+                    {site.directEmail}
+                  </a>
+                  <a
+                    href={site.bookingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block text-[1.0625rem] font-medium text-ink underline decoration-ink/30 underline-offset-[6px] transition-colors hover:decoration-ink"
+                  >
+                    {cta.bookCall.label}
+                    <span className="sr-only"> (opens in a new tab)</span>
+                  </a>
+                </div>
                 <p className="mt-6 text-[0.9375rem] text-ink-muted">
                   See our{" "}
                   <Link
