@@ -102,10 +102,6 @@ const faqs = [
       "The Go-Live Sprint is 6 weeks from £24,000, or £18,000 for the first two founding clients in exchange for a case study. Fractional FDE starts at £6,000 a month for 2 days a week, or £9,000–£11,000 a month for 3 days a week, with a three-month minimum. Pilot-to-Production Rescue starts with a £6,000–£8,000 review, followed by a fixed-price fix.",
   },
   {
-    question: "Is VAT added to these prices?",
-    answer: "No. Fairpointe is not VAT-registered, so no VAT is added. The prices quoted are what you pay.",
-  },
-  {
     question: "Who owns the code?",
     answer:
       "You do. The client owns all code we write during the engagement, along with the runbooks and documentation that come with it.",
@@ -192,9 +188,6 @@ export default function GoLivePage() {
             </li>
           ))}
         </ul>
-        <p className="mt-8 text-[0.875rem] text-ink-muted lg:mt-10">
-          Fairpointe is not VAT-registered, so no VAT is added.
-        </p>
       </Section>
 
       {/* How it works */}
