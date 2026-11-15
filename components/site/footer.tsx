@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { company, cta, isGroup, navigation, site } from "@/lib/site";
+import { company, isGroup, navigation, site } from "@/lib/site";
 import { Container, Grid } from "@/components/marketing/layout";
 import { Logo } from "./logo";
 
@@ -18,24 +18,6 @@ export function SiteFooter() {
             >
               {site.email}
             </a>
-            <div className="mt-6 space-y-2 border-t border-rule-navy pt-6 text-[0.9375rem]">
-              <p className="text-on-navy-muted">Speak to Adebola directly</p>
-              <a
-                href={`mailto:${site.directEmail}`}
-                className="block font-medium text-on-navy underline decoration-on-navy/35 underline-offset-[6px] transition-colors hover:decoration-on-navy"
-              >
-                {site.directEmail}
-              </a>
-              <a
-                href={site.bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block font-medium text-on-navy underline decoration-on-navy/35 underline-offset-[6px] transition-colors hover:decoration-on-navy"
-              >
-                {cta.bookCall.label}
-                <span className="sr-only"> (opens in a new tab)</span>
-              </a>
-            </div>
           </div>
           <nav aria-label="Footer" className="col-span-4 md:col-span-12 lg:col-span-7 lg:col-start-6">
             <ul className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
