@@ -89,12 +89,6 @@ const reasons = [
   },
 ];
 
-const trackRecord = [
-  "Before founding Fairpointe, as an engineer at Alloy, Adebola built a Typeform integration that went live in about 2 weeks, with about 60 customers in the following 2 weeks.",
-  "As Technical Lead at Yala, he designs payments architecture and the partner payout API.",
-  "At Moni, as a founding engineer and later Chief of Staff, he helped scale loan disbursements to about $50m and led 35 people across 4 countries.",
-];
-
 const faqs = [
   {
     question: "How much does it cost?",
@@ -225,22 +219,7 @@ export default function GoLivePage() {
         </div>
       </SplitSection>
 
-      {/* Founder track record */}
-      <SplitSection id="track-record" tone="deep" title="Founder track record.">
-        <p>
-          Fairpointe is led by Adebola Adeniran. The work below is from his previous employed roles. These companies
-          are not Fairpointe clients.
-        </p>
-        <ul className="border-t border-ink">
-          {trackRecord.map((item) => (
-            <li key={item} className="border-b border-rule py-6 text-[1.0625rem] leading-relaxed text-ink">
-              {item}
-            </li>
-          ))}
-        </ul>
-      </SplitSection>
-
-      <FaqSection rule={false} id="faq" title="Go-Live Sprint questions" faqs={faqs} />
+      <FaqSection id="faq" title="Go-Live Sprint questions" faqs={faqs} />
 
       {/* Closing call to action */}
       <Section id="next-step" tone="navy" aria-labelledby="next-step-heading" className="py-24 md:py-32 lg:py-40">
