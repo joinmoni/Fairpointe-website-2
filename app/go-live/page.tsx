@@ -8,13 +8,22 @@ import { FaqSection, PageHero, RuledList, SplitSection } from "@/components/mark
 
 const path = "/go-live";
 const description =
-  "FDE as a service: forward-deployed engineering for AI and SaaS vendors. Fairpointe gets your enterprise customers live in 6 weeks without a full-time FDE hire, then hands the code, runbooks and knowledge back to your team.";
+  "Get enterprise customers into production with Fairpointe. Integrations, deployment and handover for AI and SaaS vendors. Six-week sprints from £24,000.";
+const socialTitle = "Get your next enterprise customer into production.";
+const socialDescription =
+  "Enterprise implementation for AI and SaaS vendors. Customer integrations, production deployment and a practical handover to your team.";
 
-export const metadata: Metadata = pageMetadata({
-  title: "FDE as a Service for AI and SaaS Vendors | Fairpointe",
+const baseMetadata = pageMetadata({
+  title: "Enterprise Implementation for AI & SaaS Vendors | Fairpointe",
   description,
   path,
 });
+
+export const metadata: Metadata = {
+  ...baseMetadata,
+  openGraph: { ...baseMetadata.openGraph, title: socialTitle, description: socialDescription },
+  twitter: { ...baseMetadata.twitter, title: socialTitle, description: socialDescription },
+};
 
 const email = { label: "Email us", href: `mailto:${site.email}` };
 
@@ -23,69 +32,79 @@ const offers = [
     name: "Go-Live Sprint",
     term: "6 weeks",
     price: "From £24,000",
-    body: "One enterprise customer taken from signed contract to live in production.",
-    includes: ["Integrations", "Deployment", "Security review support", "Go-live", "Handover"],
-    note: "Founding-client offer: £18,000 for the first two clients, in exchange for a case study.",
+    body: "A scoped implementation for one enterprise customer, from kickoff through production launch and handover.",
+    includes: [
+      "Customer systems and requirements review",
+      "Integrations and deployment",
+      "Security review support",
+      "Production launch and monitoring",
+      "Code, documentation and team handover",
+    ],
   },
   {
     name: "Fractional FDE",
     term: "Three-month minimum",
     price: "From £6,000 a month",
-    body: "A forward-deployed engineer embedded with your team on an ongoing basis.",
+    body: "A forward-deployed engineer working with your team on customer integrations, technical onboarding and production deployments.",
     includes: ["2 days a week: from £6,000 a month", "3 days a week: £9,000–£11,000 a month"],
   },
   {
     name: "Pilot-to-Production Rescue",
-    term: "Review, then fix",
-    price: "£6,000–£8,000 review",
-    body: "For a pilot that has stalled before production. We review what is blocking it, then fix it for a fixed price.",
-    includes: ["Technical and delivery review", "Written findings and plan", "Fixed-price fix"],
+    term: "Review, then implementation",
+    price: "£6,000–£8,000 for the review",
+    body: "Find out what is stopping a pilot from reaching production and what it will take to move forward.",
+    includes: [
+      "Review of the implementation and technical blockers",
+      "Written findings, dependencies and recommended actions",
+      "Separate fixed-price proposal for agreed implementation work",
+    ],
+    note: "Implementation is scoped and priced separately from the review.",
   },
 ];
 
 const weeks = [
   {
-    title: "Discovery",
-    body: "Map the customer’s environment, systems, security requirements and the definition of live. Agree the scope and the go-live date.",
+    title: "Confirm the scope",
+    body: "Review the customer’s systems, data, access and security requirements. Agree the deliverables, responsibilities and acceptance criteria for launch.",
   },
   {
-    title: "Build",
-    body: "Build the integrations, configuration and customer-specific work your product needs to run in their environment.",
+    title: "Build the implementation",
+    body: "Build the integrations, configuration and customer-specific workflows needed to use your product in the customer’s environment.",
   },
   {
-    title: "Integrate",
-    body: "Connect to the customer’s identity, data and line-of-business systems, and test end to end with their team.",
+    title: "Test with the customer",
+    body: "Connect the required systems and test the complete workflow with the customer’s team. Resolve integration issues and confirm the implementation meets the agreed requirements.",
   },
   {
-    title: "Harden",
-    body: "Support the security review, close findings, and add monitoring, alerting and the runbooks to operate it.",
+    title: "Prepare for production",
+    body: "Address outstanding technical and security findings. Set up monitoring, document operating procedures and confirm the launch and rollback plans.",
   },
   {
-    title: "Go-live",
-    body: "Release to production with the customer, run the cutover and stay close while real usage starts.",
+    title: "Launch and stabilise",
+    body: "Release to production once the agreed approvals are in place. Monitor real usage, resolve launch issues and check the implementation against the acceptance criteria.",
   },
   {
-    title: "Handover",
-    body: "Hand the code, runbooks and knowledge to your team, walk them through it and confirm they can run it without us.",
+    title: "Hand over to your team",
+    body: "Deliver the code, configuration and runbooks. Walk your team through the implementation, confirm ownership and document any remaining actions.",
   },
 ];
 
 const reasons = [
   {
-    title: "One named UK lead",
-    body: "The person scoping the work is the person delivering it, and the single point of contact for you and your customer.",
+    title: "One named delivery lead",
+    body: "The lead who scopes the engagement stays accountable through delivery and is the main technical contact for your team and your customer.",
   },
   {
-    title: "Fixed scope",
-    body: "A written scope, a fixed price and a go-live date agreed before work starts.",
+    title: "Scope and price agreed upfront",
+    body: "You know what is included, what your team needs to provide and how success will be assessed. Any changes are agreed before additional work begins.",
   },
   {
-    title: "Built-in handover",
-    body: "Every engagement ends with the code, runbooks and knowledge back with your team, so you are never dependent on us.",
+    title: "A practical handover",
+    body: "Your team receives the code, configuration, runbooks and walkthroughs needed to operate and maintain the implementation.",
   },
   {
-    title: "Capacity that scales",
-    body: "When an engagement needs more hands, we bring in extra engineers under the same lead and the same scope.",
+    title: "Additional engineers when needed",
+    body: "Where the agreed scope requires more capacity or specialist skills, additional engineers work under the same delivery lead.",
   },
 ];
 
@@ -93,27 +112,27 @@ const faqs = [
   {
     question: "How much does it cost?",
     answer:
-      "The Go-Live Sprint is 6 weeks from £24,000, or £18,000 for the first two founding clients in exchange for a case study. Fractional FDE starts at £6,000 a month for 2 days a week, or £9,000–£11,000 a month for 3 days a week, with a three-month minimum. Pilot-to-Production Rescue starts with a £6,000–£8,000 review, followed by a fixed-price fix.",
+      "The six-week Go-Live Sprint starts at £24,000. Fractional FDE starts at £6,000 a month for two days a week, or £9,000–£11,000 a month for three days a week, with a three-month minimum. A Pilot-to-Production Rescue review costs £6,000–£8,000. Any implementation following the review is scoped and priced separately.",
   },
   {
-    question: "Who owns the code?",
+    question: "Can you get our customer live in six weeks?",
     answer:
-      "You do. The client owns all code we write during the engagement, along with the runbooks and documentation that come with it.",
+      "The Go-Live Sprint is designed for an implementation that fits an agreed six-week scope. Before kickoff, we confirm customer access, technical dependencies, responsibilities and the approvals needed for launch. If the work needs a longer timeline, we will explain that before you commit.",
   },
   {
-    question: "What is out of scope?",
+    question: "Who owns the work, and what is included?",
     answer:
-      "Anything not in the written scope we agree at the start. That typically includes changes to your core product roadmap, selling to the customer, and ongoing operational support after handover. If the scope needs to change, we agree it in writing before doing the work.",
+      "Your company owns the code we write for your engagement and receives the associated configuration, runbooks and documentation. Deliverables and exclusions are set out in the written scope. Core product development, sales activity, third-party fees and ongoing support after handover are excluded unless explicitly included.",
   },
   {
-    question: "How do you work alongside our team?",
+    question: "How do you work with our team and our customer?",
     answer:
-      "We work inside your tools and processes, alongside your engineering, product and customer teams, and in front of your customer where you want us to be. Your team stays involved throughout so the handover is a continuation, not a restart.",
+      "We work in your existing tools and processes, alongside your engineering, product and customer teams. We can join customer calls, lead technical implementation discussions and coordinate with the customer’s technical team. Responsibilities and communication are agreed at kickoff.",
   },
   {
     question: "Do you work remotely or on site?",
     answer:
-      "Most of the work is remote. Where the customer needs people in the room, on-site days in the UK or EU can be agreed as part of the scope.",
+      "Most work is delivered remotely. UK or EU on-site days can be included where useful, with travel arrangements and costs agreed in advance.",
   },
 ];
 
@@ -123,34 +142,38 @@ export default function GoLivePage() {
       <JsonLd
         data={[
           serviceSchema({
-            name: "FDE as a service: forward-deployed engineering for AI and SaaS vendors",
-            serviceType: "Forward-deployed engineering as a service",
-            description,
+            name: "Enterprise implementation for AI and SaaS vendors",
+            serviceType: "Enterprise implementation",
+            description: socialDescription,
             path,
           }),
           faqSchema(faqs),
-          breadcrumbSchema([{ name: "FDE as a service", path }]),
+          breadcrumbSchema([{ name: "Enterprise implementation", path }]),
         ]}
       />
 
       <PageHero
-        eyebrow="FDE as a service"
-        title="Your next enterprise customer, live in 6 weeks."
+        eyebrow="Enterprise implementation for AI and SaaS vendors"
+        title="Get your next enterprise customer into production."
         actions={
           <>
             <CtaButton href={cta.bookCall.href} newTab>
-              {cta.bookCall.label}
+              Discuss your deployment
             </CtaButton>
-            <CtaButton href={email.href} variant="secondary">
-              {email.label}
+            <CtaButton href="#offers" variant="secondary">
+              Explore the options
             </CtaButton>
+            <p className="mt-3 basis-full text-[0.9375rem] text-ink-muted">
+              Six-week Go-Live Sprints for an agreed scope, with customer access and dependencies confirmed before
+              kickoff.
+            </p>
           </>
         }
       >
         <p>
-          Fairpointe is a London forward-deployed engineering practice. We get AI and SaaS vendors&rsquo; enterprise
-          customers live without the vendor hiring a full-time FDE, then hand the code, runbooks and knowledge back to
-          the vendor&rsquo;s team.
+          Your customer has signed. Now your product needs to work with their systems, data and security requirements.
+          Fairpointe handles the integrations and deployment, working directly with your customer and engineering team
+          through to launch and handover.
         </p>
       </PageHero>
 
@@ -158,10 +181,11 @@ export default function GoLivePage() {
       <Section id="offers" aria-labelledby="offers-heading">
         <Grid className="gap-y-8">
           <h2 id="offers-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-5">
-            Three ways to work with us.
+            Choose the support your deployment needs.
           </h2>
           <p className="type-body col-span-4 text-ink-soft md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
-            Fixed prices, written scopes and a handover at the end of every engagement.
+            A defined implementation, ongoing engineering support or a review of a stalled pilot. Each engagement starts
+            with a written scope and clear deliverables.
           </p>
         </Grid>
         <ul aria-label="Offers" className="mt-14 grid border-t border-ink md:mt-20 lg:grid-cols-3">
@@ -188,9 +212,16 @@ export default function GoLivePage() {
       {/* How it works */}
       <Section id="how-it-works" tone="deep" rule={false} aria-labelledby="how-it-works-heading">
         <Grid className="gap-y-10">
-          <h2 id="how-it-works-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-5">
-            How the <span className="whitespace-nowrap">Go-Live</span> Sprint works.
-          </h2>
+          <div className="col-span-4 md:col-span-10 lg:col-span-5">
+            <h2 id="how-it-works-heading" className="type-h2">
+              A typical <span className="whitespace-nowrap">six-week</span> <span className="whitespace-nowrap">Go-Live</span> Sprint.
+            </h2>
+            <p className="type-body mt-8 text-ink-soft lg:max-w-[30rem]">
+              We agree what production-ready means, who needs to be involved and what access is required before
+              kickoff. Security requirements are addressed throughout. The delivery plan reflects your customer&rsquo;s
+              environment and approval process.
+            </p>
+          </div>
           <ol aria-label="Weeks 1 to 6" className="col-span-4 border-t border-ink md:col-span-12 lg:col-span-6 lg:col-start-7">
             {weeks.map((week, i) => (
               <li key={week.title} className="grid gap-3 border-b border-rule py-7 md:grid-cols-7 md:gap-8">
@@ -206,9 +237,9 @@ export default function GoLivePage() {
       </Section>
 
       {/* Why Fairpointe */}
-      <SplitSection id="why-fairpointe" rule={false} title="Why Fairpointe.">
+      <SplitSection id="why-fairpointe" rule={false} title="Clear ownership from kickoff to handover.">
         <p className="type-lede text-ink">
-          Forward-deployed engineering without the full-time hire, and without becoming dependent on us.
+          One named delivery lead, an agreed scope and practical support for your team and your customer.
         </p>
         <div className="border-t border-rule">
           {reasons.map((reason) => (
@@ -220,18 +251,18 @@ export default function GoLivePage() {
         </div>
       </SplitSection>
 
-      <FaqSection id="faq" title="FDE as a service questions" faqs={faqs} />
+      <FaqSection id="faq" title="Questions about working with Fairpointe." faqs={faqs} />
 
       {/* Closing call to action */}
       <Section id="next-step" tone="navy" aria-labelledby="next-step-heading" className="py-24 md:py-32 lg:py-40">
         <Grid className="gap-y-10">
           <h2 id="next-step-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-7">
-            Get your next enterprise customer live.
+            Discuss your next customer deployment.
           </h2>
           <div className="col-span-4 md:col-span-8 lg:col-span-4 lg:col-start-9 lg:pt-2">
             <p className="type-body text-on-navy-soft">
-              Tell us about the customer, the product and the date you need to hit. A 20-minute call is enough to tell
-              whether the Go-Live Sprint fits.
+              Tell us what needs to go live, what is blocking it and your target date. In a 20-minute call, we&rsquo;ll
+              assess whether the engagement fits and explain the next step.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <CtaButton href={cta.bookCall.href} variant="primary-inverse" newTab>

@@ -2,7 +2,7 @@
 export const pages = [
   { path: "/", title: "Enterprise technology, deployed in the UK.", priority: 1 },
   { path: "/ai-security", title: "Deploy emerging AI and security technology with confidence.", priority: 0.9 },
-  { path: "/go-live", title: "Your next enterprise customer, live in 6 weeks.", priority: 0.9 },
+  { path: "/go-live", title: "Get your next enterprise customer into production.", priority: 0.9 },
   { path: "/uk-market-entry", title: "Prove the UK before building the UK team.", priority: 0.9 },
   { path: "/cloud-infrastructure", title: "Cloud infrastructure built for critical workloads.", priority: 0.7 },
   { path: "/public-sector", title: "Specialist technology for the UK public sector.", priority: 0.8 },
