@@ -6,11 +6,14 @@ import type { Faq } from "@/lib/seo";
 
 /** Page-level hero. Typography carries the composition; `aside` is optional. */
 export function PageHero({
+  eyebrow,
   title,
   children,
   actions,
   aside,
 }: {
+  /** Short label above the title, e.g. the offer name. */
+  eyebrow?: React.ReactNode;
   title: React.ReactNode;
   children?: React.ReactNode;
   actions?: React.ReactNode;
@@ -21,6 +24,9 @@ export function PageHero({
       <Container>
         <Grid className="gap-y-14">
           <div className={cn("col-span-4 md:col-span-12", aside ? "lg:col-span-7" : "lg:col-span-10")}>
+            {eyebrow ? (
+              <p className="mb-6 text-[0.9375rem] font-medium text-accent motion-safe:animate-rise md:mb-8">{eyebrow}</p>
+            ) : null}
             <h1 className="type-h1 motion-safe:animate-rise">{title}</h1>
             {children ? (
               <div

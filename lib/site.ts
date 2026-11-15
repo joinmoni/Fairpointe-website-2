@@ -116,9 +116,9 @@ export const navigation: NavEntry[] = [
     label: "Technology Companies",
     items: [
       {
-        label: "Go-Live Sprint",
+        label: "FDEaaS",
         href: "/go-live",
-        description: "Forward-deployed engineers to get your enterprise customers live",
+        description: "FDE as a service: forward-deployed engineers to get your enterprise customers live",
       },
       {
         label: "UK Market Entry",

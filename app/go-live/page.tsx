@@ -8,10 +8,10 @@ import { FaqSection, PageHero, RuledList, SplitSection } from "@/components/mark
 
 const path = "/go-live";
 const description =
-  "Forward-deployed engineering for AI and SaaS vendors. Fairpointe gets your enterprise customers live in 6 weeks without a full-time FDE hire, then hands the code, runbooks and knowledge back to your team.";
+  "FDE as a service: forward-deployed engineering for AI and SaaS vendors. Fairpointe gets your enterprise customers live in 6 weeks without a full-time FDE hire, then hands the code, runbooks and knowledge back to your team.";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Forward-Deployed Engineering for AI and SaaS Vendors | Fairpointe",
+  title: "FDE as a Service for AI and SaaS Vendors | Fairpointe",
   description,
   path,
 });
@@ -123,17 +123,18 @@ export default function GoLivePage() {
       <JsonLd
         data={[
           serviceSchema({
-            name: "Go-Live Sprint: forward-deployed engineering for AI and SaaS vendors",
-            serviceType: "Forward-deployed engineering",
+            name: "FDE as a service: forward-deployed engineering for AI and SaaS vendors",
+            serviceType: "Forward-deployed engineering as a service",
             description,
             path,
           }),
           faqSchema(faqs),
-          breadcrumbSchema([{ name: "Go-Live Sprint", path }]),
+          breadcrumbSchema([{ name: "FDE as a service", path }]),
         ]}
       />
 
       <PageHero
+        eyebrow="FDE as a service"
         title="Your next enterprise customer, live in 6 weeks."
         actions={
           <>
@@ -219,7 +220,7 @@ export default function GoLivePage() {
         </div>
       </SplitSection>
 
-      <FaqSection id="faq" title="Go-Live Sprint questions" faqs={faqs} />
+      <FaqSection id="faq" title="FDE as a service questions" faqs={faqs} />
 
       {/* Closing call to action */}
       <Section id="next-step" tone="navy" aria-labelledby="next-step-heading" className="py-24 md:py-32 lg:py-40">
