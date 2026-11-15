@@ -16,7 +16,7 @@ export const metadata: Metadata = pageMetadata({
   path,
 });
 
-const email = { label: site.directEmail, href: `mailto:${site.directEmail}` };
+const email = { label: "Email us", href: `mailto:${site.email}` };
 
 const offers = [
   {
