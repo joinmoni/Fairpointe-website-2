@@ -2,6 +2,10 @@ export const site = {
   name: "Fairpointe",
   url: "https://fairpointe.co.uk",
   email: "hello@fairpointe.co.uk",
+  /** Founder's direct address, shown alongside the booking link. */
+  directEmail: "adebola@fairpointe.co.uk",
+  /** Intro call booking page. Opens in a new tab. */
+  bookingUrl: "https://cal.com/fairpointe/intro",
   tagline: "Enterprise technology, deployed in the UK.",
   description:
     "Fairpointe helps UK organisations evaluate and deploy specialist enterprise technology, and helps international technology companies enter, sell and deliver in the UK.",
@@ -9,8 +13,10 @@ export const site = {
 } as const;
 
 /**
- * Registered company details for the footer. Add only verified values (for
- * example from Companies House). Empty values are not rendered.
+ * Registered company details for the footer, privacy policy and JSON-LD. Add
+ * only verified values (for example from Companies House). Empty values are
+ * not rendered. No postal address is published, so `registeredOffice` stays
+ * empty and nothing renders it.
  */
 export const company: {
   legalName: string;
@@ -19,8 +25,8 @@ export const company: {
   linkedinUrl: string;
   privacyPolicyHref: string;
 } = {
-  legalName: "Fairpointe UK Limited",
-  companyNumber: "",
+  legalName: "Fairpointe Ltd",
+  companyNumber: "17430888",
   registeredOffice: "",
   linkedinUrl: "",
   privacyPolicyHref: "/privacy",
@@ -28,6 +34,11 @@ export const company: {
 
 /** Enquiry types offered on the contact form. Slugs are used in `/contact?enquiry=`. */
 export const enquiryTypes = [
+  {
+    slug: "go-live",
+    label: "Go-Live Sprint / FDE",
+    hint: "Tell us about your product, the enterprise customer you need live and your target go-live date.",
+  },
   {
     slug: "technology-project",
     label: "Technology project",
@@ -71,6 +82,8 @@ export const cta = {
   project: { label: "Discuss a project", href: contactHref("technology-project") },
   ukMarket: { label: "Enter the UK market", href: contactHref("uk-market-entry") },
   speak: { label: "Speak to Fairpointe", href: "/contact" },
+  goLive: { label: "Get a customer live", href: "/go-live" },
+  bookCall: { label: "Book a 20-minute call", href: site.bookingUrl },
 } as const;
 
 export type NavLink = { label: string; href: string; description?: string };
@@ -102,6 +115,11 @@ export const navigation: NavEntry[] = [
   {
     label: "Technology Companies",
     items: [
+      {
+        label: "Go-Live Sprint",
+        href: "/go-live",
+        description: "Forward-deployed engineers to get your enterprise customers live",
+      },
       {
         label: "UK Market Entry",
         href: "/uk-market-entry",
