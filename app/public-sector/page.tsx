@@ -63,7 +63,7 @@ export default function PublicSectorPage() {
       />
 
       <PageHero
-        title="Turn public-sector technology plans into working systems."
+        title="Put technology to work for public services."
         actions={<CtaButton href={discuss.href}>{discuss.label}</CtaButton>}
       >
         <p>

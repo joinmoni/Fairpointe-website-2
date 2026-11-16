@@ -179,8 +179,8 @@ export default function GoLivePage() {
           customer and product team through launch and handover.
         </p>
         <p>
-          Forward-deployed engineering means working directly with your customer and product team to adapt, integrate
-          and deploy your software in the customer&rsquo;s environment.
+          Forward-deployed engineering brings technical delivery into the customer&rsquo;s environment, adapting your
+          product, connecting their systems and preparing the implementation for production.
         </p>
       </PageHero>
 
@@ -273,7 +273,7 @@ export default function GoLivePage() {
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <CtaButton href={cta.bookCall.href} variant="primary-inverse" newTab>
-                Discuss your customer launch
+                Discuss your customer deployment
               </CtaButton>
               <CtaButton href={email.href} variant="secondary-inverse">
                 {email.label}

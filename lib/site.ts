@@ -80,7 +80,9 @@ export const cta = {
   project: { label: "Discuss a project", href: contactHref("technology-project") },
   ukMarket: { label: "Enter the UK market", href: contactHref("uk-market-entry") },
   speak: { label: "Speak to Fairpointe", href: "/contact" },
-  goLive: { label: "Get a customer live", href: "/go-live" },
+  goLive: { label: "Explore FDEaaS", href: "/go-live" },
+  /** Shared header button: general enquiries from organisations and vendors. */
+  header: { label: "Discuss your project", href: "/contact" },
   bookCall: { label: "Book a 20-minute call", href: site.bookingUrl },
 } as const;
 
@@ -128,7 +130,7 @@ export const navigation: NavEntry[] = [
   {
     label: "Company",
     items: [
-      { label: "About", href: "/about", description: "Turn technology decisions into working systems" },
+      { label: "About", href: "/about", description: "Engineering expertise and clear delivery ownership" },
       { label: "Contact", href: "/contact", description: "Speak to Fairpointe" },
     ],
   },

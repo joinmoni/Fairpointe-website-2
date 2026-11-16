@@ -98,9 +98,9 @@ export default function HomePage() {
           </div>
           <div className="col-span-4 md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
             <p className="type-body text-ink-soft">
-              Fairpointe delivers the integrations, configuration and deployment your customer needs to use your
-              product. Work directly with a dedicated technical lead, keep your product team involved and launch with a
-              clear handover.
+              Forward-Deployed Engineering as a Service for customer integrations and production deployment.
+              Fairpointe&rsquo;s technical lead works with your customer and product team through implementation,
+              launch and handover.
             </p>
             <p className="mt-4 text-[0.9375rem] text-ink-muted">
               Six-week Go-Live Sprints from £24,000. Scope, customer access and launch dependencies confirmed before

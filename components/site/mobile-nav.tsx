@@ -92,10 +92,10 @@ export function MobileNav() {
                     })}
                     <div className="pt-8 pb-10">
                       <Link
-                        href={cta.goLive.href}
+                        href={cta.header.href}
                         className="flex h-12 w-full items-center justify-center rounded-[2px] bg-ink text-base font-medium text-paper"
                       >
-                        {cta.goLive.label}
+                        {cta.header.label}
                       </Link>
                     </div>
                   </Container>

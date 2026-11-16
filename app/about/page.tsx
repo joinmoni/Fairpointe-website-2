@@ -51,7 +51,7 @@ export default function AboutPage() {
         ]}
       />
 
-      <PageHero title="Turn technology decisions into working systems.">
+      <PageHero title="Engineering expertise. Clear delivery ownership.">
         <p>
           Fairpointe is a UK enterprise technology company combining hands-on engineering with commercial delivery. We
           implement specialist technology for organisations and help international vendors develop and deliver UK
