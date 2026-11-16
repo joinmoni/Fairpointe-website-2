@@ -156,7 +156,7 @@ export default function GoLivePage() {
       />
 
       <PageHero
-        eyebrow="FDEaaS · Forward-Deployed Engineering as a Service"
+        eyebrow="FDEaaS: Forward-Deployed Engineering as a Service"
         title="Get your next enterprise customer into production."
         actions={
           <>
