@@ -7,14 +7,15 @@ import { CtaButton } from "@/components/marketing/links";
 import { FaqSection, PageHero, RuledList, SplitSection } from "@/components/marketing/blocks";
 
 const path = "/go-live";
+const title = "FDEaaS | Forward-Deployed Engineering | Fairpointe";
 const description =
-  "Get enterprise customers into production with Fairpointe. Customer-specific integrations, deployment and handover for AI and SaaS vendors. Six-week sprints from £24,000.";
+  "Forward-deployed engineering for AI and SaaS vendors. Deliver enterprise customer integrations, production deployments and handover with Fairpointe.";
 const socialTitle = "Get your next enterprise customer into production.";
 const socialDescription =
-  "Enterprise implementation for AI and SaaS vendors. A clear path from signed contract to working software, with customer integrations, deployment and handover.";
+  "Forward-Deployed Engineering as a Service for AI and SaaS vendors. A clear path from signed contract to working software, with customer integrations, deployment and handover.";
 
 const baseMetadata = pageMetadata({
-  title: "Enterprise Implementation for AI & SaaS Vendors | Fairpointe",
+  title,
   description,
   path,
 });
@@ -141,25 +142,26 @@ export default function GoLivePage() {
     <>
       <JsonLd
         data={[
-          webPageSchema({ name: "Enterprise Implementation for AI & SaaS Vendors | Fairpointe", description, path }),
+          webPageSchema({ name: title, description, path }),
           serviceSchema({
-            name: "Enterprise implementation for AI and SaaS vendors",
-            serviceType: "Enterprise implementation",
+            name: "FDEaaS: Forward-Deployed Engineering as a Service",
+            alternateName: "FDEaaS",
+            serviceType: "Forward-deployed engineering",
             description: socialDescription,
             path,
           }),
           faqSchema(faqs),
-          breadcrumbSchema([{ name: "Enterprise implementation", path }]),
+          breadcrumbSchema([{ name: "FDEaaS", path }]),
         ]}
       />
 
       <PageHero
-        eyebrow="Enterprise implementation for AI and SaaS vendors"
+        eyebrow="FDEaaS · Forward-Deployed Engineering as a Service"
         title="Get your next enterprise customer into production."
         actions={
           <>
             <CtaButton href={cta.bookCall.href} newTab>
-              Discuss your customer launch
+              Discuss your customer deployment
             </CtaButton>
             <CtaButton href="#offers" variant="secondary">
               Explore the options
@@ -172,9 +174,9 @@ export default function GoLivePage() {
         }
       >
         <p>
-          Give your enterprise customers a clear path from signed contract to working software. Fairpointe leads
-          customer-specific integrations and deployment, working directly with your customer and engineering team
-          through launch and handover.
+          Give your enterprise customers a clear path from signed contract to working software. Fairpointe&rsquo;s
+          forward-deployed engineers lead customer-specific integrations and deployment, working directly with your
+          customer and product team through launch and handover.
         </p>
         <p>
           Forward-deployed engineering means working directly with your customer and product team to adapt, integrate

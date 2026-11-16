@@ -86,7 +86,12 @@ export default function HomePage() {
       <Section id="go-live" tone="deep" rule={false} spacing="compact" aria-labelledby="go-live-heading" className="mt-16 md:mt-24">
         <Grid className="gap-y-8">
           <div className="col-span-4 md:col-span-10 lg:col-span-5">
-            <p className="text-[0.9375rem] font-medium text-accent">For AI and SaaS vendors</p>
+            <p className="text-[0.9375rem] font-medium text-accent">
+              <abbr title="Forward-Deployed Engineering as a Service" className="no-underline">
+                FDEaaS
+              </abbr>{" "}
+              for AI and SaaS vendors
+            </p>
             <h2 id="go-live-heading" className="type-h2 mt-4">
               Turn your next enterprise contract into a successful customer launch.
             </h2>
@@ -102,7 +107,7 @@ export default function HomePage() {
               kickoff.
             </p>
             <div className="mt-8">
-              <CtaButton href={cta.goLive.href}>Explore the Go-Live Sprint</CtaButton>
+              <CtaButton href={cta.goLive.href}>Explore FDEaaS</CtaButton>
             </div>
           </div>
         </Grid>

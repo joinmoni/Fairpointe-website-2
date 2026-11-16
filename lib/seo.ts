@@ -99,11 +99,13 @@ export function webPageSchema({
 
 export function serviceSchema({
   name,
+  alternateName,
   serviceType,
   description,
   path,
 }: {
   name: string;
+  alternateName?: string;
   serviceType: string;
   description: string;
   path: string;
@@ -112,6 +114,7 @@ export function serviceSchema({
     "@context": "https://schema.org",
     "@type": "Service",
     name,
+    ...(alternateName ? { alternateName } : {}),
     serviceType,
     description,
     url: new URL(path, site.url).toString(),

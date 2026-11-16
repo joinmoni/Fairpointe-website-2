@@ -34,7 +34,7 @@ export const company: {
 export const enquiryTypes = [
   {
     slug: "go-live",
-    label: "Go-Live Sprint / FDE",
+    label: "FDEaaS",
     hint: "Tell us about your product, the enterprise customer you need live and your target go-live date.",
   },
   {
@@ -114,9 +114,9 @@ export const navigation: NavEntry[] = [
     label: "Technology Companies",
     items: [
       {
-        label: "Enterprise Implementation",
+        label: "FDEaaS",
         href: "/go-live",
-        description: "Enterprise customer implementation for AI and SaaS vendors",
+        description: "Forward-Deployed Engineering as a Service for AI and SaaS vendors",
       },
       {
         label: "UK Market Entry",
