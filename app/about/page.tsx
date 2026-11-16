@@ -9,7 +9,7 @@ const path = "/about";
 
 const title = "About Fairpointe | Enterprise Technology Implementation";
 const description =
-  "Fairpointe combines technical evaluation, enterprise integration and production deployment with UK commercial and customer delivery support.";
+  "Fairpointe is a UK enterprise technology company combining hands-on engineering with commercial delivery: technical evaluation, integration, deployment and handover.";
 
 export const metadata: Metadata = pageMetadata({ title, description, path });
 
@@ -24,20 +24,20 @@ const experience = [
 
 const principles = [
   {
-    title: "Commercial and technical",
-    body: "Connect the business requirement with the engineering work needed to deliver it.",
+    title: "Commercial understanding",
+    body: "Connect the business objective with a clear, achievable implementation.",
   },
   {
-    title: "Hands-on delivery",
-    body: "Work through configuration, integration, testing and launch alongside the people responsible for the product and its use.",
+    title: "Hands-on engineering",
+    body: "Work directly on the configuration, integrations and deployment that bring the solution into use.",
   },
   {
-    title: "Your existing environment",
-    body: "Design the implementation around your applications, data, identity and cloud infrastructure.",
+    title: "Clear delivery ownership",
+    body: "Keep responsibilities, decisions and progress visible throughout the engagement.",
   },
   {
-    title: "UK delivery capability",
-    body: "Support UK implementations and provide international vendors with agreed local commercial and technical capacity.",
+    title: "Practical handover",
+    body: "Give customer teams the documentation and knowledge to operate and maintain the result.",
   },
 ];
 
@@ -51,25 +51,22 @@ export default function AboutPage() {
         ]}
       />
 
-      <PageHero title="Built around implementation.">
+      <PageHero title="Turn technology decisions into working systems.">
         <p>
-          Fairpointe is a UK enterprise technology company. We help organisations implement specialist technology and
-          help international vendors develop and deliver UK opportunities.
-        </p>
-        <p>
-          Our work combines technical evaluation, systems integration, production deployment and the commercial
-          coordination needed to move an implementation forward.
+          Fairpointe is a UK enterprise technology company combining hands-on engineering with commercial delivery. We
+          implement specialist technology for organisations and help international vendors develop and deliver UK
+          opportunities.
         </p>
       </PageHero>
 
       <SplitSection id="approach" title="Technology has to work outside the presentation.">
         <p className="type-lede text-ink">
-          A successful implementation needs more than a product demonstration. It needs a clear use case, access to the
-          right systems, agreed responsibilities and a team prepared to operate it.
+          The real value comes when a product fits the customer&rsquo;s environment, supports the intended workflow and
+          can be operated by the team using it.
         </p>
         <p>
-          Fairpointe works alongside customer and vendor teams to define those requirements and deliver the agreed
-          implementation.
+          Fairpointe brings those pieces together: technical evaluation, architecture, integration, deployment and
+          practical handover.
         </p>
         <div className="border-t border-rule">
           {principles.map((principle) => (
@@ -98,9 +95,9 @@ export default function AboutPage() {
         </Grid>
       </Section>
 
-      <CtaBand title="Discuss the work you need to deliver." primary={{ label: "Discuss your project", href: cta.speak.href }}>
-        Talk to us about an implementation, a customer deployment or a UK opportunity that needs commercial and
-        technical support.
+      <CtaBand title="Put your next technology decision into action." primary={{ label: "Discuss your project", href: cta.speak.href }}>
+        Talk to Fairpointe about the system you want to implement, the customer you want to launch or the UK opportunity
+        you want to develop.
       </CtaBand>
     </>
   );

@@ -3,23 +3,23 @@ import { cn } from "@/lib/utils";
 const layers = [
   {
     title: "Cloud architecture",
-    body: "Define environments, networking, deployment patterns and operational requirements.",
+    body: "Design the environments, networking and deployment patterns around your workloads and operational needs.",
   },
   {
     title: "Platform engineering",
-    body: "Create repeatable environments and deployment processes for your application teams.",
+    body: "Give application teams repeatable environments and a dependable path from development to production.",
   },
   {
     title: "Cloud security",
-    body: "Configure workload access, secrets handling and infrastructure controls within the agreed scope.",
+    body: "Build workload permissions, secrets handling and infrastructure controls into the deployment.",
   },
   {
     title: "Infrastructure automation",
-    body: "Manage infrastructure and configuration through version-controlled, repeatable processes.",
+    body: "Make infrastructure changes repeatable and reviewable through version-controlled configuration.",
   },
   {
     title: "Migration and modernisation",
-    body: "Plan and implement workload changes, including testing, cutover and rollback arrangements.",
+    body: "Move workloads with a clear plan for testing, cutover, rollback and operational handover.",
   },
 ] as const;
 

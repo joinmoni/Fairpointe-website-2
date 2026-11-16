@@ -17,7 +17,7 @@ const fieldLabels: Record<EnquiryField, string> = {
   name: "Name",
   email: "Work email",
   company: "Company",
-  message: "Tell us about your project",
+  message: "What would you like to achieve?",
 };
 
 const EmailLink = () => (
@@ -253,6 +253,7 @@ export function EnquiryForm({ defaultEnquiry, id = "enquiry" }: { defaultEnquiry
                 required
                 rows={7}
                 maxLength={5000}
+                placeholder="Tell us about your project, the outcome you want and your target timeline."
                 defaultValue={values?.message}
                 aria-invalid={fieldErrors.message ? true : undefined}
                 aria-describedby={describedBy("message", fieldId("message-hint"))}
@@ -277,7 +278,7 @@ export function EnquiryForm({ defaultEnquiry, id = "enquiry" }: { defaultEnquiry
                 </>
               ) : (
                 <>
-                  Send enquiry
+                  Send your enquiry
                   <ArrowRight
                     aria-hidden
                     strokeWidth={1.75}

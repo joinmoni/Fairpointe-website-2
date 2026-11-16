@@ -33,11 +33,11 @@ export default async function ContactPage({ searchParams }: PageProps<"/contact"
             <div className="col-span-4 md:col-span-10 lg:col-span-5">
               <div className="lg:sticky lg:top-32">
                 <h1 id="contact-heading" className="type-h1">
-                  Tell us what you&rsquo;re working on.
+                  Let&rsquo;s move your project forward.
                 </h1>
                 <p className="type-lede mt-8 max-w-[26rem] text-ink-soft">
-                  Share the technology, customer requirement or UK opportunity you need help with, along with your
-                  target timeline.
+                  Tell us what you want to implement, launch or bring to the UK. Share your priorities and target
+                  timeline so we can make the first conversation useful.
                 </p>
               </div>
             </div>
@@ -51,9 +51,10 @@ export default async function ContactPage({ searchParams }: PageProps<"/contact"
                 >
                   {site.email}
                 </a>
-                <h2 className="mt-10 text-[1.0625rem] font-semibold tracking-[-0.01em]">Prefer to talk?</h2>
+                <h2 className="mt-10 text-[1.0625rem] font-semibold tracking-[-0.01em]">Start with a conversation.</h2>
                 <p className="mt-2 text-[0.9375rem] text-ink-muted">
-                  Book a 20-minute call to discuss your project, customer deployment or UK expansion.
+                  Book a 20-minute call to discuss your priorities, explore the delivery approach and identify the next
+                  step.
                 </p>
                 <div className="mt-4 flex flex-col items-start gap-3">
                   <a

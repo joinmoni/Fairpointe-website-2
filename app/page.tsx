@@ -9,28 +9,28 @@ import { TechnologyList, TechnologyPartnershipsSection } from "@/components/mark
 
 const title = "Enterprise Technology Implementation UK | Fairpointe";
 const description =
-  "Fairpointe implements AI, cloud, data and security technology for UK organisations and supports international vendors with UK customer delivery.";
+  "Fairpointe leads AI, cloud, data and security technology implementation for UK organisations, from technical evaluation to production launch, and supports international vendors with UK delivery.";
 
 export const metadata: Metadata = pageMetadata({ title, description, path: "/" });
 
 const capabilities: { title: string; body: string; link?: { label: string; href: string } }[] = [
   {
     title: "Enterprise AI & Agents",
-    body: "Connect AI applications and agents to business data, tools and workflows, with access controls and monitoring.",
+    body: "Connect AI applications and agents to the data, tools and workflows your teams use, with clear permissions and monitoring.",
   },
   {
     title: "Cloud & Data Platforms",
-    body: "Build and configure the infrastructure, data connections and deployment processes your application needs.",
+    body: "Build the infrastructure, data connections and deployment processes that keep production applications running.",
     link: { label: "AWS and Azure implementation", href: "/cloud-infrastructure" },
   },
   {
     title: "Security & Identity",
-    body: "Configure access controls for users, applications and automated workloads across the deployment.",
+    body: "Give people, applications and automated workloads the access they need, with controls your team can manage.",
     link: { label: "AI agent and non-human identity security", href: "/ai-security" },
   },
   {
     title: "Systems Integration",
-    body: "Connect APIs, business applications and data sources so the complete workflow works across your existing systems.",
+    body: "Connect business applications, APIs and data sources so information and actions flow across your existing systems.",
   },
 ];
 
@@ -41,7 +41,7 @@ const faq = {
 };
 
 export default function HomePage() {
-  const implementation = { label: "Discuss your implementation", href: contactHref("technology-project") };
+  const implementation = { label: "Plan your implementation", href: contactHref("technology-project") };
 
   return (
     <>
@@ -52,7 +52,7 @@ export default function HomePage() {
             name: "Enterprise technology implementation in the UK",
             serviceType: "Enterprise technology implementation",
             description:
-              "Fairpointe integrates AI, cloud, data and security platforms with existing systems, prepares them for production and supports teams through launch.",
+              "Fairpointe leads the integration and implementation of AI, cloud, data and security technology, from technical evaluation to production launch and handover.",
             path: "/",
           }),
         ]}
@@ -71,8 +71,8 @@ export default function HomePage() {
               style={{ animationDelay: "90ms" }}
             >
               <p className="type-lede text-ink-soft">
-                Fairpointe integrates AI, cloud, data and security platforms with your existing systems, prepares them
-                for production and supports your team through launch.
+                Put AI, cloud, data and security technology to work across your business. Fairpointe leads the
+                integration and implementation, from technical evaluation to production launch and handover.
               </p>
               <div className="mt-10">
                 <CtaButton href={cta.project.href}>Discuss your project</CtaButton>
@@ -88,13 +88,18 @@ export default function HomePage() {
           <div className="col-span-4 md:col-span-10 lg:col-span-5">
             <p className="text-[0.9375rem] font-medium text-accent">For AI and SaaS vendors</p>
             <h2 id="go-live-heading" className="type-h2 mt-4">
-              Get your next enterprise customer into production.
+              Turn your next enterprise contract into a successful customer launch.
             </h2>
           </div>
           <div className="col-span-4 md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
             <p className="type-body text-ink-soft">
-              Customer-specific integrations and deployment, delivered alongside your engineering team. Six-week Go-Live
-              Sprints from £24,000, with scope, access and dependencies agreed before kickoff.
+              Fairpointe delivers the integrations, configuration and deployment your customer needs to use your
+              product. Work directly with a dedicated technical lead, keep your product team involved and launch with a
+              clear handover.
+            </p>
+            <p className="mt-4 text-[0.9375rem] text-ink-muted">
+              Six-week Go-Live Sprints from £24,000. Scope, customer access and launch dependencies confirmed before
+              kickoff.
             </p>
             <div className="mt-8">
               <CtaButton href={cta.goLive.href}>Explore the Go-Live Sprint</CtaButton>
@@ -107,19 +112,20 @@ export default function HomePage() {
       <Section id="technologies" aria-labelledby="technologies-heading">
         <Grid className="gap-y-8">
           <h2 id="technologies-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-5">
-            Technologies we deploy and integrate
+            Make your chosen technology work for your business.
           </h2>
           <p className="type-body col-span-4 text-ink-soft md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
-            Implementation support for the AI, cloud, data and security platforms your organisation uses.
+            From OpenAI and Microsoft Copilot to AWS, Azure, Snowflake and Databricks, Fairpointe connects specialist
+            platforms to your systems, data and workflows.
           </p>
         </Grid>
         <TechnologyList className="mt-14 md:mt-20" />
         <Grid className="mt-12 gap-y-6 md:mt-16">
-          <h3 className="type-h3 col-span-4 md:col-span-10 lg:col-span-5">Already selected your technology?</h3>
+          <h3 className="type-h3 col-span-4 md:col-span-10 lg:col-span-5">Ready to move from selection to implementation?</h3>
           <div className="col-span-4 md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7">
             <p className="type-body text-ink-soft">
-              We can help define the architecture, connect existing systems, prepare the deployment and hand it over to
-              your team.
+              Bring us your use case and technology choice. We&rsquo;ll define the architecture, build the integrations
+              and prepare your team for launch.
             </p>
             <div className="mt-8">
               <CtaButton href={implementation.href}>{implementation.label}</CtaButton>
@@ -135,7 +141,7 @@ export default function HomePage() {
         <Grid className="gap-y-10">
           <div className="col-span-4 md:col-span-10 lg:col-span-5">
             <h2 id="uk-organisations-heading" className="type-h2">
-              The engineering work behind a production deployment.
+              The expertise to move your implementation forward.
             </h2>
             <div className="mt-10 border-t border-rule pt-6 lg:max-w-[30rem]">
               <h3 className="type-h4">{faq.question}</h3>
@@ -144,8 +150,7 @@ export default function HomePage() {
           </div>
           <div className="col-span-4 md:col-span-12 lg:col-span-6 lg:col-start-7 lg:pt-2">
             <p className="type-body text-ink-soft">
-              From customer workflows to the infrastructure beneath them, we help turn a technology decision into a
-              working implementation.
+              Bring applications, infrastructure, data and access controls together in one practical delivery plan.
             </p>
             <ol id="capabilities" aria-label="Capabilities" className="mt-12 border-t border-ink">
               {capabilities.map((item, i) => (
@@ -172,7 +177,7 @@ export default function HomePage() {
       {/* Delivery lifecycle */}
       <Section id="lifecycle" tone="deep" rule={false} aria-labelledby="lifecycle-heading">
         <h2 id="lifecycle-heading" className="type-h2 max-w-[22ch]">
-          From evaluation to production.
+          A clear path from evaluation to production.
         </h2>
         <div className="mt-14 md:mt-20">
           <ControlLoop stages={deploymentStages} />
@@ -187,29 +192,26 @@ export default function HomePage() {
       >
         <Container>
           <div className="border-t border-on-navy/60 pt-6">
-            <p className="text-[1.0625rem] font-medium tracking-[-0.01em]">For technology companies</p>
+            <p className="text-[1.0625rem] font-medium tracking-[-0.01em]">For international technology companies</p>
           </div>
           <Grid className="mt-10 gap-y-10 md:mt-14">
             <h2 id="uk-market-entry-heading" className="type-h2-lg col-span-4 md:col-span-11 lg:col-span-8">
-              Build your UK presence around real opportunities.
+              Build UK momentum, from first opportunity to customer launch.
             </h2>
             <div className="type-body prose-flow col-span-4 text-on-navy-soft md:col-span-8 lg:col-span-6">
               <p className="text-on-navy">
-                Fairpointe helps international technology companies assess UK opportunities, support customer
-                evaluations and deliver implementations.
-              </p>
-              <p>
-                Start with market development, an active customer opportunity or a deployment that needs local
-                technical support. Agree the work before committing to a larger UK team.
+                Combine UK market development with the technical expertise to demonstrate, integrate and deploy your
+                product. Fairpointe works alongside your team to develop opportunities and deliver the customer
+                experience behind them.
               </p>
             </div>
             <div className="col-span-4 md:col-span-4 md:col-start-9 lg:col-span-4 lg:col-start-9 lg:self-end">
               <div className="flex flex-wrap gap-3">
-                <CtaButton href={cta.goLive.href} variant="primary-inverse">
-                  Deliver a customer implementation
+                <CtaButton href="/uk-market-entry" variant="primary-inverse">
+                  Explore your UK opportunity
                 </CtaButton>
-                <CtaButton href="/uk-market-entry" variant="secondary-inverse">
-                  Explore UK market entry
+                <CtaButton href={cta.goLive.href} variant="secondary-inverse">
+                  Plan a customer deployment
                 </CtaButton>
               </div>
             </div>

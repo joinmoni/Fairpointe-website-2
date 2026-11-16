@@ -6,19 +6,19 @@ export type Stage = { title: string; body: string };
 export const deploymentStages: readonly Stage[] = [
   {
     title: "Evaluate",
-    body: "Confirm the requirements, test the technology and agree the implementation scope.",
+    body: "Define the use case, validate the technology and establish what a successful implementation will deliver.",
   },
   {
     title: "Integrate",
-    body: "Build the connections to your applications, data, identity and infrastructure.",
+    body: "Connect your applications, data and infrastructure into a working solution.",
   },
   {
     title: "Deploy",
-    body: "Test the complete workflow and release it with the agreed controls and monitoring.",
+    body: "Test the complete workflow and launch with the controls, monitoring and operating procedures in place.",
   },
   {
-    title: "Support",
-    body: "Hand over the implementation and agree any further maintenance, optimisation or technical support.",
+    title: "Hand over",
+    body: "Equip your team with the code, documentation and knowledge to run the implementation, with further support available by agreement.",
   },
 ];
 
@@ -26,19 +26,19 @@ export const deploymentStages: readonly Stage[] = [
 export const accessReviewStages: readonly Stage[] = [
   {
     title: "Discover",
-    body: "Identify the agents, workloads, accounts and credentials within the agreed scope.",
+    body: "Build a clear picture of the agents, workloads, identities and credentials within your environment.",
   },
   {
     title: "Assess",
-    body: "Map ownership and effective permissions, then prioritise access that needs changing.",
+    body: "Establish ownership, review effective permissions and prioritise the changes that matter.",
   },
   {
     title: "Implement",
-    body: "Configure the agreed permissions, credential handling and monitoring controls.",
+    body: "Put the agreed access controls, credential handling and monitoring into operation.",
   },
   {
     title: "Hand over",
-    body: "Document the changes, assign ownership and show your team how to maintain the controls.",
+    body: "Give your team clear documentation, ownership and procedures to maintain those controls.",
   },
 ];
 

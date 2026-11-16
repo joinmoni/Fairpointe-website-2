@@ -16,7 +16,7 @@ import {
 const path = "/ai-security";
 const title = "AI Agent & Non-Human Identity Security UK | Fairpointe";
 const description =
-  "Review AI agent permissions and non-human identities across AWS, Azure and business systems. Fairpointe implements agreed access and monitoring controls.";
+  "AI agent and non-human identity security across AWS, Azure, Microsoft Entra, GitHub, Kubernetes and SaaS. Fairpointe maps agent access and implements the right controls.";
 
 export const metadata: Metadata = pageMetadata({ title, description, path });
 
@@ -30,7 +30,7 @@ const environmentAreas = [
   "MCP infrastructure",
 ];
 
-const discussAccess = { label: "Discuss your agent access", href: contactHref("ai-security") };
+const discussAccess = { label: "Discuss your AI security priorities", href: contactHref("ai-security") };
 
 const useCases = [
   {
@@ -92,24 +92,25 @@ export default function AiSecurityPage() {
       />
 
       <PageHero
-        title="AI agent security across your cloud and business systems."
+        title="Give your AI agents the access they need to work securely."
         actions={<CtaButton href={discussAccess.href}>{discussAccess.label}</CtaButton>}
         aside={<StageIndex stages={accessReviewStages} />}
       >
         <p>
-          Fairpointe helps organisations review and control the identities, credentials and permissions used by AI
-          agents and automated workloads.
+          Fairpointe implements access controls for AI agents and automated workloads across cloud platforms and
+          business systems. We map the identities and permissions behind each workflow, then help your team put the
+          right controls in place.
         </p>
         <p>
-          Our work focuses on non-human identity security: understanding what software can access, identifying
-          excessive permissions and implementing agreed access controls with your engineering and security teams.
+          Focused AI agent and non-human identity security across AWS, Azure, Microsoft Entra, GitHub, Kubernetes and
+          SaaS applications.
         </p>
       </PageHero>
 
       {/* Approach */}
       <Section id="approach" tone="deep" rule={false} aria-labelledby="approach-heading">
         <h2 id="approach-heading" className="type-h2 max-w-[22ch]">
-          From access review to implemented controls.
+          Understand access. Put controls into practice.
         </h2>
         <div className="mt-14 md:mt-20">
           <ControlLoop stages={accessReviewStages} />
@@ -126,20 +127,16 @@ export default function AiSecurityPage() {
       <Section id="problem" rule={false} aria-labelledby="problem-heading">
         <Grid className="gap-y-10">
           <h2 id="problem-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-5">
-            Know which systems your agents can reach.
+            Make every agent&rsquo;s access clear and accountable.
           </h2>
           <div className="type-body prose-flow col-span-4 text-ink-soft md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
             <p className="type-lede text-ink">
-              AI agents and automated workloads use digital identities to access applications, call APIs and act on
-              business data. Those identities may have permissions that extend beyond the work they need to perform.
+              AI agents create useful connections between business systems. Knowing which identity each agent uses,
+              what it can access and who owns that access gives your team a stronger foundation for deployment.
             </p>
             <p>
-              An access review should establish what each workload can reach, who owns the identity it uses and which
-              permissions are required.
-            </p>
-            <p>
-              Fairpointe helps map these access paths, identify excessive permissions and implement agreed changes to
-              access, credential handling and monitoring.
+              Fairpointe turns that understanding into practical changes: permissions aligned with the task, clearer
+              ownership and monitoring of the access that matters.
             </p>
           </div>
           <div className="col-span-4 mt-10 md:col-span-12 md:mt-16">
@@ -189,8 +186,9 @@ export default function AiSecurityPage() {
 
       <FaqSection id="faq" title="AI agent access questions" faqs={faqs} />
 
-      <CtaBand title="Understand and control your agents’ access." primary={discussAccess}>
-        Tell us which agents, platforms and business systems you use, and what you need to review or change.
+      <CtaBand title="Build stronger access controls into your AI deployment." primary={discussAccess}>
+        Talk to us about the agents you are deploying and the systems they need to use. We&rsquo;ll help define the
+        access review and implementation work around your environment.
       </CtaBand>
     </>
   );

@@ -128,7 +128,7 @@ export const navigation: NavEntry[] = [
   {
     label: "Company",
     items: [
-      { label: "About", href: "/about", description: "Built around implementation" },
+      { label: "About", href: "/about", description: "Turn technology decisions into working systems" },
       { label: "Contact", href: "/contact", description: "Speak to Fairpointe" },
     ],
   },

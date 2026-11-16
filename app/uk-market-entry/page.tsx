@@ -10,12 +10,12 @@ import { OperatingModel } from "@/components/diagrams/market-entry";
 const path = "/uk-market-entry";
 const title = "UK Market Entry for Technology Companies | Fairpointe";
 const description =
-  "UK opportunity research, technical pre-sales and customer implementation for international enterprise technology companies.";
+  "UK market entry for international enterprise technology companies: market development, technical pre-sales and customer implementation, from first opportunity to customer launch.";
 
 export const metadata: Metadata = pageMetadata({ title, description, path });
 
 const enquiry = contactHref("uk-market-entry");
-const discuss = { label: "Discuss your UK expansion", href: enquiry };
+const discuss = { label: "Explore your UK opportunity", href: enquiry };
 
 const navigateAreas = [
   "Enterprise account research",
@@ -68,16 +68,13 @@ export default function UkMarketEntryPage() {
       />
 
       <PageHero
-        title="Prove the UK before building the UK team."
+        title="Build UK momentum with commercial and technical delivery."
         actions={<CtaButton href={discuss.href}>{discuss.label}</CtaButton>}
       >
         <p>
-          Fairpointe helps international enterprise technology companies assess UK opportunities, support customer
-          evaluations and deliver implementations.
-        </p>
-        <p>
-          Start with target-account research, an active sales opportunity or a customer deployment. We agree the
-          commercial and technical work around your current stage.
+          Fairpointe helps international enterprise technology companies develop UK opportunities and deliver for UK
+          customers. Combine local market development, technical pre-sales and implementation expertise around your
+          next stage of growth.
         </p>
       </PageHero>
 
@@ -85,16 +82,13 @@ export default function UkMarketEntryPage() {
       <Section id="who-it-is-for" aria-labelledby="who-it-is-for-heading">
         <Grid className="gap-y-10">
           <h2 id="who-it-is-for-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-5">
-            Start with the opportunity you need to prove.
+            Prove the UK before building the UK team.
           </h2>
           <div className="type-body prose-flow col-span-4 text-ink-soft md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
             <p className="type-lede text-ink">
-              You may need to identify suitable UK accounts, support a technical evaluation or implement your product
-              for a customer already signed.
-            </p>
-            <p>
-              Fairpointe provides UK-based commercial and technical support for the agreed work, so you can assess
-              demand and delivery requirements before expanding your local team.
+              Start with the opportunity in front of you: a target market to assess, a customer evaluation to progress
+              or an implementation to deliver. Fairpointe provides the commercial and technical capacity to move that
+              work forward alongside your existing team.
             </p>
           </div>
         </Grid>
@@ -104,7 +98,7 @@ export default function UkMarketEntryPage() {
       <Section id="model" tone="deep" rule={false} aria-labelledby="model-heading">
         <Grid className="gap-y-6">
           <h2 id="model-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-7">
-            Support from market development to customer delivery.
+            From first opportunity to customer launch.
           </h2>
         </Grid>
         <div className="mt-14 md:mt-20">
@@ -116,16 +110,13 @@ export default function UkMarketEntryPage() {
       <Section id="why-fairpointe" rule={false} aria-labelledby="why-fairpointe-heading">
         <Grid className="gap-y-10">
           <h2 id="why-fairpointe-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-5">
-            Support the sale and the implementation.
+            Give UK customers confidence from evaluation to implementation.
           </h2>
           <div className="type-body prose-flow col-span-4 text-ink-soft md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
             <p className="type-lede text-ink">
-              Prospective customers need to understand how your product fits their systems, how it will be evaluated
-              and who will implement and support it.
-            </p>
-            <p>
-              Fairpointe connects market development with technical delivery, helping your team progress qualified
-              opportunities and deliver the work that follows.
+              Show customers how your product fits their environment, how it will be deployed and who will guide the
+              implementation. Fairpointe brings commercial development and technical delivery into the same customer
+              journey.
             </p>
             <p>
               <ArrowLink href="/go-live">Enterprise customer implementation</ArrowLink>
@@ -155,9 +146,9 @@ export default function UkMarketEntryPage() {
 
       <FaqSection rule={false} id="faq" title="Questions about UK market entry" faqs={faqs} />
 
-      <CtaBand title="Choose the next step for your UK expansion." primary={discuss}>
-        Tell us about your product, the UK opportunities you have identified and the commercial or technical support
-        you need. We&rsquo;ll assess where Fairpointe can contribute and define a practical starting scope.
+      <CtaBand title="Take the next step in your UK expansion." primary={discuss}>
+        Tell us about your product, current UK activity and growth priorities. We&rsquo;ll identify where local
+        commercial and technical delivery can move your plans forward.
       </CtaBand>
     </>
   );

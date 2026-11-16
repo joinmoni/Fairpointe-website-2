@@ -11,11 +11,11 @@ import { TwoSidedDiagram } from "@/components/diagrams/public-sector";
 const path = "/public-sector";
 const title = "UK Public-Sector Technology Implementation | Fairpointe";
 const description =
-  "Technical evaluation, systems integration and deployment support for public-sector organisations, plus opportunity research and delivery support for suppliers.";
+  "Public-sector technology implementation: technical evaluation, integration and deployment for UK public-sector requirements, plus opportunity research and technical delivery for suppliers.";
 
 export const metadata: Metadata = pageMetadata({ title, description, path });
 
-const discuss = { label: "Discuss your requirement", href: contactHref("public-sector") };
+const discuss = { label: "Discuss your public-sector project", href: contactHref("public-sector") };
 
 const capabilities = [
   {
@@ -63,12 +63,12 @@ export default function PublicSectorPage() {
       />
 
       <PageHero
-        title="Technical delivery for UK public-sector requirements."
+        title="Turn public-sector technology plans into working systems."
         actions={<CtaButton href={discuss.href}>{discuss.label}</CtaButton>}
       >
         <p>
-          Fairpointe supports public-sector organisations implementing specialist technology and technology suppliers
-          assessing and delivering public-sector opportunities.
+          Fairpointe provides technical evaluation, integration and implementation for UK public-sector requirements. We
+          also work with technology suppliers to assess opportunities and deliver the technical work behind them.
         </p>
       </PageHero>
 
@@ -77,8 +77,12 @@ export default function PublicSectorPage() {
         <Grid className="gap-y-12">
           <div className="col-span-4 md:col-span-10 lg:col-span-4">
             <h2 id="capabilities-heading" className="type-h2">
-              Implementation support across your technology environment.
+              Practical delivery across cloud, AI, security and data.
             </h2>
+            <p className="type-body mt-8 text-ink-soft">
+              Connect specialist technology with existing systems and give teams a clear path through evaluation,
+              implementation and handover.
+            </p>
             <div className="mt-10 border-t border-rule pt-6">
               <h3 className="type-h4">{faq.question}</h3>
               <p className="type-body mt-3 text-ink-soft">{faq.answer}</p>
@@ -102,7 +106,7 @@ export default function PublicSectorPage() {
       <Section id="technology-suppliers" tone="deep" aria-labelledby="technology-suppliers-heading">
         <Grid className="gap-y-10">
           <h2 id="technology-suppliers-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-5">
-            Clear support for buyers and suppliers.
+            The right expertise for your side of the project.
           </h2>
           <div className="type-body prose-flow col-span-4 text-ink-soft md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2 [&>h3]:mt-8 [&>h3+p]:mt-2">
             <p className="type-lede text-ink">
@@ -111,13 +115,13 @@ export default function PublicSectorPage() {
             </p>
             <h3 className="type-h4 text-ink">For public-sector organisations</h3>
             <p>
-              Support for technical evaluation, implementation planning, systems integration and deployment. Tell us
-              about the requirement, existing environment and procurement stage.
+              Bring your requirements, existing environment and delivery priorities. Fairpointe helps evaluate the
+              technology, plan the implementation and connect it with the systems your teams use.
             </p>
             <h3 className="type-h4 text-ink">For technology suppliers</h3>
             <p>
-              Research into relevant notices, buyer requirements, incumbent suppliers and procurement routes, with
-              technical evaluation or implementation support agreed where appropriate.
+              Build your approach around relevant opportunities and clear buyer requirements. Fairpointe combines
+              opportunity research with technical evaluation and implementation support.
             </p>
             <p>
               <ArrowLink href="/uk-market-entry">UK market entry for technology companies</ArrowLink>
@@ -132,9 +136,8 @@ export default function PublicSectorPage() {
       {/* Renders only once verified credentials exist in lib/proof.ts */}
       <CredentialsSection title="Procurement and credentials" />
 
-      <CtaBand title="Discuss a public-sector technology requirement." primary={discuss}>
-        Tell us whether you are buying or supplying technology, the requirement you are working on and the stage you
-        have reached.
+      <CtaBand title="Move your public-sector technology project forward." primary={discuss}>
+        Tell us what you are buying or supplying, the stage you have reached and the technical work ahead.
       </CtaBand>
     </>
   );

@@ -10,11 +10,11 @@ import { MultiCloudStack } from "@/components/diagrams/cloud";
 const path = "/cloud-infrastructure";
 const title = "AWS & Azure Cloud Implementation | Fairpointe";
 const description =
-  "Cloud architecture, migration, deployment automation and operational handover for production applications across AWS, Microsoft Azure and hybrid environments.";
+  "AWS, Microsoft Azure and hybrid cloud implementation for business applications and AI systems: architecture, migration, deployment automation and operational handover.";
 
 export const metadata: Metadata = pageMetadata({ title, description, path });
 
-const discuss = { label: "Discuss your cloud project", href: contactHref("cloud-infrastructure") };
+const discuss = { label: "Plan your cloud deployment", href: contactHref("cloud-infrastructure") };
 
 const faq = {
   question: "What does a cloud implementation engagement include?",
@@ -39,15 +39,13 @@ export default function CloudInfrastructurePage() {
       />
 
       <PageHero
-        title="Cloud infrastructure built for production workloads."
+        title="Build the cloud foundation for your next production launch."
         actions={<CtaButton href={discuss.href}>{discuss.label}</CtaButton>}
       >
         <p>
-          Fairpointe designs and implements AWS, Microsoft Azure and hybrid infrastructure for production applications.
-        </p>
-        <p>
-          We help with migrations, deployment automation, access controls, monitoring and operational handover,
-          whether you are launching a new application or improving an existing environment.
+          Fairpointe designs and implements AWS, Microsoft Azure and hybrid infrastructure for business applications and
+          AI systems. Launch new workloads, modernise existing environments and give your team a repeatable way to
+          deploy and operate them.
         </p>
       </PageHero>
 
@@ -55,11 +53,11 @@ export default function CloudInfrastructurePage() {
         <Grid className="gap-y-12">
           <div className="col-span-4 md:col-span-12 lg:col-span-5">
             <h2 id="capabilities-heading" className="type-h2">
-              What we deliver across AWS and Azure.
+              From architecture to an environment your team can run.
             </h2>
             <p className="type-body mt-8 text-ink-soft">
-              Agree the architecture, implementation work and operational requirements before making changes to your
-              environment.
+              Bring infrastructure, deployment automation, access controls and monitoring together in a practical
+              implementation.
             </p>
             <RuledList
               className="mt-12"
@@ -85,20 +83,19 @@ export default function CloudInfrastructurePage() {
         </Grid>
       </Section>
 
-      <SplitSection id="cloud-identity" tone="deep" title="Review the access inside your cloud environment.">
+      <SplitSection id="cloud-identity" tone="deep" title="Build clear workload access into your cloud environment.">
         <p>
-          Applications, deployment pipelines and AI agents use service accounts, workload identities and credentials to
-          reach cloud resources. Our AI &amp; Security service helps review that access and implement agreed controls.
+          Applications, pipelines and AI agents depend on identities and credentials. Fairpointe helps your team review
+          that access and implement controls alongside the infrastructure it serves.
         </p>
         <div className="pt-4">
-          <ArrowLink href="/ai-security">Explore AI agent and identity access</ArrowLink>
+          <ArrowLink href="/ai-security">Explore AI agent and identity security</ArrowLink>
         </div>
       </SplitSection>
 
-      <CtaBand title="Discuss the infrastructure your application needs." primary={discuss}>
-        Tell us about your current environment, the workload you need to launch or migrate and the problems you need
-        to resolve. We&rsquo;ll help define the implementation and handover, with any ongoing support agreed
-        separately.
+      <CtaBand title="Move your cloud project towards production." primary={discuss}>
+        Bring us your current environment, workload and target timeline. We&rsquo;ll define the architecture,
+        implementation priorities and handover your team needs.
       </CtaBand>
     </>
   );

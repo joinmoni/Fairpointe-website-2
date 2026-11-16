@@ -8,10 +8,10 @@ import { FaqSection, PageHero, RuledList, SplitSection } from "@/components/mark
 
 const path = "/go-live";
 const description =
-  "Get enterprise customers into production with Fairpointe. Integrations, deployment and handover for AI and SaaS vendors. Six-week sprints from £24,000.";
+  "Get enterprise customers into production with Fairpointe. Customer-specific integrations, deployment and handover for AI and SaaS vendors. Six-week sprints from £24,000.";
 const socialTitle = "Get your next enterprise customer into production.";
 const socialDescription =
-  "Enterprise implementation for AI and SaaS vendors. Customer integrations, production deployment and a practical handover to your team.";
+  "Enterprise implementation for AI and SaaS vendors. A clear path from signed contract to working software, with customer integrations, deployment and handover.";
 
 const baseMetadata = pageMetadata({
   title: "Enterprise Implementation for AI & SaaS Vendors | Fairpointe",
@@ -32,7 +32,7 @@ const offers = [
     name: "Go-Live Sprint",
     term: "6 weeks",
     price: "From £24,000",
-    body: "A scoped implementation for one enterprise customer, from kickoff through production launch and handover.",
+    body: "Launch one enterprise customer with a dedicated delivery lead, customer-specific integrations and a structured production handover.",
     includes: [
       "Customer systems and requirements review",
       "Integrations and deployment",
@@ -45,14 +45,14 @@ const offers = [
     name: "Fractional FDE",
     term: "Three-month minimum",
     price: "From £6,000 a month",
-    body: "A forward-deployed engineer working with your team on customer integrations, technical onboarding and production deployments.",
+    body: "Add dedicated forward-deployed engineering capacity to deliver customer integrations, guide technical onboarding and move implementations into production.",
     includes: ["2 days a week: from £6,000 a month", "3 days a week: £9,000–£11,000 a month"],
   },
   {
     name: "Pilot-to-Production Rescue",
     term: "Review, then implementation",
     price: "£6,000–£8,000 for the review",
-    body: "Find out what is stopping a pilot from reaching production and what it will take to move forward.",
+    body: "Get a clear route from pilot to production. We assess the implementation, identify the work required and provide a prioritised delivery plan.",
     includes: [
       "Review of the implementation and technical blockers",
       "Written findings, dependencies and recommended actions",
@@ -91,20 +91,20 @@ const weeks = [
 
 const reasons = [
   {
-    title: "One named delivery lead",
-    body: "The lead who scopes the engagement stays accountable through delivery and is the main technical contact for your team and your customer.",
+    title: "One accountable delivery lead",
+    body: "Your main technical contact stays responsible from scoping through launch, bringing customer requirements and engineering delivery together.",
   },
   {
-    title: "Scope and price agreed upfront",
-    body: "You know what is included, what your team needs to provide and how success will be assessed. Any changes are agreed before additional work begins.",
+    title: "A clear delivery commitment",
+    body: "Scope, deliverables, price and responsibilities are established upfront, giving everyone a shared plan to work towards.",
   },
   {
-    title: "A practical handover",
-    body: "Your team receives the code, configuration, runbooks and walkthroughs needed to operate and maintain the implementation.",
+    title: "A team equipped to operate",
+    body: "Your team receives the implementation code, runbooks and walkthroughs needed to maintain what has been delivered.",
   },
   {
-    title: "Additional engineers when needed",
-    body: "Where the agreed scope requires more capacity or specialist skills, additional engineers work under the same delivery lead.",
+    title: "Expertise matched to the work",
+    body: "Additional engineers and specialist skills are brought into the delivery plan where the scope requires them.",
   },
 ];
 
@@ -159,22 +159,22 @@ export default function GoLivePage() {
         actions={
           <>
             <CtaButton href={cta.bookCall.href} newTab>
-              Discuss your deployment
+              Discuss your customer launch
             </CtaButton>
             <CtaButton href="#offers" variant="secondary">
               Explore the options
             </CtaButton>
             <p className="mt-3 basis-full text-[0.9375rem] text-ink-muted">
-              Six-week Go-Live Sprints for an agreed scope, with customer access and dependencies confirmed before
+              Six-week Go-Live Sprints from £24,000, with scope, customer access and dependencies confirmed before
               kickoff.
             </p>
           </>
         }
       >
         <p>
-          Your customer has signed. Now your product needs to work with their systems, data and security requirements.
-          Fairpointe handles the integrations and deployment, working directly with your customer and engineering team
-          through to launch and handover.
+          Give your enterprise customers a clear path from signed contract to working software. Fairpointe leads
+          customer-specific integrations and deployment, working directly with your customer and engineering team
+          through launch and handover.
         </p>
         <p>
           Forward-deployed engineering means working directly with your customer and product team to adapt, integrate
@@ -186,11 +186,11 @@ export default function GoLivePage() {
       <Section id="offers" aria-labelledby="offers-heading">
         <Grid className="gap-y-8">
           <h2 id="offers-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-5">
-            Choose the support your deployment needs.
+            The right delivery model for your next customer.
           </h2>
           <p className="type-body col-span-4 text-ink-soft md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
-            A defined implementation, ongoing engineering support or a review of a stalled pilot. Each engagement starts
-            with a written scope and clear deliverables.
+            Choose a focused customer implementation, dedicated engineering capacity or a practical route from pilot to
+            production.
           </p>
         </Grid>
         <ul aria-label="Offers" className="mt-14 grid border-t border-ink md:mt-20 lg:grid-cols-3">
@@ -219,12 +219,11 @@ export default function GoLivePage() {
         <Grid className="gap-y-10">
           <div className="col-span-4 md:col-span-10 lg:col-span-5">
             <h2 id="how-it-works-heading" className="type-h2">
-              A typical <span className="whitespace-nowrap">six-week</span> <span className="whitespace-nowrap">Go-Live</span> Sprint.
+              Six weeks built around your customer launch.
             </h2>
             <p className="type-body mt-8 text-ink-soft lg:max-w-[30rem]">
-              We agree what production-ready means, who needs to be involved and what access is required before
-              kickoff. Security requirements are addressed throughout. The delivery plan reflects your customer&rsquo;s
-              environment and approval process.
+              Start with a clear definition of success and a delivery plan shaped around your customer&rsquo;s
+              environment. Integration, security requirements, testing and handover are addressed throughout.
             </p>
           </div>
           <ol aria-label="Weeks 1 to 6" className="col-span-4 border-t border-ink md:col-span-12 lg:col-span-6 lg:col-start-7">
@@ -242,9 +241,10 @@ export default function GoLivePage() {
       </Section>
 
       {/* Why Fairpointe */}
-      <SplitSection id="why-fairpointe" rule={false} title="Clear ownership from kickoff to handover.">
+      <SplitSection id="why-fairpointe" rule={false} title="Clear ownership. Practical delivery. A team ready to take over.">
         <p className="type-lede text-ink">
-          One named delivery lead, an agreed scope and practical support for your team and your customer.
+          A named technical lead coordinates the implementation, keeps your customer and product team aligned and
+          carries the work through to handover.
         </p>
         <div className="border-t border-rule">
           {reasons.map((reason) => (
@@ -262,16 +262,16 @@ export default function GoLivePage() {
       <Section id="next-step" tone="navy" aria-labelledby="next-step-heading" className="py-24 md:py-32 lg:py-40">
         <Grid className="gap-y-10">
           <h2 id="next-step-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-7">
-            Discuss your next customer deployment.
+            Plan your next enterprise customer launch.
           </h2>
           <div className="col-span-4 md:col-span-8 lg:col-span-4 lg:col-start-9 lg:pt-2">
             <p className="type-body text-on-navy-soft">
-              Tell us what needs to go live, what is blocking it and your target date. In a 20-minute call, we&rsquo;ll
-              assess whether the engagement fits and explain the next step.
+              Bring us your product, customer requirements and target date. In a 20-minute call, we&rsquo;ll identify the
+              delivery priorities and assess the right engagement.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <CtaButton href={cta.bookCall.href} variant="primary-inverse" newTab>
-                {cta.bookCall.label}
+                Discuss your customer launch
               </CtaButton>
               <CtaButton href={email.href} variant="secondary-inverse">
                 {email.label}

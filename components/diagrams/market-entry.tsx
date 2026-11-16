@@ -10,37 +10,37 @@ export const phases: {
 }[] = [
   {
     title: "Market development",
-    body: "Research target accounts, buying signals, potential partners and relevant opportunities. Agree qualification criteria and any outreach activity before work starts.",
+    body: "Focus your UK activity with researched target accounts, buying signals, potential partners and qualified opportunities.",
     workstreams: ["Target-account research", "Opportunity qualification", "Partner research", "Agreed outreach"],
     lanes: ["commercial"],
   },
   {
     title: "Technical pre-sales",
-    body: "Support discovery calls, product demonstrations and technical discussions with prospective customers.",
+    body: "Give prospective customers clear answers through discovery, demonstrations and technical evaluation planning.",
     workstreams: ["Discovery", "Demonstrations", "Technical requirements", "Evaluation planning"],
     lanes: ["commercial", "technical"],
   },
   {
     title: "Proof of concept",
-    body: "Define success criteria and work with your product team and the customer to test the product against an agreed use case.",
+    body: "Demonstrate how your product meets a real customer requirement, with defined success criteria and a focused evaluation.",
     workstreams: ["Success criteria", "Customer use case", "Technical validation"],
     lanes: ["commercial", "technical"],
   },
   {
     title: "Deployment & integration",
-    body: "Configure and integrate your product with the customer’s systems, then support testing, production launch and handover.",
+    body: "Connect your product to the customer’s environment and lead the implementation through testing, launch and handover.",
     workstreams: ["Configuration", "Systems integration", "Production launch", "Handover"],
     lanes: ["technical"],
   },
   {
     title: "Customer engineering",
-    body: "Resolve customer-specific technical issues, support adoption and translate implementation feedback into clear requirements for your product team.",
+    body: "Help customers adopt the product, resolve technical issues and turn implementation feedback into useful product requirements.",
     workstreams: ["Technical troubleshooting", "Customer adoption", "Product feedback"],
     lanes: ["technical"],
   },
   {
     title: "Ongoing support",
-    body: "Provide the technical continuity included in your agreement, with clear responsibilities, support hours and escalation routes.",
+    body: "Maintain technical continuity after launch through agreed support coverage, responsibilities and escalation routes.",
     workstreams: ["Agreed support coverage", "Technical continuity", "Expansion requirements"],
     lanes: ["commercial", "technical"],
   },
