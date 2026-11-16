@@ -1,54 +1,52 @@
 import type { Metadata } from "next";
 import { contactHref } from "@/lib/site";
-import { breadcrumbSchema, faqSchema, pageMetadata, serviceSchema } from "@/lib/seo";
+import { breadcrumbSchema, faqSchema, pageMetadata, serviceSchema, webPageSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/json-ld";
 import { Grid, Section } from "@/components/marketing/layout";
-import { CtaButton } from "@/components/marketing/links";
+import { ArrowLink, CtaButton } from "@/components/marketing/links";
 import { CtaBand, FaqSection, PageHero, RuledList, SplitSection } from "@/components/marketing/blocks";
 import { OperatingModel } from "@/components/diagrams/market-entry";
 
 const path = "/uk-market-entry";
+const title = "UK Market Entry for Technology Companies | Fairpointe";
 const description =
-  "UK market entry for international technology companies: market development, technical pre-sales, proof of concept, deployment and local customer support.";
+  "UK opportunity research, technical pre-sales and customer implementation for international enterprise technology companies.";
 
-export const metadata: Metadata = pageMetadata({
-  title: "UK Market Entry for Technology Companies | Fairpointe",
-  description,
-  path,
-});
+export const metadata: Metadata = pageMetadata({ title, description, path });
 
 const enquiry = contactHref("uk-market-entry");
+const discuss = { label: "Discuss your UK expansion", href: enquiry };
 
 const navigateAreas = [
-  "Enterprise buyers",
-  "UK public sector",
-  "AWS ecosystem",
-  "Microsoft ecosystem",
-  "Procurement",
-  "Technical implementation",
-  "Local support",
+  "Enterprise account research",
+  "Public-sector opportunity research",
+  "Cloud ecosystem opportunities",
+  "Technical evaluations",
+  "Implementation planning",
+  "Customer deployment",
+  "Agreed local support",
 ];
 
 const faqs = [
   {
-    question: "Does a technology company need a UK office before working with Fairpointe?",
+    question: "Do we need a UK office before working with Fairpointe?",
     answer:
-      "No. The model is specifically designed to help international technology companies prove the UK opportunity, win customers and deliver successfully before building a full local team.",
+      "No. An engagement can begin with opportunity research, support for an active customer evaluation or a defined implementation. We agree the work and responsibilities with your existing team.",
   },
   {
-    question: "Can Fairpointe help with UK public-sector opportunities?",
+    question: "How does an engagement start?",
     answer:
-      "Yes. Fairpointe can help identify relevant public-sector opportunities, research buyers and incumbent suppliers, understand procurement routes, technical requirements and buying cycles, and support the commercial and technical process. Contract awards remain the decision of the buying organisation.",
+      "We discuss your product, current customers, UK activity and immediate objective. We then propose a defined scope, deliverables and responsibilities for the work that fits your stage.",
   },
   {
-    question: "Does Fairpointe provide technical implementation?",
+    question: "Can you help with public-sector opportunities?",
     answer:
-      "Yes. Fairpointe combines UK market development with technical delivery, including technical pre-sales, proof of concept, deployment, integration, customer engineering and post-go-live support for technologies within our areas of expertise.",
+      "We can research relevant opportunities, buyers, incumbent suppliers and procurement routes. Technical evaluation, bid support and delivery work are agreed according to the opportunity. Contract awards remain the buying organisation’s decision.",
   },
   {
-    question: "Can Fairpointe work with AWS and Microsoft Azure customers?",
+    question: "Can you implement our product for UK customers?",
     answer:
-      "Yes. Fairpointe works across AWS and Microsoft Azure environments and can support opportunities involving either cloud ecosystem.",
+      "We can support implementations that fit our technical capabilities, including configuration, integration, deployment and handover. We review your product and the customer’s requirements before agreeing the scope.",
   },
 ];
 
@@ -57,6 +55,7 @@ export default function UkMarketEntryPage() {
     <>
       <JsonLd
         data={[
+          webPageSchema({ name: title, description, path }),
           serviceSchema({
             name: "UK market entry for technology companies",
             serviceType: "Market entry and business development",
@@ -70,15 +69,15 @@ export default function UkMarketEntryPage() {
 
       <PageHero
         title="Prove the UK before building the UK team."
-        actions={<CtaButton href={enquiry}>Enter the UK market</CtaButton>}
+        actions={<CtaButton href={discuss.href}>{discuss.label}</CtaButton>}
       >
         <p>
-          Fairpointe helps international enterprise technology companies enter the UK with local commercial and
-          technical capability.
+          Fairpointe helps international enterprise technology companies assess UK opportunities, support customer
+          evaluations and deliver implementations.
         </p>
         <p>
-          We help you identify opportunities, engage customers, support technical evaluations, deploy your product into
-          customer environments and support customers after go-live.
+          Start with target-account research, an active sales opportunity or a customer deployment. We agree the
+          commercial and technical work around your current stage.
         </p>
       </PageHero>
 
@@ -86,16 +85,16 @@ export default function UkMarketEntryPage() {
       <Section id="who-it-is-for" aria-labelledby="who-it-is-for-heading">
         <Grid className="gap-y-10">
           <h2 id="who-it-is-for-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-5">
-            Enter the UK without building everything from day one.
+            Start with the opportunity you need to prove.
           </h2>
           <div className="type-body prose-flow col-span-4 text-ink-soft md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
             <p className="type-lede text-ink">
-              Expanding into the UK can mean hiring salespeople, solutions engineers, implementation engineers and
-              customer success teams before the market has been proven.
+              You may need to identify suitable UK accounts, support a technical evaluation or implement your product
+              for a customer already signed.
             </p>
             <p>
-              Fairpointe provides local commercial and technical capability so you can test demand, win customers and
-              deliver successfully before making that investment.
+              Fairpointe provides UK-based commercial and technical support for the agreed work, so you can assess
+              demand and delivery requirements before expanding your local team.
             </p>
           </div>
         </Grid>
@@ -105,7 +104,7 @@ export default function UkMarketEntryPage() {
       <Section id="model" tone="deep" rule={false} aria-labelledby="model-heading">
         <Grid className="gap-y-6">
           <h2 id="model-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-7">
-            From first opportunity to ongoing customer support.
+            Support from market development to customer delivery.
           </h2>
         </Grid>
         <div className="mt-14 md:mt-20">
@@ -117,51 +116,48 @@ export default function UkMarketEntryPage() {
       <Section id="why-fairpointe" rule={false} aria-labelledby="why-fairpointe-heading">
         <Grid className="gap-y-10">
           <h2 id="why-fairpointe-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-5">
-            Commercial access backed by technical delivery.
+            Support the sale and the implementation.
           </h2>
           <div className="type-body prose-flow col-span-4 text-ink-soft md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
             <p className="type-lede text-ink">
-              Enterprise technology is difficult to sell through market development alone.
+              Prospective customers need to understand how your product fits their systems, how it will be evaluated
+              and who will implement and support it.
             </p>
             <p>
-              Customers want to know how the technology fits their environment, who will support the evaluation, who
-              can deploy it and what happens after go-live.
+              Fairpointe connects market development with technical delivery, helping your team progress qualified
+              opportunities and deliver the work that follows.
             </p>
             <p>
-              Fairpointe combines UK market development with technical delivery so your UK proposition can extend from
-              the first opportunity through proof of concept, implementation and ongoing customer support.
+              <ArrowLink href="/go-live">Enterprise customer implementation</ArrowLink>
             </p>
           </div>
           <div className="col-span-4 mt-6 md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7">
-            <h3 className="mb-5 text-[0.9375rem] font-medium text-ink-muted">Where Fairpointe helps you navigate</h3>
+            <h3 className="mb-5 text-[0.9375rem] font-medium text-ink-muted">Where we can help</h3>
             <RuledList items={navigateAreas} columns={2} />
           </div>
         </Grid>
       </Section>
 
       {/* Public sector */}
-      <SplitSection id="public-sector" tone="deep" title="Navigate UK public-sector opportunities.">
+      <SplitSection id="public-sector" tone="deep" title="Assess relevant UK public-sector opportunities.">
         <p>
-          The UK public sector is a substantial technology buyer, but entering it requires an understanding of
-          procurement notices, frameworks, incumbent suppliers, technical requirements and buying cycles.
+          Fairpointe researches procurement notices, buyer requirements, incumbent suppliers and procurement routes to
+          help you assess whether an opportunity fits your product and delivery capability.
         </p>
         <p>
-          Fairpointe helps technology companies identify relevant public-sector opportunities, understand the buyers,
-          incumbent suppliers, procurement routes, technical requirements and buying cycles, and determine the
-          appropriate route to market.
+          Where you decide to proceed, we can support agreed technical evaluation and implementation work. Any bid
+          support, partner approach or delivery role is defined separately.
         </p>
         <p>
-          Where an opportunity progresses, we can support the technical evaluation, deployment and support that follow.
+          <ArrowLink href="/public-sector">Public-sector technology implementation</ArrowLink>
         </p>
       </SplitSection>
 
-      <FaqSection rule={false} id="faq" title="Entering the UK technology market" faqs={faqs} />
+      <FaqSection rule={false} id="faq" title="Questions about UK market entry" faqs={faqs} />
 
-      <CtaBand title="Your UK commercial and technical partner." primary={{ label: "Enter the UK market", href: enquiry }}>
-        Fairpointe is designed for enterprise technology companies that have proven technology and strong customer
-        outcomes but do not yet need a full UK organisation. Whether the opportunity comes directly, through a cloud
-        marketplace, through a technology partner or through public-sector procurement, we can help turn UK demand into
-        successful deployments.
+      <CtaBand title="Choose the next step for your UK expansion." primary={discuss}>
+        Tell us about your product, the UK opportunities you have identified and the commercial or technical support
+        you need. We&rsquo;ll assess where Fairpointe can contribute and define a practical starting scope.
       </CtaBand>
     </>
   );

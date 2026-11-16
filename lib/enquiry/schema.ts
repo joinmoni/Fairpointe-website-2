@@ -16,19 +16,19 @@ const singleLine = (label: string, max: number) =>
     .refine((v) => !/[\r\n]/.test(v), `Your ${label} must be on a single line.`);
 
 export const enquirySchema = z.object({
-  enquiry: z.enum(slugs, { error: "Select what you would like to discuss." }),
+  enquiry: z.enum(slugs, { error: "Choose an enquiry type." }),
   name: singleLine("name", 120),
   email: z
     .string()
     .trim()
-    .min(1, "Enter your work email address.")
+    .min(1, "Enter a valid work email address.")
     .max(254, "Your email address must be 254 characters or fewer.")
-    .pipe(z.email("Enter a valid email address, like name@company.com.")),
+    .pipe(z.email("Enter a valid work email address.")),
   company: singleLine("company name", 160),
   message: z
     .string()
     .trim()
-    .min(1, "Enter a message.")
+    .min(1, "Tell us briefly what you need help with.")
     .max(5000, "Your message must be 5,000 characters or fewer."),
 });
 

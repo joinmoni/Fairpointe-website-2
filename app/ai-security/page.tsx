@@ -1,73 +1,76 @@
 import type { Metadata } from "next";
 import { contactHref } from "@/lib/site";
-import { breadcrumbSchema, faqSchema, pageMetadata, serviceSchema } from "@/lib/seo";
+import { breadcrumbSchema, faqSchema, pageMetadata, serviceSchema, webPageSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/json-ld";
 import { Grid, Section } from "@/components/marketing/layout";
 import { CtaButton } from "@/components/marketing/links";
 import { CtaBand, FaqSection, PageHero, RuledList } from "@/components/marketing/blocks";
-import { AccessPaths, ControlLoop, EnvironmentCoverage, StageIndex } from "@/components/diagrams/ai-security";
+import {
+  AccessPaths,
+  ControlLoop,
+  EnvironmentCoverage,
+  StageIndex,
+  accessReviewStages,
+} from "@/components/diagrams/ai-security";
 
 const path = "/ai-security";
+const title = "AI Agent & Non-Human Identity Security UK | Fairpointe";
 const description =
-  "Evaluate and deploy AI and security technology, including AI agent and non-human identity security across AWS, Azure, Entra, GitHub, Kubernetes and SaaS.";
+  "Review AI agent permissions and non-human identities across AWS, Azure and business systems. Fairpointe implements agreed access and monitoring controls.";
 
-export const metadata: Metadata = pageMetadata({
-  title: "AI Agent & Non-Human Identity Security UK | Fairpointe",
-  description,
-  path,
-});
+export const metadata: Metadata = pageMetadata({ title, description, path });
 
 const environmentAreas = [
   "AWS",
   "Microsoft Azure",
-  "Identity",
-  "Security",
-  "AI Infrastructure",
-  "Developer Platforms",
-  "Hybrid Environments",
+  "Microsoft Entra",
+  "GitHub",
+  "Kubernetes",
+  "SaaS applications",
+  "MCP infrastructure",
 ];
 
-const discussEnvironment = { label: "Discuss a project", href: contactHref("ai-security") };
+const discussAccess = { label: "Discuss your agent access", href: contactHref("ai-security") };
 
 const useCases = [
   {
     title: "Enterprise AI agents",
-    body: "Understand which systems autonomous agents can reach and which identities they use to get there.",
+    body: "Map the applications and data each agent can access, and check whether its permissions match its purpose.",
   },
   {
-    title: "Machine identities",
-    body: "Discover and govern service accounts, API credentials, workload identities and other non-human access.",
+    title: "Service and workload identities",
+    body: "Identify owners and review access for the software accounts used by applications, integrations and automated jobs.",
   },
   {
-    title: "Cloud and DevOps",
-    body: "Understand machine access across cloud infrastructure, CI/CD systems, repositories and Kubernetes environments.",
+    title: "Cloud and developer tools",
+    body: "Review permissions across cloud infrastructure, deployment pipelines, repositories and Kubernetes.",
   },
   {
-    title: "MCP and AI infrastructure",
-    body: "Apply security controls to the emerging infrastructure connecting AI models and agents to tools, data and enterprise systems.",
+    title: "MCP connections",
+    body: "Review the credentials and permissions connecting AI tools to enterprise systems through Model Context Protocol servers.",
   },
 ];
 
 const faqs = [
   {
-    question: "What is AI agent security?",
+    question: "What does this service cover?",
     answer:
-      "AI agent security is the practice of protecting autonomous and semi-autonomous AI systems, including the identities, credentials, permissions, applications and data they use to perform actions.",
+      "We review the identities, credentials and permissions used by AI agents and automated workloads within an agreed scope. We then prioritise findings and implement the access and monitoring changes included in the engagement.",
   },
   {
     question: "What is a non-human identity?",
     answer:
-      "A non-human identity is a digital identity used by software rather than a person. Examples include service accounts, API keys, access tokens, workload identities and credentials used by automated systems or AI agents.",
+      "A non-human identity is a digital identity used by software rather than a person, such as a service account, service principal or workload identity. It may authenticate using a key, token, certificate or another credential.",
   },
   {
-    question: "Why do AI agents create identity risk?",
+    question: "What will our team receive?",
     answer:
-      "AI agents can interact with multiple systems and perform actions autonomously. If their credentials have excessive permissions, are poorly managed or become compromised, an attacker or malfunctioning agent may gain access to sensitive systems or data.",
+      "Deliverables are agreed before work starts. They can include an identity and access inventory, ownership mapping, prioritised findings, implemented control changes and documentation for your team.",
   },
   {
-    question: "Can Fairpointe work across AWS and Microsoft Azure?",
+    question: "Which environments can be included?",
     answer:
-      "Yes. Fairpointe evaluates and deploys technology across multi-cloud and mixed technology environments, including AWS, Microsoft Azure, Microsoft Entra, GitHub, Kubernetes and SaaS applications.",
+      "The scope can include AWS, Microsoft Azure, Microsoft Entra, GitHub, Kubernetes, SaaS applications and MCP infrastructure. We confirm platform coverage and the access needed during scoping.",
   },
 ];
 
@@ -76,8 +79,9 @@ export default function AiSecurityPage() {
     <>
       <JsonLd
         data={[
+          webPageSchema({ name: title, description, path }),
           serviceSchema({
-            name: "AI and security technology evaluation and deployment",
+            name: "AI agent and non-human identity security",
             serviceType: "AI agent and non-human identity security",
             description,
             path,
@@ -88,61 +92,54 @@ export default function AiSecurityPage() {
       />
 
       <PageHero
-        title="Deploy emerging AI and security technology with confidence."
-        actions={<CtaButton href={discussEnvironment.href}>{discussEnvironment.label}</CtaButton>}
-        aside={<StageIndex />}
+        title="AI agent security across your cloud and business systems."
+        actions={<CtaButton href={discussAccess.href}>{discussAccess.label}</CtaButton>}
+        aside={<StageIndex stages={accessReviewStages} />}
       >
         <p>
-          Fairpointe helps organisations evaluate and deploy specialist technologies across AI infrastructure,
-          identity, security and cloud.
+          Fairpointe helps organisations review and control the identities, credentials and permissions used by AI
+          agents and automated workloads.
         </p>
         <p>
-          We work alongside your existing engineering and security teams to take new technology from technical
-          evaluation and proof of concept into production.
+          Our work focuses on non-human identity security: understanding what software can access, identifying
+          excessive permissions and implementing agreed access controls with your engineering and security teams.
         </p>
       </PageHero>
 
       {/* Approach */}
       <Section id="approach" tone="deep" rule={false} aria-labelledby="approach-heading">
         <h2 id="approach-heading" className="type-h2 max-w-[22ch]">
-          Take new technology from evaluation into production.
+          From access review to implemented controls.
         </h2>
         <div className="mt-14 md:mt-20">
-          <ControlLoop />
+          <ControlLoop stages={accessReviewStages} />
         </div>
         <Grid className="mt-16 md:mt-20">
           <div className="col-span-4 md:col-span-9 lg:col-span-6">
-            <h3 className="mb-5 text-[0.9375rem] font-medium text-ink-muted">Environments we work across</h3>
+            <h3 className="mb-5 text-[0.9375rem] font-medium text-ink-muted">Platforms and environments in scope</h3>
             <RuledList items={environmentAreas} columns={2} />
           </div>
         </Grid>
       </Section>
 
-      {/* Problem: AI agent and non-human identity security as a specialist example */}
+      {/* Identity explanation and illustrative access examples */}
       <Section id="problem" rule={false} aria-labelledby="problem-heading">
         <Grid className="gap-y-10">
           <h2 id="problem-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-5">
-            AI creates a new identity problem.
+            Know which systems your agents can reach.
           </h2>
           <div className="type-body prose-flow col-span-4 text-ink-soft md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
             <p className="type-lede text-ink">
-              AI agent and non-human identity security is one of the specialist areas where Fairpointe helps
-              organisations evaluate and deploy new technology.
-            </p>
-            <p>Traditional identity security was designed primarily around people.</p>
-            <p>
-              AI agents and automated workloads operate differently. They authenticate to systems, call APIs, access
-              data, trigger workflows and take actions without a person signing in each time.
-            </p>
-            <p>Every credential creates a potential path to company systems and information.</p>
-            <p>
-              As organisations deploy more AI, understanding these non-human identities becomes part of securing the AI
-              infrastructure itself.
+              AI agents and automated workloads use digital identities to access applications, call APIs and act on
+              business data. Those identities may have permissions that extend beyond the work they need to perform.
             </p>
             <p>
-              Fairpointe helps organisations discover service accounts, API keys, tokens, secrets and workload
-              identities, understand their ownership and permissions, reduce excessive privileges and monitor how access
-              changes as AI and cloud environments evolve.
+              An access review should establish what each workload can reach, who owns the identity it uses and which
+              permissions are required.
+            </p>
+            <p>
+              Fairpointe helps map these access paths, identify excessive permissions and implement agreed changes to
+              access, credential handling and monitoring.
             </p>
           </div>
           <div className="col-span-4 mt-10 md:col-span-12 md:mt-16">
@@ -156,11 +153,11 @@ export default function AiSecurityPage() {
         <Grid className="gap-y-10">
           <div className="col-span-4 md:col-span-10 lg:col-span-5">
             <h2 id="environments-heading" className="type-h2">
-              Secure agents across your environment.
+              Review access across the systems agents use.
             </h2>
             <p className="type-body mt-8 max-w-[30rem] text-ink-soft">
-              AI rarely operates inside a single platform. Fairpointe takes an environment-wide approach to the
-              identities and infrastructure connecting agents to company systems.
+              The review scope can include cloud platforms, developer tools and business applications. We agree the
+              environments and access required before work starts.
             </p>
           </div>
           <div className="col-span-4 md:col-span-12 lg:col-span-6 lg:col-start-7 lg:pt-2">
@@ -172,7 +169,7 @@ export default function AiSecurityPage() {
       {/* Use cases */}
       <Section id="use-cases" aria-labelledby="use-cases-heading">
         <h2 id="use-cases-heading" className="type-h2 max-w-[22ch]">
-          Where AI agent security matters.
+          Where this work helps.
         </h2>
         <div className="mt-14 grid border-t border-ink md:mt-20 md:grid-cols-2">
           {useCases.map((useCase, i) => (
@@ -190,11 +187,10 @@ export default function AiSecurityPage() {
         </div>
       </Section>
 
-      <FaqSection id="faq" title="AI agent security questions" faqs={faqs} />
+      <FaqSection id="faq" title="AI agent access questions" faqs={faqs} />
 
-      <CtaBand title="Discuss the technology you want to deploy." primary={discussEnvironment}>
-        Talk to Fairpointe about your AI, security, identity and cloud environment, including the machine identities
-        your AI agents use.
+      <CtaBand title="Understand and control your agents’ access." primary={discussAccess}>
+        Tell us which agents, platforms and business systems you use, and what you need to review or change.
       </CtaBand>
     </>
   );

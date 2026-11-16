@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { cta, site } from "@/lib/site";
-import { breadcrumbSchema, faqSchema, pageMetadata, serviceSchema } from "@/lib/seo";
+import { breadcrumbSchema, faqSchema, pageMetadata, serviceSchema, webPageSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/json-ld";
 import { Grid, Section } from "@/components/marketing/layout";
 import { CtaButton } from "@/components/marketing/links";
@@ -141,6 +141,7 @@ export default function GoLivePage() {
     <>
       <JsonLd
         data={[
+          webPageSchema({ name: "Enterprise Implementation for AI & SaaS Vendors | Fairpointe", description, path }),
           serviceSchema({
             name: "Enterprise implementation for AI and SaaS vendors",
             serviceType: "Enterprise implementation",
@@ -174,6 +175,10 @@ export default function GoLivePage() {
           Your customer has signed. Now your product needs to work with their systems, data and security requirements.
           Fairpointe handles the integrations and deployment, working directly with your customer and engineering team
           through to launch and handover.
+        </p>
+        <p>
+          Forward-deployed engineering means working directly with your customer and product team to adapt, integrate
+          and deploy your software in the customer&rsquo;s environment.
         </p>
       </PageHero>
 

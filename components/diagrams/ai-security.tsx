@@ -1,29 +1,52 @@
 import { cn } from "@/lib/utils";
 
-export const deploymentStages = [
+export type Stage = { title: string; body: string };
+
+/** Homepage delivery process. */
+export const deploymentStages: readonly Stage[] = [
   {
     title: "Evaluate",
-    body: "Validate the technology against the real business and technical requirement.",
+    body: "Confirm the requirements, test the technology and agree the implementation scope.",
   },
   {
     title: "Integrate",
-    body: "Connect it with your existing applications, data, identity and infrastructure.",
+    body: "Build the connections to your applications, data, identity and infrastructure.",
   },
   {
     title: "Deploy",
-    body: "Move the solution into a secure, production-ready environment.",
+    body: "Test the complete workflow and release it with the agreed controls and monitoring.",
   },
   {
-    title: "Operate",
-    body: "Support, optimise and extend the deployment as requirements evolve.",
+    title: "Support",
+    body: "Hand over the implementation and agree any further maintenance, optimisation or technical support.",
   },
-] as const;
+];
+
+/** AI & Security process. The hero index and the loop both read from this list. */
+export const accessReviewStages: readonly Stage[] = [
+  {
+    title: "Discover",
+    body: "Identify the agents, workloads, accounts and credentials within the agreed scope.",
+  },
+  {
+    title: "Assess",
+    body: "Map ownership and effective permissions, then prioritise access that needs changing.",
+  },
+  {
+    title: "Implement",
+    body: "Configure the agreed permissions, credential handling and monitoring controls.",
+  },
+  {
+    title: "Hand over",
+    body: "Document the changes, assign ownership and show your team how to maintain the controls.",
+  },
+];
 
 /** Compact vertical index of the four stages, used beside the AI & Security hero. */
-export function StageIndex() {
+export function StageIndex({ stages }: { stages: readonly Stage[] }) {
   return (
     <ol aria-label="Approach" className="relative border-l border-rule-strong pl-8">
-      {deploymentStages.map((stage, i) => (
+      {stages.map((stage, i) => (
         <li key={stage.title} className="relative py-3.5">
           <span
             aria-hidden
@@ -50,8 +73,11 @@ function Arrow({ className }: { className?: string }) {
   );
 }
 
-/** Evaluate → Integrate → Deploy → Operate, drawn as a continuous loop. */
-export function ControlLoop() {
+/**
+ * Four stages drawn as a continuous loop. Desktop and mobile layouts are two
+ * presentations of the same `stages` list, so their wording always matches.
+ */
+export function ControlLoop({ stages }: { stages: readonly Stage[] }) {
   return (
     <figure>
       {/* Desktop and tablet: horizontal track with return path */}
@@ -64,12 +90,12 @@ export function ControlLoop() {
           </svg>
         </div>
         <ol className="grid grid-cols-4 gap-x-6 lg:gap-x-8">
-          {deploymentStages.map((stage, i) => (
+          {stages.map((stage, i) => (
             <li key={stage.title} className="relative">
               <div aria-hidden className="relative z-10 flex h-5 items-center">
                 <span className={cn("size-3 shrink-0 border border-ink", i === 0 ? "bg-ink" : "bg-paper")} />
                 <span className="h-px flex-1 bg-ink/70" />
-                {i < deploymentStages.length - 1 ? (
+                {i < stages.length - 1 ? (
                   <Arrow className="-ml-px text-ink/70" />
                 ) : (
                   <span className="h-px w-0" />
@@ -86,7 +112,7 @@ export function ControlLoop() {
       {/* Mobile: vertical sequence */}
       <ol className="relative md:hidden">
         <span aria-hidden className="absolute top-2 bottom-2 left-[5.5px] w-px bg-ink/40" />
-        {deploymentStages.map((stage, i) => (
+        {stages.map((stage, i) => (
           <li key={stage.title} className="relative pb-10 pl-10 last:pb-0">
             <span
               aria-hidden
@@ -107,40 +133,40 @@ const accessPaths = [
     workload: "Customer support agent",
     identity: "OAuth token",
     system: "CRM",
-    access: "Read and write, every record",
+    access: "Read and write access to all customer records",
   },
   {
     workload: "Coding agent",
     identity: "GitHub App token",
     system: "Source repositories",
-    access: "Write, every repository",
+    access: "Write access across all repositories",
   },
   {
     workload: "Data pipeline",
     identity: "Service account key",
     system: "Data warehouse",
-    access: "Project owner",
+    access: "Project-wide administrative permissions",
   },
   {
     workload: "MCP server",
-    identity: "Long-lived API key",
+    identity: "API key",
     system: "Payments API",
-    access: "Unrestricted scope",
+    access: "Access beyond the tools and actions required",
   },
 ] as const;
 
 const pathColumns = [
   { key: "workload", label: "Agent or workload" },
-  { key: "identity", label: "Identity used" },
-  { key: "system", label: "System reached" },
-  { key: "access", label: "Effective access" },
+  { key: "identity", label: "Credential used" },
+  { key: "system", label: "System accessed" },
+  { key: "access", label: "Example access to review" },
 ] as const;
 
-/** Illustrative access paths: how each credential connects an autonomous system to company data. */
+/** Illustrative access examples. These are not findings from a client engagement. */
 export function AccessPaths() {
   return (
     <figure>
-      <div role="table" aria-label="Illustrative access paths" className="border-t border-ink">
+      <div role="table" aria-label="Illustrative examples of access to review" className="border-t border-ink">
         <div role="rowgroup" className="hidden md:block">
           <div role="row" className="grid grid-cols-4 gap-x-6 border-b border-rule py-3.5">
             {pathColumns.map((col) => (
@@ -185,26 +211,38 @@ export function AccessPaths() {
         </div>
       </div>
       <figcaption className="mt-5 text-[0.9375rem] text-ink-muted">
-        Illustrative access paths. Each credential is a route from an autonomous system to company data.
+        Illustrative examples of access to review. These are not findings from a Fairpointe client engagement.
       </figcaption>
     </figure>
   );
 }
 
 export const environments = [
-  { name: "AWS", identities: "IAM roles, access keys, instance and function roles" },
-  { name: "Microsoft Azure", identities: "Managed identities, service principals, Key Vault secrets" },
-  { name: "Microsoft Entra", identities: "App registrations, service principals, OAuth consent grants" },
-  { name: "GitHub", identities: "GitHub Apps, Actions tokens, deploy keys, personal access tokens" },
-  { name: "Kubernetes", identities: "Service accounts, workload identity bindings, mounted secrets" },
-  { name: "SaaS applications", identities: "OAuth integrations, API tokens, connected applications" },
-  { name: "MCP infrastructure", identities: "MCP server credentials, tool permissions, delegated tokens" },
+  { name: "AWS", identities: "IAM roles, access keys and workload permissions" },
+  { name: "Microsoft Azure", identities: "Managed identities, service principals and access to stored secrets" },
+  {
+    name: "Microsoft Entra",
+    identities: "Application identities, service principals and delegated or application permissions",
+  },
+  {
+    name: "GitHub",
+    identities: "GitHub Apps, Actions workflow permissions, deploy keys and personal access tokens",
+  },
+  { name: "Kubernetes", identities: "Service accounts, workload identity configuration and access to secrets" },
+  {
+    name: "SaaS applications",
+    identities: "Connected applications, integration identities and API token permissions",
+  },
+  {
+    name: "MCP infrastructure",
+    identities: "Model Context Protocol server credentials, tool permissions and delegated access",
+  },
 ] as const;
 
 export function EnvironmentCoverage() {
   return (
     <table className="w-full border-collapse text-left">
-      <caption className="sr-only">Environments and the non-human identities examined in each</caption>
+      <caption className="sr-only">Environments and the non-human identities in scope for each</caption>
       <thead className="hidden md:table-header-group">
         <tr className="border-t border-ink">
           <th scope="col" className="w-[38%] py-3.5 pr-6 text-[0.875rem] font-medium text-ink-muted">

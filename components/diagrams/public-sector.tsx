@@ -1,18 +1,19 @@
 /** Fairpointe positioned between technology suppliers and public-sector buyers. */
 export function TwoSidedDiagram() {
   const sides = [
-    { title: "Technology suppliers", body: "What suppliers can provide" },
-    { title: "Public-sector organisations", body: "What buyers need to procure, implement and operate successfully" },
+    { title: "Technology suppliers", body: "Opportunity research and delivery support" },
+    { title: "Public-sector organisations", body: "Evaluation and implementation support" },
   ];
 
   return (
-    <figure aria-label="Fairpointe works across both sides of technology adoption">
+    <figure aria-label="Fairpointe supports technology suppliers and public-sector organisations within an agreed scope">
       <div className="grid items-stretch gap-0 md:grid-cols-[1fr_auto_1fr]">
         <Side {...sides[0]} />
         <div className="flex flex-col items-center md:flex-row">
           <span aria-hidden className="h-8 w-px bg-ink/50 md:h-px md:w-10 lg:w-16" />
-          <div className="bg-ink px-6 py-4 text-center text-[1.0625rem] font-semibold tracking-[-0.015em] text-paper">
-            Fairpointe
+          <div className="bg-ink px-6 py-4 text-center text-paper">
+            <p className="text-[1.0625rem] font-semibold tracking-[-0.015em]">Fairpointe</p>
+            <p className="mt-1 text-[0.875rem] leading-snug text-paper/75">Agreed commercial and technical scope</p>
           </div>
           <span aria-hidden className="h-8 w-px bg-ink/50 md:h-px md:w-10 lg:w-16" />
         </div>

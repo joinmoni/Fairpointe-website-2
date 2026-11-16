@@ -13,11 +13,11 @@ import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 
 const fieldLabels: Record<EnquiryField, string> = {
-  enquiry: "What would you like to discuss?",
+  enquiry: "What do you need help with?",
   name: "Name",
   email: "Work email",
   company: "Company",
-  message: "Message",
+  message: "Tell us about your project",
 };
 
 const EmailLink = () => (
@@ -40,7 +40,7 @@ function errorMessage(state: Extract<EnquiryState, { status: "error" }>) {
     default:
       return (
         <>
-          We could not send your enquiry. Please try again or email <EmailLink /> directly.
+          Your enquiry could not be sent. Please try again or email <EmailLink />.
         </>
       );
   }
@@ -98,7 +98,9 @@ export function EnquiryForm({ defaultEnquiry, id = "enquiry" }: { defaultEnquiry
           <h2 ref={successRef} tabIndex={-1} className="type-h3 outline-none">
             Thanks. Your enquiry has been sent to Fairpointe.
           </h2>
-          <p className="type-body mt-4 text-ink-soft">We will be in touch.</p>
+          <p className="type-body mt-4 text-ink-soft">
+            We&rsquo;ll review the details and reply using the email address you provided.
+          </p>
         </motion.div>
       ) : (
         <motion.form

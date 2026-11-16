@@ -7,7 +7,7 @@ import { Grid, Section } from "@/components/marketing/layout";
 import { PageHero } from "@/components/marketing/blocks";
 
 const path = "/privacy";
-const lastUpdated = "15 November 2026";
+const lastUpdated = "16 November 2026";
 
 export const metadata: Metadata = pageMetadata({
   title: "Privacy Policy | Fairpointe",
@@ -97,6 +97,15 @@ const sections: { title: string; body: ReactNode }[] = [
           We may also disclose information where the law requires it, or to protect our rights, property or safety.
         </p>
       </>
+    ),
+  },
+  {
+    title: "Booking a call",
+    body: (
+      <p>
+        Our booking link takes you to Cal.com. Information you submit on the booking page is also handled under the
+        privacy information provided there.
+      </p>
     ),
   },
   {

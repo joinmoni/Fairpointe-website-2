@@ -1,44 +1,43 @@
 import type { Metadata } from "next";
 import { cta } from "@/lib/site";
-import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
+import { breadcrumbSchema, pageMetadata, webPageSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/json-ld";
 import { Grid, Section } from "@/components/marketing/layout";
 import { CtaBand, PageHero, RuledList, SplitSection } from "@/components/marketing/blocks";
 
 const path = "/about";
 
-export const metadata: Metadata = pageMetadata({
-  title: "About Fairpointe | UK Technology Company",
-  description:
-    "Fairpointe is a UK enterprise technology company bringing specialist AI, cloud and security technology into real customer environments, and supporting UK market entry.",
-  path,
-});
+const title = "About Fairpointe | Enterprise Technology Implementation";
+const description =
+  "Fairpointe combines technical evaluation, enterprise integration and production deployment with UK commercial and customer delivery support.";
+
+export const metadata: Metadata = pageMetadata({ title, description, path });
 
 const experience = [
-  "CTO and engineering leadership",
+  "Engineering and technical leadership",
+  "Enterprise software integrations",
   "Production financial infrastructure",
-  "Cloud systems",
-  "AI and software products",
-  "Enterprise B2B technology",
+  "Cloud infrastructure and deployment",
+  "Customer-facing technical delivery",
   "UK and international operations",
 ];
 
 const principles = [
   {
     title: "Commercial and technical",
-    body: "We understand that successful technology adoption requires both a strong commercial case and successful technical delivery.",
+    body: "Connect the business requirement with the engineering work needed to deliver it.",
   },
   {
-    title: "Built for emerging technology",
-    body: "We focus on specialist technologies where deep product understanding and hands-on implementation matter.",
+    title: "Hands-on delivery",
+    body: "Work through configuration, integration, testing and launch alongside the people responsible for the product and its use.",
   },
   {
-    title: "Cloud agnostic",
-    body: "We work across AWS, Microsoft Azure and hybrid environments based on the customer’s existing technology estate.",
+    title: "Your existing environment",
+    body: "Design the implementation around your applications, data, identity and cloud infrastructure.",
   },
   {
-    title: "UK focused",
-    body: "We provide international technology companies with local knowledge, customer access and technical delivery capability.",
+    title: "UK delivery capability",
+    body: "Support UK implementations and provide international vendors with agreed local commercial and technical capacity.",
   },
 ];
 
@@ -46,32 +45,31 @@ export default function AboutPage() {
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema([{ name: "About", path }])}
+        data={[
+          webPageSchema({ type: "AboutPage", name: title, description, path }),
+          breadcrumbSchema([{ name: "About", path }]),
+        ]}
       />
 
-      <PageHero title="Built by operators.">
+      <PageHero title="Built around implementation.">
         <p>
-          Fairpointe is a UK enterprise technology company focused on bringing specialist technology into real customer
-          environments.
+          Fairpointe is a UK enterprise technology company. We help organisations implement specialist technology and
+          help international vendors develop and deliver UK opportunities.
         </p>
         <p>
-          We work with organisations adopting emerging AI, cloud and security technology, and with international
-          technology companies expanding into the UK.
-        </p>
-        <p>
-          Our model combines commercial execution with hands-on technical delivery. That means we can support the
-          journey from identifying an opportunity and evaluating the technology through to integration, deployment and
-          ongoing support.
+          Our work combines technical evaluation, systems integration, production deployment and the commercial
+          coordination needed to move an implementation forward.
         </p>
       </PageHero>
 
       <SplitSection id="approach" title="Technology has to work outside the presentation.">
         <p className="type-lede text-ink">
-          Our approach comes from building and operating technology in production environments.
+          A successful implementation needs more than a product demonstration. It needs a clear use case, access to the
+          right systems, agreed responsibilities and a team prepared to operate it.
         </p>
         <p>
-          That means understanding the architecture, implementation, commercial constraints and operational reality
-          around a technology decision, not simply recommending software and leaving the customer to make it work.
+          Fairpointe works alongside customer and vendor teams to define those requirements and deliver the agreed
+          implementation.
         </p>
         <div className="border-t border-rule">
           {principles.map((principle) => (
@@ -83,30 +81,26 @@ export default function AboutPage() {
         </div>
       </SplitSection>
 
-      <Section id="founder" tone="deep" aria-labelledby="founder-heading">
+      <Section id="experience" tone="deep" aria-labelledby="experience-heading">
         <Grid className="gap-y-12">
-          <h2 id="founder-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-5">
-            Leadership
+          <h2 id="experience-heading" className="type-h2 col-span-4 md:col-span-10 lg:col-span-5">
+            Relevant experience
           </h2>
           <div className="col-span-4 md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-7 lg:pt-2">
-            <div className="type-body prose-flow border-t border-ink pt-6 text-ink-soft">
+            <div className="type-body border-t border-ink pt-6 text-ink-soft">
               <p>
-                Fairpointe is led by a technology operator with experience building and scaling software, cloud
-                infrastructure and financial technology products across the UK and international markets.
-              </p>
-              <p>
-                Fairpointe&rsquo;s leadership sets its technology strategy and the development of specialist enterprise
-                implementation capabilities.
+                Fairpointe&rsquo;s approach draws on experience in engineering leadership, enterprise integrations,
+                cloud infrastructure and production financial systems.
               </p>
             </div>
-            <h4 className="mt-12 mb-5 text-[0.9375rem] font-medium text-ink-muted">Experience</h4>
-            <RuledList items={experience} columns={2} />
+            <RuledList items={experience} columns={2} className="mt-12" />
           </div>
         </Grid>
       </Section>
 
-      <CtaBand title="Work with Fairpointe." primary={cta.speak}>
-        Talk to us about the technology you want to deploy or your plans to enter the UK market.
+      <CtaBand title="Discuss the work you need to deliver." primary={{ label: "Discuss your project", href: cta.speak.href }}>
+        Talk to us about an implementation, a customer deployment or a UK opportunity that needs commercial and
+        technical support.
       </CtaBand>
     </>
   );

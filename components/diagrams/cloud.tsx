@@ -1,11 +1,26 @@
 import { cn } from "@/lib/utils";
 
 const layers = [
-  "Cloud architecture",
-  "Platform engineering",
-  "Cloud security",
-  "Infrastructure automation",
-  "Migration and modernisation",
+  {
+    title: "Cloud architecture",
+    body: "Define environments, networking, deployment patterns and operational requirements.",
+  },
+  {
+    title: "Platform engineering",
+    body: "Create repeatable environments and deployment processes for your application teams.",
+  },
+  {
+    title: "Cloud security",
+    body: "Configure workload access, secrets handling and infrastructure controls within the agreed scope.",
+  },
+  {
+    title: "Infrastructure automation",
+    body: "Manage infrastructure and configuration through version-controlled, repeatable processes.",
+  },
+  {
+    title: "Migration and modernisation",
+    body: "Plan and implement workload changes, including testing, cutover and rollback arrangements.",
+  },
 ] as const;
 
 /**
@@ -23,14 +38,15 @@ export function MultiCloudStack({ tone = "paper" }: { tone?: "paper" | "deep" })
       <ul aria-label="Capabilities that span both clouds" className="mt-2 border border-ink">
         {layers.map((layer, i) => (
           <li
-            key={layer}
+            key={layer.title}
             className={cn(
-              "px-4 py-3.5 text-[0.9375rem] font-medium tracking-[-0.01em] sm:px-5",
+              "px-4 py-3.5 sm:px-5",
               i > 0 && "border-t border-rule",
               tone === "deep" ? "bg-paper" : "bg-white/50",
             )}
           >
-            {layer}
+            <p className="text-[0.9375rem] font-medium tracking-[-0.01em]">{layer.title}</p>
+            <p className="mt-1 text-[0.875rem] leading-snug text-ink-soft">{layer.body}</p>
           </li>
         ))}
       </ul>
@@ -42,7 +58,7 @@ export function MultiCloudStack({ tone = "paper" }: { tone?: "paper" | "deep" })
         ))}
       </div>
       <figcaption className="mt-4 text-[0.9375rem] text-ink-muted">
-        The same engineering disciplines applied across both cloud platforms and hybrid environments.
+        The implementation is designed around your workloads, existing systems and operational requirements.
       </figcaption>
     </figure>
   );

@@ -58,11 +58,42 @@ export function websiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": `${site.url}/#website`,
+    "@id": websiteId,
     name: site.name,
     url: site.url,
     publisher: { "@id": organizationId },
     inLanguage: "en-GB",
+  };
+}
+
+export const websiteId = `${site.url}/#website`;
+
+/**
+ * WebPage (or a subtype such as AboutPage or ContactPage) for one URL. `name`
+ * and `description` should match the page's visible heading and metadata.
+ */
+export function webPageSchema({
+  type = "WebPage",
+  name,
+  description,
+  path,
+}: {
+  type?: "WebPage" | "AboutPage" | "ContactPage";
+  name: string;
+  description: string;
+  path: string;
+}) {
+  const url = new URL(path, site.url).toString();
+  return {
+    "@context": "https://schema.org",
+    "@type": type,
+    "@id": `${url}#webpage`,
+    url,
+    name,
+    description,
+    inLanguage: "en-GB",
+    isPartOf: { "@id": websiteId },
+    about: { "@id": organizationId },
   };
 }
 

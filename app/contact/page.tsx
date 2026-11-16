@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { company, cta, site } from "@/lib/site";
-import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
+import { breadcrumbSchema, pageMetadata, webPageSchema } from "@/lib/seo";
 import { isEnquirySlug } from "@/lib/enquiry/schema";
 import { JsonLd } from "@/components/json-ld";
 import { Container, Grid } from "@/components/marketing/layout";
@@ -9,12 +9,11 @@ import { EnquiryForm } from "@/components/contact/enquiry-form";
 
 const path = "/contact";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Contact Fairpointe | Discuss a Technology Project",
-  description:
-    "Contact Fairpointe about evaluating or deploying AI, security and cloud technology, UK public-sector technology or entering the UK technology market.",
-  path,
-});
+const title = "Contact Fairpointe | Discuss Your Project";
+const description =
+  "Discuss a technology implementation, customer deployment, cloud project, AI access requirement or UK market-entry opportunity with Fairpointe.";
+
+export const metadata: Metadata = pageMetadata({ title, description, path });
 
 export default async function ContactPage({ searchParams }: PageProps<"/contact">) {
   const { enquiry } = await searchParams;
@@ -24,13 +23,7 @@ export default async function ContactPage({ searchParams }: PageProps<"/contact"
     <>
       <JsonLd
         data={[
-          {
-            "@context": "https://schema.org",
-            "@type": "ContactPage",
-            name: "Contact Fairpointe",
-            url: new URL(path, site.url).toString(),
-            about: { "@id": `${site.url}/#organization` },
-          },
+          webPageSchema({ type: "ContactPage", name: title, description, path }),
           breadcrumbSchema([{ name: "Contact", path }]),
         ]}
       />
@@ -40,11 +33,11 @@ export default async function ContactPage({ searchParams }: PageProps<"/contact"
             <div className="col-span-4 md:col-span-10 lg:col-span-5">
               <div className="lg:sticky lg:top-32">
                 <h1 id="contact-heading" className="type-h1">
-                  Let&rsquo;s discuss what you&rsquo;re trying to deploy or bring to the UK.
+                  Tell us what you&rsquo;re working on.
                 </h1>
                 <p className="type-lede mt-8 max-w-[26rem] text-ink-soft">
-                  Whether you&rsquo;re evaluating specialist technology, planning a deployment or looking to establish
-                  your technology company in the UK, tell us what you&rsquo;re working on.
+                  Share the technology, customer requirement or UK opportunity you need help with, along with your
+                  target timeline.
                 </p>
               </div>
             </div>
@@ -60,7 +53,7 @@ export default async function ContactPage({ searchParams }: PageProps<"/contact"
                 </a>
                 <h2 className="mt-10 text-[1.0625rem] font-semibold tracking-[-0.01em]">Prefer to talk?</h2>
                 <p className="mt-2 text-[0.9375rem] text-ink-muted">
-                  For the Go-Live Sprint, fractional forward-deployed engineering or a pilot that needs rescuing.
+                  Book a 20-minute call to discuss your project, customer deployment or UK expansion.
                 </p>
                 <div className="mt-4 flex flex-col items-start gap-3">
                   <a
@@ -74,14 +67,14 @@ export default async function ContactPage({ searchParams }: PageProps<"/contact"
                   </a>
                 </div>
                 <p className="mt-6 text-[0.9375rem] text-ink-muted">
-                  See our{" "}
+                  Read our{" "}
                   <Link
                     href={company.privacyPolicyHref}
                     className="underline decoration-ink/30 underline-offset-4 transition-colors hover:decoration-ink"
                   >
                     Privacy Policy
                   </Link>{" "}
-                  for how we handle enquiries.
+                  to see how we handle your enquiry.
                 </p>
               </div>
             </div>

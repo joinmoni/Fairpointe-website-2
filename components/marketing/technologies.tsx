@@ -43,8 +43,8 @@ export function TechnologyList({ className }: { className?: string }) {
         ))}
       </ul>
       <p className="mt-5 text-[0.8125rem] text-ink-muted">
-        Product names and logos are trademarks of their respective owners. They identify technologies Fairpointe works
-        with and do not indicate a partnership or endorsement.
+        Product names and logos belong to their respective owners. Their inclusion identifies technologies Fairpointe
+        works with and does not imply partnership or endorsement.
       </p>
     </div>
   );

@@ -6,7 +6,7 @@ export const site = {
   bookingUrl: "https://cal.com/fairpointe/intro",
   tagline: "Enterprise technology, deployed in the UK.",
   description:
-    "Fairpointe helps UK organisations evaluate and deploy specialist enterprise technology, and helps international technology companies enter, sell and deliver in the UK.",
+    "Fairpointe implements AI, cloud, data and security technology for UK organisations and supports international vendors with UK customer delivery.",
   locale: "en_GB",
 } as const;
 
@@ -100,12 +100,12 @@ export const navigation: NavEntry[] = [
       {
         label: "AI & Security",
         href: "/ai-security",
-        description: "Evaluate and deploy emerging AI and security technology",
+        description: "AI agent and non-human identity security",
       },
       {
         label: "Cloud & Infrastructure",
         href: "/cloud-infrastructure",
-        description: "Cloud foundations across AWS, Microsoft Azure and hybrid environments",
+        description: "AWS and Azure implementation",
       },
     ],
   },
@@ -114,21 +114,21 @@ export const navigation: NavEntry[] = [
     label: "Technology Companies",
     items: [
       {
-        label: "FDEaaS",
+        label: "Enterprise Implementation",
         href: "/go-live",
-        description: "FDE as a service: forward-deployed engineers to get your enterprise customers live",
+        description: "Enterprise customer implementation for AI and SaaS vendors",
       },
       {
         label: "UK Market Entry",
         href: "/uk-market-entry",
-        description: "A UK commercial and technical partner for international technology companies",
+        description: "UK market entry for technology companies",
       },
     ],
   },
   {
     label: "Company",
     items: [
-      { label: "About", href: "/about", description: "Built by operators" },
+      { label: "About", href: "/about", description: "Built around implementation" },
       { label: "Contact", href: "/contact", description: "Speak to Fairpointe" },
     ],
   },
